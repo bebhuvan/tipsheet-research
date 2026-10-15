@@ -1,0 +1,36 @@
+---
+title: "The finding, in plain words"
+dek: "The question and the answer in one or two sentences."
+date: 2026-01-01
+topic: other
+verdict: study
+finding: "The result in one sentence. Confirmatory results only."
+card: "plan.md"
+author: "tipsheet research"
+ai:
+  assisted: true
+  models: ["Claude (plan, code, draft)", "DeepSeek (independent recalculation)", "Gemini (review)"]
+  roles: "I wrote the questions and predictions down before computing anything. A second model recalculated the headline numbers from the written plan alone; a third reviewed the draft against the plan and the results."
+  note: "Every number in this piece was computed by code and checked against the study's results. A person read and signed off the piece."
+signed_off: { by: null, on: null }
+---
+
+import F from "./figures.json";
+
+Opening: a concrete case that puts the reader in the decision.
+
+**In brief**
+
+- One line per sub-question, with its number.
+
+<h2 id="q1">The first sub-question, in the reader's words</h2>
+
+The short answer first.
+
+<Figure {...F.q1} />
+
+How to read the chart. Why it happens. A rupee example. How sure I am.
+
+<h2 id="limits">Limits</h2>
+
+<h2 id="method">How I did it</h2>
