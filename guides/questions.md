@@ -57,6 +57,10 @@ Use the template. For each sub-question:
 
 Plus: the data and its traps, what would change my mind, and the questions I won't ask.
 
+### 5b. Plan the charts by job
+
+For each sub-question, list its figures and each one's job (answer, spread, comparison, mechanism, conditioning, robustness, caveat, case; see `guides/charts.md`). Walk the list of jobs and include each one that helps the reader. No two figures do the same job. This happens before any result is seen, so the charts follow the questions and not whatever looks striking.
+
 ### 6. Stress-test the plan before showing it
 
 Read it as a sceptical reader would and answer in the plan:
@@ -65,6 +69,7 @@ Read it as a sceptical reader would and answer in the plan:
 - Is there at least one question where you honestly don't know the answer?
 - Is the comparison the reader's real alternative?
 - Where could the data mislead (survivors only, overlapping windows, one decade doing all the work)?
+- Is any question causal ("why") when the data can only show a pattern? Rephrase it, or plan to answer "can't tell" honestly.
 
 ### 7. Human approval, then freeze
 

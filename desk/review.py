@@ -32,11 +32,13 @@ read a finance paper or taken a statistics course.
 6 every term, statistic or abbreviation used before it is explained (quote the first use)
 7 every chart whose point is not stated in words near it, or whose "how to read it" wouldn't help a novice
 8 any passage you had to read twice
+9 the "Still lost? Read this" section, read alone: does it leave a novice with one true, repeatable sentence
+  without overclaiming? Quote it if not.
 Then, for each sub-question in the plan, answer it in one sentence using ONLY the article. If the article
 doesn't let you answer, say "cannot tell from the article".
 
 Reply in JSON only:
-{"issues": [{"quote": "<exact text from the draft, 5-40 words>", "category": <1-8>,
+{"issues": [{"quote": "<exact text from the draft, 5-40 words>", "category": <1-9>,
              "severity": "must_fix" | "should_fix" | "minor", "problem": "<one sentence>",
              "evidence": "<plan section or results key, for 1-5>", "fix": "<concrete rewrite or action>"}],
  "answers": {"q1": "<one sentence>", ...},

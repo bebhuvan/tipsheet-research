@@ -21,6 +21,8 @@ FIGS = {
     #     "sub": "what is plotted, the sample and dates",
     #     "read": "how to read it",
     #     "source": SOURCE,
+    #     "job": "answer",          # guides/charts.md: answer spread comparison mechanism conditioning robustness caveat case
+    #     "evidence": "tested",     # tested measured exploratory illustration
     #     "spec": {"kind": "hbars", "fmt": "pct", "digits": 0, "series": [{"col": "v", "label": "…", "slot": 2}]},
     #     "data": {"categories": [...], "series": {"v": [...]}},
     # },

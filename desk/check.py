@@ -15,6 +15,7 @@ from .gates import numeric, style
 from .models import spent_inr
 from .study import Study, above_amendments, figure_text, gate_bundle, prose_of
 
+REQUIRED_SECTIONS = ["caveats", "meaning", "limits", "method", "still-lost"]   # guides/writing.md
 INTERNAL = [r"\bData ?bank\b", r"\b\w+\.py\b", r"\bresults\.json\b", r"\bstudies/", r"\bcompute step\b",
             r"\bDeepSeek\b", r"\bGemini\b", r"\bunverified\b"]
 
@@ -96,9 +97,10 @@ def run(slug: str) -> list[dict]:
         st = style.check(prose)
         add("style", "ok" if st["ok"] else "fail", f"{len(st['errors'])} errors, {len(st['warnings'])} warnings",
             errors=st["errors"][:40], warnings=st["warnings"][:40])
-        missing = [q.id for q in S.questions() if not re.search(rf'id=["\']{q.id}["\']', body)]
+        need = [q.id for q in S.questions()] + REQUIRED_SECTIONS
+        missing = [s for s in need if not re.search(rf'id=["\']{s}["\']', body)]
         add("sections", "fail" if missing else "ok",
-            ("no section with id for " + ", ".join(missing)) if missing else "a section per sub-question")
+            ("no section with id " + ", ".join(missing)) if missing else "a section per sub-question, plus the fixed sections")
         hits = sorted({m.group(0) for p in INTERNAL for m in re.finditer(p, prose_of(body) + head, flags=re.I)})
         add("reader_copy_clean", "fail" if hits else "ok", ", ".join(hits) or "no internal names or unverified citations")
         for k in ("title", "dek", "finding", "topic", "date"):

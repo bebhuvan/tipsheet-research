@@ -70,6 +70,19 @@ studies/<slug>/      plan.md, compute.py, recompute.md, figures.py, article.mdx,
 tests/               tests for desk/
 ```
 
+## Exemplars (decided 2026-10-15)
+
+The owner's own sites set the bar: This Indian Life (thisindianlife.today) and Hope and Despair (hopeanddespair.world). From them the desk takes:
+- an answer thesis before drafting, and answer types (direct, qualified, null, can't tell)
+- a narrative job for every chart
+- an evidence tag on every chart (tested, measured, exploratory, illustration)
+- caveats before the evidence
+- a human scale for every number
+- weighing two readings rather than splitting them
+- the "Still lost? Read this" closing box
+
+`desk check` requires the fixed sections, and `figures.write` requires every chart's job and evidence tag.
+
 ## What is deliberately absent
 
 The old bench's router with role profiles, nine critics, red team, reader panel, scoreboard, mock calibration, state machine, three tiers of work, and the public-repo export. Each can return when a real study shows it is needed.
@@ -77,5 +90,4 @@ The old bench's router with role profiles, nine critics, red team, reader panel,
 ## Open decisions for the owner
 
 - Public or private GitHub repo (local only until decided).
-- Two or three exemplar pieces whose explaining the desk should match (`guides/writing.md` has placeholders).
 - When to retire the portal's `research/` bench.

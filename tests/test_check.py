@@ -54,6 +54,14 @@ ARTICLE = textwrap.dedent("""\
     <h2 id="q2">Is waiting worth it?</h2>
 
     Waiting cost about 3.1 points a year.
+
+    <h2 id="caveats">Before you read</h2>
+    <h2 id="meaning">What this means for you</h2>
+    <h2 id="limits">Limits</h2>
+    <h2 id="method">How I did it</h2>
+    <h2 id="still-lost">Still lost? Read this</h2>
+
+    Most of the time it happens.
     """)
 
 
@@ -91,7 +99,8 @@ def write_article_and_figs(d):
     (d / "article.mdx").write_text(ARTICLE)
     from desk import figures
     figures.write(d / "figures.py", {"q1": {"title": "44% of the time", "read": "One bar per checkpoint.",
-                                            "spec": {"kind": "hbars", "series": []}, "data": {"categories": [], "series": {}}}})
+                                            "spec": {"kind": "hbars", "series": []}, "data": {"categories": [], "series": {}},
+                                            "job": "answer", "evidence": "measured"}})
 
 
 def status(items):
@@ -162,3 +171,22 @@ def test_prose_of_strips_components():
     body = 'import F from "./f.json";\n\n<Figure {...F.q1} />\n\n<h2 id="q1">Title 2</h2>\n\nText.\n\n## References\n\nSmith 1991.'
     p = prose_of(body)
     assert "import" not in p and "Figure" not in p and "Title 2" in p and "1991" not in p
+
+
+def test_missing_fixed_section_fails(study):
+    d, _ = study
+    write_results(d)
+    write_article_and_figs(d)
+    (d / "article.mdx").write_text(ARTICLE.replace('<h2 id="still-lost">', '<h2 id="other">'))
+    assert status(check.run(SLUG))["sections"] == "fail"
+
+
+def test_figure_needs_job_and_evidence(study):
+    d, _ = study
+    write_results(d)
+    from desk import figures
+    with pytest.raises(ValueError):
+        figures.write(d / "figures.py", {"q1": {"title": "t", "read": "r", "spec": {}, "data": {}, "job": "answer"}})
+    figures.write(d / "figures.py", {"q1": {"title": "t", "read": "r", "spec": {"kind": "hbars"}, "data": {"x": 1},
+                                            "job": "answer", "evidence": "illustration"}})
+    assert json.loads((d / "figures.json").read_text())["q1"]["note"].startswith("Evidence: illustration.")

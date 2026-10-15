@@ -1,60 +1,95 @@
 # Step 3: writing the article
 
-The reader manages their own money, is intelligent, and has never read a finance paper. They will read carefully if every paragraph earns its place. When in doubt, explain once more. Never assume they know a term, a statistic or why a chart looks the way it does.
+The reader manages their own money, is intelligent, and has never read a finance paper or taken a statistics course. The test: **they finish the piece understanding it, and can say something true about it to a friend.** When in doubt, explain once more.
+
+## The exemplars
+
+The owner's own sites set the bar for explanation. Read the guides below before a first article, and one published piece before every article.
+
+- **This Indian Life** (thisindianlife.today). Read `docs/EDITORIAL_NORTH_STAR.md` and `docs/academy/VOICE.md` in the project folder (`../THis Indian Life`). Take from it: an answer thesis before drafting, answer types, a narrative job for every chart, specific Indian particulars, and the no-overclaim rule.
+- **Hope and Despair** (hopeanddespair.world). Read `WRITING.md` and `EXPLAINERS.md` in `../hope and despair`. Take from it: lead with the point and complicate it at once, a human scale for every number, caveats before the evidence, weighing rather than splitting, the evidence tag, and the "Still lost? Read this" box.
+
+The rules below are those ideas adapted to finance research.
+
+## Before drafting: the thesis and the answer types
+
+Once results are in, write the article's **thesis in one sentence**, no caveat pile-up. If you can't, the study hasn't found its argument yet. Go back to the results, not the prose.
+
+Then give every sub-question an **answer type**:
+
+| Type | When | Shape |
+|---|---|---|
+| Direct | the evidence answers it | "Yes. Waiting cost the typical applicant about 11 points against the index." |
+| Qualified | it answers part, and limits the claim | "Usually, but only for IPOs less than a tenth under water." |
+| Null | we looked properly and found no difference | "No. Being under water at six months told you nothing about the next year, and the sample was big enough to see a gap of 5 points." |
+| Can't tell | the data can't answer it honestly | "The data shows the pattern. It can't show why." |
+
+Null and can't-tell answers get the same care and the same space as direct ones.
 
 ## The shape of an article
 
-1. **Title**: the finding, in plain words. ("Your IPO is below the issue price. Waiting usually costs you.")
-2. **Dek**: one or two sentences: the question and the answer.
-3. **Finding box** (`finding` in the front matter): the result in one sentence. Confirmatory results only.
-4. **Opening** (150–300 words): a concrete case or a rupee story that puts the reader in the decision, then the big question, then why it's hard to answer from intuition.
-5. **In brief**: the answer to each sub-question, one line each, with its number.
-6. **One section per sub-question**, in the plan's order. Heading ids `q1`, `q2`, … match the plan (`<h2 id="q1">`).
-7. **What I found when I dug further**: exploratory results, labelled, with the count of things tried. Only if there are any.
-8. **What this means for you**: evidence-based implications. No advice to buy, hold or sell.
-9. **Limits**: the caveats that change meaning, each stated once.
-10. **How I did it**: data, sample, definitions, methods, checks run, the frozen plan's link, amendments. Complete and visible: the appendix for the sceptical reader.
+1. **Title**: the thesis, in plain words. ("Your IPO is below the issue price. Waiting usually costs you.")
+2. **Dek**: the question and the answer in one or two sentences.
+3. **Finding box** (`finding`): one sentence. Confirmatory results only.
+4. **Opening** (150–300 words): a real case with real dates and rupees, putting the reader in the decision. Then the big question, and why intuition gets it wrong.
+5. **Before you read** (`id="caveats"`): the two or three things that could make a reader misuse the numbers, stated before the evidence. Examples: price returns without dividends, mainboard IPOs only, history rather than forecast. The rest of the limits go at the end.
+6. **In brief**: each sub-question's answer in one line, with its number and its answer type.
+7. **One section per sub-question** (`id="q1"`, `id="q2"`, …), in the plan's order, each answering the question the last one raised.
+8. **What I found when I dug further** (`id="further"`): exploratory results, labelled, with the count of things tried. Only if there are any.
+9. **What this means for you** (`id="meaning"`): what the reader should now believe, and what they should *not* conclude. No advice to buy, hold or sell.
+10. **What would change my mind**: the evidence that would overturn the finding.
+11. **Limits** (`id="limits"`): the remaining caveats, each once.
+12. **How I did it** (`id="method"`): data, sample, definitions, methods, the checks run and their results, the frozen plan's link, amendments. Complete and visible.
+13. **Still lost? Read this** (`id="still-lost"`): two to four warm, jargon-free paragraphs that explain the whole piece from zero. A reader who bounced off every chart reads only this and still leaves with one true thing they can say out loud. It simplifies; it never overclaims.
 
 ## The shape of a section
 
-Required in every section:
-- **The question**, as the heading, in the reader's words.
-- **The short answer**, in the first two sentences, with its number.
-- **The chart**, big, with the finding as its title.
-- **How to read the chart**: walk the reader through it. What the axes are, what one mark means, where to look first, and what the eye should notice. Many readers have never read a chart like it.
-- **Why it happens**: the mechanism, as far as the evidence goes. If we don't know why, say so and give the candidate explanations.
+- **The heading is the question** in the reader's words.
+- **The first sentence is the answer**, with its number. No wind-up.
+- **Complicate it at once.** The next beat gives the catch, the exception or the other reading. A finding never stands alone.
+- **The chart**, big, with the finding as its title and an evidence tag (`guides/charts.md`).
+- **How to read it**: the axes, what one mark means, where to look first. Assume the reader has never seen this kind of chart.
+- **Why it happens**: the mechanism, as far as the evidence goes. Without a causal design, say "this proves the pattern, not the cause", then give the candidate explanations.
+- **A human scale for every big number.** "11 points" means little; "₹1 lakh became ₹93,000 instead of ₹1.04 lakh" lands. In the headline sections, use a real case: a real IPO, a real SIP start month, with dates.
+- **How sure I am**, once, in words and numbers.
+- **Two readings**, where the same chart supports both an optimist's and a sceptic's story. Show both, then **weigh them**: say which is heavier and why. Splitting the difference is its own dishonesty.
 
-Required in the headline sections, optional elsewhere:
-- **A rupee example**: ₹1 lakh, or a ₹10,000 monthly SIP, followed through a real period with real dates. Specific beats average.
-- **How sure I am**: in words and numbers, once. "In 9 of 10 resamples the gap was between 2 and 6 points." Name the caveat that matters and skip the ones that don't.
+## Specificity kills the AI smell
 
-Explain every term the first time it appears, in the sentence itself or the next one. "The median (the middle IPO, with half doing better and half worse)". "Excess return over the Nifty 500 (how far ahead of or behind the index the stock was)". Re-explain briefly if the term returns after a long gap.
+Generic prose reads as machine prose; specific prose reads as a person who looked. Name the IPO, the month, the index, the rupee amount. "Paytm, 18 November 2021, ₹2,150 a share" beats "a high-profile listing". Never invent an example: every name, date and number comes from the results or a source you opened.
+
+Explain each term in the sentence where it first appears. "The median IPO (the middle one, with half doing better and half worse)". "Excess return over the Nifty 500 (how far ahead of or behind the index)". Link a hard concept to Wikipedia the first time it matters, at most once per concept.
+
+Round as a person speaks: 44%, about ₹3.3 lakh crore. Give provenance and vintage where they matter ("NSE bhavcopy, to 8 October 2026").
 
 ## Argue
 
-An article is an argument, not a results log. The early pilots read as "X% did Y" sentence after sentence. Each section should move the argument forward: what did we believe, what does the data say, what follows. Lead with tension: the common belief, the critique, the reader's fear. State conclusions with conviction where the evidence is strong, and say plainly when it isn't.
+The early pilots read as results logs: "X% did Y" sentence after sentence, sixteen questions at equal depth. An article is an argument. Lead with tension: the common belief, the critique, the reader's fear. Each section moves the argument forward. Go deep on three or four findings; secondary results go in a short table ("Other things I measured"). State conclusions with conviction where the evidence is strong, and plainly when it isn't. Have a view.
 
-Go deep on three or four findings rather than evenly across everything. Secondary results go in a short table ("Other things I measured") with one line each.
+## Before and after
+
+**Before** (the IPO pilot, accurate and flat):
+> Of those below at six months, 44% closed at or above the issue price at some point within a year, and 75% within three years. Yet 53% were below it at the three-year mark.
+
+**After** (same numbers, explained):
+> Most IPOs that fall below their issue price do climb back to it, which is why waiting feels sensible. Three in four touched it again within three years. But touching isn't staying. At the three-year mark, more than half were under water again, because many reached the issue price and then slid back under it. The price you paid behaves less like a floor and more like a ceiling the stock keeps bumping into.
+
+The second version leads with the reader's belief, uses the same numbers, explains the mechanism and leaves an image the reader can repeat.
 
 ## House style
 
 - First person singular, "I". Plain Indian English, British spelling, lakh and crore, ₹.
-- Short paragraphs. Sentences under about 30 words where possible.
-- No em-dash chains, no "not X but Y", no "X? Y." reveals, no filler hedges, no "In this article". The style gate enforces most of this.
+- Short paragraphs, one idea each. Vary sentence length; a short sentence lands a point.
+- Don't make "the chart shows" the verb of every paragraph.
+- No em-dash chains, no "not X but Y", no "X? Y." reveals, no filler hedges, no tidy moral at the end of every section, no triads by reflex. The style gate catches most of this; read the draft aloud for the rest.
 - No internal names: no "desk", "Data bank", file paths or model names in reader copy. AI involvement is disclosed in the front matter's `ai` block.
 - Don't name critics. State their argument in its strongest form as "the critique".
-- Every number comes from `results.json` and is written at sensible precision: 44%, not 43.87%.
-
-## Exemplars
-
-The bar for explanation. Read one before writing.
-
-- *(owner to choose: two or three pieces whose explaining the desk should match)*
+- Every number comes from `results.json`.
 
 ## Before running desk check
 
-Read the draft as the reader:
+- Can you state the article's argument in one sentence, and is it the title?
 - Could someone who has never invested follow every section?
-- Does each chart have a sentence telling the reader what to see?
-- Does the article make an argument you could state in one sentence?
-- Is every frozen question answered, including the inconvenient ones?
+- Does every chart have a sentence telling the reader what to see?
+- Is every frozen question answered, with its answer type, including the inconvenient ones?
+- Would the "Still lost?" box alone leave a reader with one true, repeatable sentence?
