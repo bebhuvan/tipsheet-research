@@ -18,14 +18,14 @@ Each chapter makes one claim the reader can repeat. The claims are hypotheses; t
 
 1. **Does it work?** Over 10 years or more, almost always; over 1 to 5 years, often not; after inflation, by a thinner margin than the pitch.
 2. **What it works on.** The asset decides more than anything else. Diversifying costs return in the middle of the range and buys protection at the bottom.
-3. **Time.** Longer SIPs give steadier returns a year but a wider range of rupees, and the early instalments do most of the work.
-4. **The method.** SIP against lump sum depends on whether you have the lump sum. Dates, frequency and timing tricks move results by fractions of a point.
+3. **Time.** Longer SIPs give steadier returns a year but a wider range of rupees, the early instalments do most of the work, and reaching a goal reliably takes more than the calculator says.
+4. **The method.** SIP against lump sum depends on whether you have the lump sum. Dates, frequency and timing tricks move results by fractions of a point; tax and volatility work differently from what the pitch says.
 5. **The pain.** Every SIP goes under water at some point. What you do then is the biggest decision you control.
-6. **The critique and the crowd.** Testing the serious case against SIPs, and whether investors as a group used them well.
+6. **The critique and the crowd.** Testing the serious case against SIPs, whether investors as a group used them well, and how long real SIPs last.
 
 ## Headline findings
 
-The questions the article tells in depth (mechanism, a real rupee story, one big annotated chart): **Q1** (the verdict), **Q5** (diversification's price), **Q11** (the levers, ranked), **Q13** (the bad start) and **Q14** (stopping). Every other question gets one chart, a short answer and its number.
+The questions the article tells in depth (mechanism, a real rupee story, one big annotated chart): **Q1** (the verdict), **Q5** (diversification's price), **Q12** (the levers, ranked), **Q16** (the bad start) and **Q17** (stopping). Every other question gets one chart, a short answer and its number.
 
 ## What I already know (honest disclosure)
 
@@ -46,8 +46,8 @@ This redoes the October 2026 study "Is SIP bad?" (portal repository, `research/s
 | `portal:asset_tri_daily` | Total-return levels: Nifty 500 from January 1995, Nifty 50 from June 1999, Midcap 150 and Smallcap 250 from April 2005, gold (domestic rupee price) from August 2000, NSE 5-year G-sec index from September 2001 | Nifty 500 1995–1998 is probably back-calculated by NSE, with some hindsight in its constituents. Midcap 150 and Smallcap 250 before their 2016 launch are back-calculated. Gold before 2005 is the world price × USD/INR (misses import-duty changes). All flagged on charts and tested by the era split |
 | `reference/rbi_deposit_rates_1_3y.csv` | RBI Handbook, "Structure of Interest Rates" (DBIE report 282): five major banks' 1–3 year deposit rates as at each end-March, 1971 to 2026, one consistent measure | Fetched from RBI's DBIE by the Data bank; checked against the 2009-10 Handbook table (`rbi_hbs74_deposit_rates.csv`): equal in 31 of 36 overlapping years. Top and bottom of each range both kept; the top is used, and the bottom is a sensitivity. The last row is provisional |
 | `portal:macro_cpi_monthly` | All-India CPI, linked across base years, monthly | CPI is published about two weeks after the month; it is used only to deflate realised values, never to make a decision, so the lag doesn't matter |
-| `databank:nifty_index_valuations` | Nifty 50 and Nifty 500 trailing P/E, daily, from January 1999 | NSE switched to consolidated earnings in 2021. Q16 uses P/E only at dates up to 2017 (10-year endings stop in 2026), so all on the old basis; today's P/E is shown separately and flagged as a different basis |
-| `databank:india_data_hub_series` (`CMMFSIPFLO11M`) | AMFI gross monthly SIP inflows, April 2016 on | Derived figures only (no raw series published) |
+| `databank:nifty_index_valuations` | Nifty 50 and Nifty 500 trailing P/E, daily, from January 1999 | NSE switched to consolidated earnings in 2021. Q19 uses P/E only at dates up to 2017 (10-year endings stop in 2026), so all on the old basis; today's P/E is shown separately and flagged as a different basis |
+| `databank:india_data_hub_series` (`CMMFSIPFLO11M`, `CMMFSIPNEW11M`, `CMMFSIPCLO11M`, `CMMFSIPACC11M`) | AMFI gross monthly SIP inflows (April 2016 on); new, closed and outstanding SIP accounts (April 2019 on) | Derived figures only (no raw series published). AMFI's January–April 2025 clean-up of dormant accounts inflates closures in those months |
 
 ## Common conventions
 
@@ -146,9 +146,19 @@ This redoes the October 2026 study "Is SIP bad?" (portal repository, `research/s
 - **Checks:** era_split, robustness (switch over 12 months instead of 36; FD at the bottom of range)
 - **Headline figure:** the distribution of final values with and without the switch. Job: answer. Second: share of final value by instalment year (job: mechanism).
 
+### Q10. How much do you need to put in each month to reach a goal, and what does starting late cost?
+
+- **Status:** new. (The lab's delay study, the median corpus at 10, 15 and 20 years and the catch-up amount, is known; this asks the goal question across the whole range of outcomes.)
+- **Why a reader cares:** calculators give one number at an assumed 12%. A reader planning for a child's college needs to know how likely that number is to be enough.
+- **Rival answers:** (a) the 12% calculator is about right; (b) to be fairly sure of reaching a goal you need much more than the calculator says.
+- **Estimand:** for the Nifty 500 (long history) and 60/20/20 (the menu), the monthly amount needed to reach ₹1 crore in 10, 15 and 20 years in 50%, 80% and 95% of start months; flat, and with a 10% yearly step-up (the first year's amount). Also the amount a 12%-a-year calculator gives, and the share of start months in which that amount reached the goal. The cost of starting five years late: the monthly amount a 15-year SIP needs to match the 20-year SIP's 80% outcome.
+- **Prediction P10:** for ₹1 crore in 15 years on the Nifty 500, the 95% amount is at least 1.5 times the 50% amount, and the 12% calculator's amount reaches the goal in fewer than 60% of start months.
+- **Checks:** era_split, robustness (₹1 crore in today's rupees, CPI-adjusted; 60/20/20)
+- **Headline figure:** the monthly amount needed by confidence and horizon, with the calculator's amount marked. Job: answer. Second: starting five years late (job: case).
+
 ## Chapter 4. The method
 
-### Q10. SIP or lump sum?
+### Q11. SIP or lump sum?
 
 - **Status:** known (replication). Targets: for someone holding the money, a lump sum beat a 12-month STP in 59% to 70% of start months (lab S5). For a salaried saver, the monthly SIP against saving in an FD and investing each April: the SIP ended ahead in 50.4% of 10-year windows.
 - **Why a reader cares:** "lump sum always beats SIP" is true for someone who has the lump sum, and meaningless for someone who doesn't.
@@ -156,7 +166,7 @@ This redoes the October 2026 study "Is SIP bad?" (portal repository, `research/s
 - **Checks:** era_split
 - **Headline figure:** two panels, "you have the money" and "you earn it monthly", each the share of start months won and the median rupee gap. Job: comparison.
 
-### Q11. Do dates, frequency or timing tricks matter?
+### Q12. Do dates, frequency or timing tricks matter?
 
 - **Status:** known (replication). Targets, effects on the median 10-year XIRR: best SIP date instead of the 1st +0.1; weekly +0.1; 15% step-up +0.2; waiting for a 20% fall +0.7 (two episodes); waiting for a 2% daily fall −0.3; investing more when P/E is low (earlier: CAPE −0.3, yield gap −1.6); pausing in a 20% fall −1.5; 1% a year more in costs −1.1.
 - **Why a reader cares:** a lot of SIP advice is about these levers. Ranked against each other and against the choice of asset, they look small.
@@ -164,9 +174,29 @@ This redoes the October 2026 study "Is SIP bad?" (portal repository, `research/s
 - **Checks:** truncation_stable (the P/E rule uses only P/E known on each date), robustness (Nifty 50; 15 years)
 - **Headline figure:** a forest chart of every lever's median effect with its 10th–90th range, against the asset and start-year gaps, in points of XIRR and in rupees. Job: answer.
 
+### Q13. Is a SIP "long-term" after a year? The tax clock on every instalment
+
+- **Status:** new.
+- **Why a reader cares:** many think a SIP becomes long-term, and lightly taxed, a year after it starts. Each instalment has its own clock, so a SIP is never fully long-term while it runs.
+- **Rival answers:** (a) after a year or two it is mostly long-term; (b) a large part of the gains stays short-term for years, because the newest instalments are always young.
+- **Estimand:** for Nifty 500 SIPs redeemed in full at ages 12, 18, 24, 36 and 60 months: the share of units held under a year (first in, first out) and the share of gains on them, median and range across start months; the tax under today's rules (20% on short-term gains, 12.5% on long-term gains above ₹1.25 lakh a year), with and without a 1% exit load on units held under a year; the total as a share of the value, against a lump sum of the same money held as long.
+- **Prediction P13:** at 24 and 36 months, the median short-term share of gains is below the short-term share of units.
+- **Checks:** robustness (no exit load, as most index funds charge none; ₹50,000 a month so the long-term exemption binds)
+- **Headline figure:** share of units and of gains that are short-term, by age at redemption. Job: mechanism.
+
+### Q14. Does volatility help a SIP?
+
+- **Status:** new. (The October study's path explainer showed one worked example; this measures it across history.)
+- **Why a reader cares:** the pitch for rupee cost averaging says choppy markets help a SIP. More volatility buys more units on the dips, but it also drags down compounding.
+- **Rival answers:** (a) more volatile windows gave SIPs an edge over the index's own return; (b) the edge comes from the shape of the path (when the falls came) and the window's overall return, not from volatility as such.
+- **Estimand:** for every 10-year window (Nifty 500 long history; each menu asset): the "SIP edge", the SIP's XIRR minus the index's own annualised return over the same dates; its Spearman correlation with the window's realised volatility and with the index's total return over the window. An illustration: two made-up paths with the same start and end level, one smooth and one choppy, and the SIP result on each (tagged illustration).
+- **Prediction P14:** across Nifty 500 windows, the SIP edge correlates more strongly (in absolute size) with the window's total return than with its volatility.
+- **Checks:** era_split, robustness (Smallcap 250; gold)
+- **Headline figure:** SIP edge against volatility, each window coloured by its total return. Job: mechanism. Second: the two-path illustration (job: case).
+
 ## Chapter 5. The pain
 
-### Q12. How deep and how long do SIPs go under water?
+### Q15. How deep and how long do SIPs go under water?
 
 - **Status:** known (replication). Targets: 96% of Nifty 500 SIPs from 2005 were in the red at some month-end (S10); the longest stretch was 38 months (August 1999 start, S15); worst values against money put in at 1/2/3 years −44.5/−43.5/−37.0%.
 - **Why a reader cares:** knowing the pain in advance is what lets people sit through it.
@@ -174,49 +204,49 @@ This redoes the October 2026 study "Is SIP bad?" (portal repository, `research/s
 - **Checks:** era_split
 - **Headline figure:** an "underwater" chart for every start month (statement value against money put in), with the deepest episodes labelled. Job: spread.
 
-### Q13. When a SIP was in the red after a year or two, how did it end, and why?
+### Q16. When a SIP was in the red after a year or two, how did it end, and why?
 
 - **Status:** part known, part new. Known targets: 29.7% of Nifty 500 start months from 1995 were in the red at 12 months, with a median 10-year XIRR of 16.7% against 13.8% for all start months; 21.2% at 24 months, median 16.4%.
 - **New:** (1) the whole distribution (5th, 25th, 75th percentiles, worst, share below FD) for red against not red, for the Nifty 500, Nifty 50, Midcap 150 and Smallcap 250; (2) by depth at 12 months (less than 10%, 10–20%, more than 20% below); (3) the mechanism: for red SIPs, the share of units held at month 120 that were bought while in the red, against the share of money put in while in the red.
 - **Why a reader cares:** this is the reader's situation in 2026.
 - **Rival answers:** (a) a bad start means a bad decade and a worse ending; (b) a bad start buys cheap units and a better ending, as long as prices recover.
-- **Prediction P13:** (a) for all four indices, the median 10-year XIRR of SIPs in the red at 12 months is higher than the rest's; (b) for the Nifty 500, the median rises with depth across the three red bands; (c) the share of units bought while red is at least 1.5 times the share of money put in while red.
+- **Prediction P16:** (a) for all four indices, the median 10-year XIRR of SIPs in the red at 12 months is higher than the rest's; (b) for the Nifty 500, the median rises with depth across the three red bands; (c) the share of units bought while red is at least 1.5 times the share of money put in while red.
 - **Checks:** era_split, robustness (24 months; expense ratio 1%; 15-year ending where data allows)
 - **Headline figure:** outcomes by depth at 12 months against "not red", with episode counts. Job: answer. Second: units bought while red against money put in while red (job: mechanism). Third: the January 2008 Nifty 500 SIP followed month by month (job: case).
 
-### Q14. Did stopping a SIP that was in the red protect the investor?
+### Q17. Did stopping a SIP that was in the red protect the investor?
 
 - **Status:** new. (Lab S4 measured pausing for every SIP; this conditions on being in the red.)
 - **Why a reader cares:** stopping is the decision on the table, and people make it when they're down.
 - **Rival answers:** (a) stopping caps the damage when a fall continues; (b) stopping gives up the cheapest instalments, so it costs, most of all in the deepest falls.
 - **Estimand:** for every Nifty 500 start month in the red at month *m* (12, 24), four paths over the same 10 years and ₹12 lakh of savings: **A** keep going; **B** stop and hold, with later instalments into the FD; **C** sell at month *m*, with proceeds and later instalments into the FD; **D** pause into the FD until the held units are back above the money put in, then resume (the FD balance stays). For each, the paired final-value gap with A in rupees: median, worst, best, the share where A ended ahead, and the gap by depth band.
-- **Prediction P14:** A ends ahead of B and of C in more than 80% of red start months, and ahead of D in more than 65%. The median gap against C is larger for start months more than 20% in the red than for those less than 10% in the red.
+- **Prediction P17:** A ends ahead of B and of C in more than 80% of red start months, and ahead of D in more than 65%. The median gap against C is larger for start months more than 20% in the red than for those less than 10% in the red.
 - **Checks:** era_split, robustness (FD untaxed; FD at the bottom of range; *m* = 24; the other three indices)
 - **Headline figure:** paired gaps (A minus each path) in rupees, one row per path, with the share A won in the title. Job: answer. Second: the gap by depth band (job: conditioning).
 
-### Q15. When does a SIP's running return start to tell you how it will end?
+### Q18. When does a SIP's running return start to tell you how it will end?
 
 - **Status:** new.
 - **Why a reader cares:** apps show the XIRR from the first month, and people judge SIPs and funds on one or two years of it.
 - **Rival answers:** (a) early returns predict the ending: a poor start means a poor ending; (b) early returns are noise or even point the other way, and only become informative late.
 - **Estimand:** for Nifty 500 SIPs, at ages 6, 12, 24, 36, 60 and 84 months: the Spearman rank correlation between the running XIRR and the final 10-year XIRR; the share of SIPs in the bottom third at that age that ended in the bottom third (33% if unrelated); the first age at which the correlation exceeds 0.5.
-- **Prediction P15:** the correlation is below zero at 12 and 24 months and does not exceed 0.5 before 60 months.
+- **Prediction P18:** the correlation is below zero at 12 and 24 months and does not exceed 0.5 before 60 months.
 - **Checks:** era_split, robustness (mid and small caps from 2005; 15-year ending)
 - **Headline figure:** the correlation by age, with 0 and 0.5 marked and the independent count. Job: answer.
 
 ## Chapter 6. The critique and the crowd
 
-### Q16. Was the bonus for a bad start really about cheap prices, and where are prices now?
+### Q19. Was the bonus for a bad start really about cheap prices, and where are prices now?
 
 - **Status:** new. (The October study correlated starting P/E with 10-year results; that is known and not repeated here. This conditions on being in the red.)
-- **Why a reader cares:** if a bad start paid off only because the fall made the market cheap, a fall that leaves it expensive might not pay. This is the honest limit on Q13.
+- **Why a reader cares:** if a bad start paid off only because the fall made the market cheap, a fall that leaves it expensive might not pay. This is the honest limit on Q16.
 - **Rival answers:** (a) the bonus is a valuation effect: red SIPs did better only when the Nifty was cheap at month 12; (b) averaging into any fall that recovers pays, whatever the valuation.
 - **Estimand:** Nifty 50 SIPs in the red at 12 months: median 10-year XIRR when the month-12 trailing P/E was below the median of all month-12 P/Es, against above it; the Spearman correlation of month-12 P/E with the 10-year XIRR, within red SIPs and within all SIPs. Then, as context and not a forecast: today's Nifty 50 P/E percentile (different earnings basis, flagged) and today's deposit rate against their histories.
-- **Prediction P16:** red SIPs with month-12 P/E below the median have a median 10-year XIRR at least 2 points higher than red SIPs with P/E above it.
+- **Prediction P19:** red SIPs with month-12 P/E below the median have a median 10-year XIRR at least 2 points higher than red SIPs with P/E above it.
 - **Checks:** era_split (not possible: about 1.7 independent windows; recorded as such), robustness (P/E at the start month instead of month 12)
 - **Headline figure:** month-12 P/E against 10-year XIRR, red SIPs in colour, episodes labelled. Job: mechanism. Second: today's percentiles (job: caveat).
 
-### Q17. Did investors' SIP money arrive at bad times?
+### Q20. Did investors' SIP money arrive at bad times?
 
 - **Status:** known (replication). Targets (Nifty 500, before tax, April 2016 on): industry 11.4%, constant SIP 12.6%, index 13.7% a year; against a SIP growing at the contributions' own trend (23.3% a year), the gap was −0.1 points.
 - **Why a reader cares:** the critique says SIP money pours in near peaks. The answer depends on the benchmark, and the trend benchmark is the fair one.
@@ -224,7 +254,7 @@ This redoes the October 2026 study "Is SIP bad?" (portal repository, `research/s
 - **Checks:** robustness (Midcap 150 and Smallcap 250 in place of the Nifty 500)
 - **Headline figure:** the three returns as bars, with the benchmark explained. Job: comparison.
 
-### Q18. Have market falls become shallower since SIP money grew?
+### Q21. Have market falls become shallower since SIP money grew?
 
 - **Status:** known (replication, descriptive).
 - **Why a reader cares:** the critique says SIP flows killed the deep falls that make averaging pay.
@@ -232,7 +262,46 @@ This redoes the October 2026 study "Is SIP bad?" (portal repository, `research/s
 - **Checks:** none (descriptive: about ten years of large SIP flows cannot separate cause from coincidence, and the article says so)
 - **Headline figure:** the index's drawdown chart with episodes labelled and 2016 marked. Job: caveat.
 
+### Q22. How long do real SIPs last, and what does the stoppage ratio count?
+
+- **Status:** new. (The October study's registrations-against-returns correlation is known: registrations did not follow the trailing 12-month return as strongly as predicted.)
+- **Why a reader cares:** every 10-year statistic in this study assumes the SIP survives 10 years. If the typical SIP is stopped after two or three, most investors never see the outcomes the pitch promises. The "stoppage ratio above 100%" headlines also need explaining.
+- **Rival answers:** (a) most SIPs run for many years, as advised; (b) the typical SIP account lasts only a few years.
+- **Estimand:** monthly from April 2019, from AMFI's counts of new, closed and outstanding SIP accounts: the implied average life of an account (outstanding accounts divided by monthly closures, a steady-state approximation, as a 12-month rolling value), with and without AMFI's dormant-account clean-up of January to April 2025; the stoppage ratio (closed over new); the average monthly inflow per outstanding account. Closures against the Nifty 500's trailing 12-month return, descriptive.
+- **Caveats set now:** an account is not an investor (one person can hold many SIPs); closures include SIPs that reached the end date they were set up with, failed bank mandates and the clean-up. The implied life is a rough measure, and the article says so.
+- **Prediction P22:** the implied average life of a SIP account, outside the clean-up months, is under 5 years throughout 2019 to 2026.
+- **Checks:** robustness (including the clean-up months; new accounts instead of closures as the flow)
+- **Headline figure:** implied average life over time, with the clean-up marked. Job: answer. Second: new and closed accounts with the stoppage ratio explained (job: caveat).
+
 **The critique scorecard.** The chapter ends with a table: each argument of the critique in its strongest form, what the data shows with its number, and a verdict of **agrees**, **disagrees** or **can't tell yet**.
+
+## SIP myths, checked
+
+The article ends with a table: each popular claim, the question that answers it, and a one-line verdict with its number.
+
+| Claim | Answered by |
+|---|---|
+| "SIPs never lose money in the long run" | Q1, Q2 |
+| "SIPs beat FDs" / "SIPs don't beat FDs" | Q1 |
+| "SIP returns beat inflation comfortably" | Q3 |
+| "Small-cap SIPs are best for the long run" | Q4 |
+| "Debt and gold are for the timid" | Q5 |
+| "The longer you stay, the less risk" | Q7 |
+| "Wait for a fall before starting" | Q8, Q12 |
+| "Stay invested till the goal" | Q9 |
+| "₹10,000 a month for 20 years makes you a crorepati" | Q10 |
+| "Lump sum always beats SIP" | Q11 |
+| "The 25th is a better SIP date" / "weekly is better" / "step-ups give higher returns" | Q12 |
+| "After a year my SIP is long-term" | Q13 |
+| "Volatility is good for SIPs" | Q14 |
+| "Rupee cost averaging means you always buy cheap" | Q14, explainer |
+| "My SIP is negative, so SIPs don't work" | Q15, Q16 |
+| "Stop the SIP when the market falls" | Q17 |
+| "My SIP's return after a year tells me if it's working" | Q18 |
+| "The old SIP success stories won't repeat" | Q19 |
+| "SIP investors pour in at the top" | Q20 |
+| "SIP flows have killed deep falls" | Q21 |
+| "Investors are fleeing SIPs (stoppage ratio above 100%)" | Q22 |
 
 ## Naive questions answered as context
 
@@ -244,22 +313,27 @@ This redoes the October 2026 study "Is SIP bad?" (portal repository, `research/s
 ## Questions I won't ask
 
 - **Individual funds, active against index, direct against regular plans:** the fund NAV history is being rebuilt and isn't ready. A later canonical study.
-- **What SIPs will return from here:** no forecasts. Q16's percentiles are context only.
+- **What SIPs will return from here:** no forecasts. Q19's percentiles are context only.
 - **PPF, real estate, NPS:** no clean return series in our data yet (PPF rates are public and could be added in a later amendment; real estate has no clean long series).
-- **Whether SIP flows *caused* any market change:** too little history to separate cause from coincidence (Q18 describes only).
+- **Whether SIP flows *caused* any market change:** too little history to separate cause from coincidence (Q21 describes only).
 - **Other countries' lost decades (Japan):** index licences not cleared. Mentioned in words only, as the critique's strongest example.
-- **Tax optimisation and harvesting:** a separate topic.
+- **Tax optimisation and harvesting:** a separate topic (Q13 covers only the tax clock).
+- **Individual investors' outcomes:** AMFI publishes industry totals only; account-level SIP histories sit with the registrars (CAMS, KFintech) and aren't public. Q20 and Q22 use the totals.
+- **International SIPs (S&P 500, Nasdaq feeder funds):** index licences not cleared.
+- **The withdrawal phase (SWPs, retirement):** a separate study.
+- **Hybrid and balanced-advantage funds, ELSS, NPS:** fund-level data, waiting for the NAV cleanup, or a different topic.
+- **SIP against PPF:** worth adding once PPF's notified rate history is fetched (public); a later amendment, not part of this freeze.
 
 ## What would change my mind
 
-- If the method levers in Q11 move results by as much as the choice of asset in Q4, the study's central argument is wrong, and the article leads with that.
+- If the method levers in Q12 move results by as much as the choice of asset in Q4, the study's central argument is wrong, and the article leads with that.
 - If SIPs in the red at 12 months ended *worse* for any index with two or more episodes, the reassuring story fails for that index.
-- If stopping and holding (Q14 B) beat keeping going in a third or more of red start months, "don't stop" isn't the lesson, and the article says what it depends on.
-- If red SIPs did no better when the market was still dear (Q16), the critique has a real point about today.
+- If stopping and holding (Q17 B) beat keeping going in a third or more of red start months, "don't stop" isn't the lesson, and the article says what it depends on.
+- If red SIPs did no better when the market was still dear (Q19), the critique has a real point about today.
 
 ## Headline numbers for the independent recompute
 
-Q1: shares lost money and below FD at 3, 5 and 10 years (Nifty 500). Q5: median and 5th-percentile final values for the Nifty 500 and 60/20/20 at 10 years. Q11: the date, weekly and pause effects. Q13: share red at 12 months, the two medians, the three depth-band medians, the unit share. Q14: share where A beat B, C and D, and the median gap against C. Q15: correlations at 12, 36 and 60 months.
+Q1: shares lost money and below FD at 3, 5 and 10 years (Nifty 500). Q5: median and 5th-percentile final values for the Nifty 500 and 60/20/20 at 10 years. Q12: the date, weekly and pause effects. Q16: share red at 12 months, the two medians, the three depth-band medians, the unit share. Q17: share where A beat B, C and D, and the median gap against C. Q18: correlations at 12, 36 and 60 months. Q10: the 50%, 80% and 95% monthly amounts for ₹1 crore in 15 years (Nifty 500). Q22: the implied average life in the latest 12 months.
 
 ## Amendments
 
