@@ -1,0 +1,50 @@
+{
+ "at": "2026-10-15T06:23:35+00:00",
+ "items": [
+  {
+   "check": "plan_shape",
+   "status": "ok",
+   "detail": "4 sub-questions"
+  },
+  {
+   "check": "plan_frozen",
+   "status": "pending",
+   "detail": "run `desk freeze` after the plan is approved and committed"
+  },
+  {
+   "check": "results",
+   "status": "pending",
+   "detail": "run compute.py"
+  },
+  {
+   "check": "figures",
+   "status": "pending",
+   "detail": "run figures.py"
+  },
+  {
+   "check": "recompute",
+   "status": "pending",
+   "detail": "run `desk recompute`"
+  },
+  {
+   "check": "review",
+   "status": "pending",
+   "detail": "run `desk review`"
+  },
+  {
+   "check": "report",
+   "status": "pending",
+   "detail": "run `desk report`, then write: What I set out to ask; What I found; What changed from the plan; Mistakes and how they were caught; Dead ends; What a sceptical reader should check first; What the desk should change"
+  },
+  {
+   "check": "budget",
+   "status": "ok",
+   "detail": "₹0 of ₹250"
+  },
+  {
+   "check": "human_read",
+   "status": "pending",
+   "detail": "a person reads the article, recomputes three numbers by hand, and sets signed_off"
+  }
+ ]
+}

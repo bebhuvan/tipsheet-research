@@ -1,0 +1,43 @@
+# RBI, Handbook of Statistics on Indian Economy 2009-10, Table 74: Structure of Interest Rates (sheet T1, columns 2-5).
+# Source: https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/74T_HBSE200910.xls (page: https://www.rbi.org.in/scripts/PublicationsView.aspx?id=12765)
+# Downloaded by the owner from a browser on 2026-10-08 (RBI's server blocks scripted downloads); sha256 bd42ae411b34d2cd4be50909804a4ee4112994a498031e94895105c5b69890f5
+# Percent per annum. Commercial bank deposit rates by term; a range is low-high. Financial years (April-March).
+# RBI notes: from 1996-97 (and for terms above 3 years from 1995-96) deposit rates are those of 5 major public sector banks as at end-March;
+# before that they were administered rates. For 2010-11 deposit rates refer to the period up to July 31, 2010. Call money: annual average.
+fy,dep_1_3y_low,dep_1_3y_high,dep_3_5y_high,dep_over5y_high,call
+1975-76,8.0,8.0,9.0,10.0,10.55
+1976-77,8.0,8.0,9.0,10.0,10.84
+1977-78,6.0,6.0,8.0,9.0,9.28
+1978-79,6.0,6.0,7.5,9.0,7.57
+1979-80,7.0,7.0,8.5,10.0,8.47
+1980-81,7.5,8.5,10.0,10.0,7.12
+1981-82,8.0,9.0,10.0,10.0,8.96
+1982-83,8.0,9.0,10.0,11.0,8.78
+1983-84,8.0,9.0,10.0,11.0,8.63
+1984-85,8.0,9.0,10.0,11.0,9.95
+1985-86,8.5,9.0,10.0,11.0,10.0
+1986-87,8.5,9.0,10.0,11.0,9.99
+1987-88,9.0,10.0,10.0,10.0,9.88
+1988-89,9.0,10.0,10.0,10.0,9.77
+1989-90,9.0,10.0,10.0,10.0,11.49
+1990-91,9.0,10.0,11.0,11.0,15.85
+1991-92,12.0,12.0,13.0,13.0,19.57
+1992-93,11.0,11.0,11.0,11.0,14.42
+1993-94,10.0,10.0,10.0,10.0,6.99
+1994-95,11.0,11.0,11.0,11.0,9.4
+1995-96,12.0,12.0,13.0,13.0,17.73
+1996-97,11.0,12.0,13.0,13.0,7.84
+1997-98,10.5,11.0,12.0,12.0,8.69
+1998-99,9.0,11.0,11.5,11.5,7.83
+1999-00,8.5,9.5,10.5,10.5,8.87
+2000-01,8.5,9.5,10.0,10.0,9.15
+2001-02,7.5,8.5,8.5,8.5,7.16
+2002-03,4.25,6.0,6.25,6.25,5.89
+2003-04,4.0,5.25,5.5,5.5,4.62
+2004-05,5.25,5.5,6.25,6.25,4.65
+2005-06,6.0,6.5,7.0,7.0,5.6
+2006-07,7.5,9.0,9.0,9.0,7.22
+2007-08,8.25,8.75,9.0,9.0,6.07
+2008-09,8.0,8.75,8.5,8.5,7.06
+2009-10,6.0,7.0,7.5,7.5,3.24
+2010-11,6.75,7.25,7.25,7.75,4.51
