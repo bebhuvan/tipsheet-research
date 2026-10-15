@@ -52,7 +52,7 @@ def _deposit_rate(R, column: str = "dep_1_3y_high") -> pd.Series:
     days = pd.date_range(s.index[0], RETRIEVED_LAST_RATE + pd.Timedelta(days=400), freq="D")
     daily = s.reindex(days.union(s.index)).interpolate(method="time").reindex(days).ffill()
     if R is not None:
-        R.input(f"reference:{path.name}", data.fingerprint(path))
+        R.input(f"file:{path.relative_to(data.ROOT).as_posix()}", data.fingerprint(path))
     return daily
 
 

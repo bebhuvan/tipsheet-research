@@ -223,3 +223,17 @@ def test_canonical_plan_shape(study):
     assert S.chapters() == ["First claim", "Second claim"] and not S.plan_problems()
     (d / "plan.md").write_text(canon.replace("## Headline findings", "## Highlights"))
     assert any("Headline findings" in p for p in Study(SLUG).plan_problems())
+
+
+def test_file_inputs_resolve_and_detect_change(tmp_path, monkeypatch):
+    from desk.config import ROOT
+    f = ROOT / "studies" / "_pytest_ref.csv"
+    f.write_text("a,b\n1,2\n")
+    try:
+        monkeypatch.setattr(data, "_HASH_CACHE", tmp_path / "fp.json")
+        fp = data.fingerprint(data.resolve("file:studies/_pytest_ref.csv"))
+        assert data.changed_inputs({"file:studies/_pytest_ref.csv": fp}) == []
+        f.write_text("a,b\n1,3\n")
+        assert data.changed_inputs({"file:studies/_pytest_ref.csv": fp})
+    finally:
+        f.unlink()

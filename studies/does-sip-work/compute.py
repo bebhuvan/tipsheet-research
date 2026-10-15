@@ -1252,6 +1252,39 @@ def naive():
     R.fact("x0_fy26_cohort_xirr", float(p.xirr(np.array([i]), 12)[0]), "fraction")
 
 
+def constants():
+    """Plan parameters and counts the article quotes, recorded so the numeric gate can trace them."""
+    for key, val, note in (("expense_equity", 0.002, "yearly cost of an equity index fund"), ("expense_gold", 0.005, ""),
+                           ("expense_gsec", 0.003, ""), ("tax_fd", 0.30, "FD interest tax slab, plus 4% cess"), ("tax_cess", 0.04, ""),
+                           ("tax_lt", 0.125, "long-term capital gains"), ("tax_st", 0.20, "short-term capital gains"),
+                           ("exit_load", 0.01, ""), ("extra_cost", 0.01, ""), ("calculator", 0.12, ""), ("fall", 0.20, "the fall that pauses or deploys"),
+                           ("band_10", 0.10, "depth band and lab resume level"), ("near_high", 0.02, ""), ("stepup", 0.10, ""),
+                           ("mix_equity", 0.60, ""), ("choppy", 0.30, "illustration swing")):
+        R.fact(f"const_{key}", val, "fraction", note or "plan parameter")
+    R.fact("const_lt_exempt", 125_000, "rupees", "long-term gains exempt each year")
+    p = I.panels["Nifty 500"]
+    i = int(np.where(p.months == pd.Period("2025-04", "M"))[0][0])
+    R.fact("x0_invested", 12 * AMT, "rupees")
+    R.fact("x0_value", float(AMT * p.value(i, 11)), "rupees")
+    years = (I.levels.index[-1] - I.levels["Nifty 500"].dropna().index[0]).days / 365.25
+    R.fact("data_years", round(years, 1), "years")
+    holds = {k: v["value"] for k, v in R.facts.items() if k.endswith("_holds") and not k.startswith(("q16_P16a", "q16_P16b", "q16_P16c"))}
+    R.fact("predictions_total", len(holds), "count")
+    R.fact("predictions_held", sum(bool(v) for v in holds.values()), "count")
+    R.fact("predictions_failed", sum(not v for v in holds.values()), "count")
+    R.fact("q3_n500_10y_inflation_gap", R.facts["q2_n500_10y_p50"]["value"] - R.facts["q3_n500_10y_real_p50"]["value"], "fraction")
+    pe = I.pe["NIFTY_50"].dropna()
+    R.fact("q16_case2008_value_now_lakh", R.facts["q16_case2008_value_now"]["value"], "rupees")
+    for k, val in (("questions", 22), ("chapters", 6), ("horizon_steps_36", 36), ("months_12", 12), ("months_24", 24),
+                   ("instalments_120", 120), ("lakh_12", 12), ("lakh_24", 24), ("lakh_1_2", 1.2), ("illus_from", 100), ("illus_to", 200),
+                   ("thirty_years", 30), ("day_31", 31), ("data_end_day", 14), ("deposit_terms_1", 1), ("deposit_terms_3", 3),
+                   ("two", 2), ("three", 3), ("four", 4), ("five", 5), ("nine", 9), ("ten", 10), ("fifteen", 15), ("nineteen", 19),
+                   ("twenty", 20), ("one_in_n", 1), ("half_point", 0.5), ("corr_half", 0.5), ("months_60", 60), ("months_84", 84)):
+        R.context(k, val)
+    for y in (1995, 1997, 1999, 2000, 2004, 2005, 2007, 2008, 2009, 2010, 2012, 2014, 2015, 2016, 2019, 2020, 2021, 2024, 2025, 2026):
+        R.context(f"y{y}", y)
+
+
 # ================================================================= recompute inputs and main
 
 def recompute_inputs(out_dir: Path) -> None:
@@ -1287,6 +1320,7 @@ def main() -> None:
         fn()
         print(f"  {fn.__name__} {time.time() - t:.0f}s", flush=True)
     if not only:
+        constants()
         R.write()
     else:
         for k, v in R.facts.items():

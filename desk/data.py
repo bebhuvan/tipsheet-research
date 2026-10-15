@@ -2,6 +2,7 @@
 
     databank:<dataset>   the newest Parquet snapshot in the Data bank warehouse (DATABANK_ROOT)
     portal:<table>       a table the portal pipeline derives (PORTAL_ROOT/.cache/derived/<table>.parquet)
+    file:<path>          a file committed in this repository (e.g. a study's reference/ table), path from the repo root
 
 Nothing here writes to either store, and no portal code is imported. Fingerprints (path, size, mtime,
 sha256) go into results.json so `desk check` can tell when results were computed on data that has
@@ -15,7 +16,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from .config import CACHE, PORTAL_DERIVED, WAREHOUSE, sha256_file
+from .config import CACHE, PORTAL_DERIVED, ROOT, WAREHOUSE, sha256_file
 
 _HASH_CACHE = CACHE / "fingerprints.json"
 
@@ -33,7 +34,12 @@ def resolve(name: str) -> Path:
         if not p.is_file():
             raise FileNotFoundError(f"no portal table {p}")
         return p
-    raise ValueError(f"input name must start with databank: or portal:, got {name!r}")
+    if store == "file":
+        p = ROOT / key
+        if not p.is_file():
+            raise FileNotFoundError(f"no file {p}")
+        return p
+    raise ValueError(f"input name must start with databank:, portal: or file:, got {name!r}")
 
 
 def fingerprint(path: Path) -> dict:

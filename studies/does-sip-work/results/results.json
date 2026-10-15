@@ -1,8 +1,8 @@
 {
  "study": "does-sip-work",
- "computed_at": "2026-10-15T07:20:58+00:00",
+ "computed_at": "2026-10-15T07:42:56+00:00",
  "plan_commit": "b974bf7d91d8d30a2a9bdb25817c51fcfb235a0b",
- "compute_sha256": "300c5ee6b6d786588e73e9290846d6f1a68cc2d91b6e767dfca598f15eb05681",
+ "compute_sha256": "a696098b13780faf9a75e42eb33728e3db394358362bef6b742b2432147ce4d0",
  "inputs": {
   "portal:asset_tri_daily": {
    "file": "asset_tri_daily.parquet",
@@ -28,7 +28,7 @@
    "mtime_ns": 1792040532258591496,
    "sha256": "a00cfc6a943192030712685e8261424d1fbf7b90017fb87b0073323355341b6d"
   },
-  "reference:rbi_deposit_rates_1_3y.csv": {
+  "file:studies/does-sip-work/reference/rbi_deposit_rates_1_3y.csv": {
    "file": "rbi_deposit_rates_1_3y.csv",
    "size": 2067,
    "mtime_ns": 1792046513485011908,
@@ -1951,11 +1951,11 @@
    "unit": "rupees"
   },
   "q11_sip_beat_fd_april": {
-   "value": 0.78625954,
+   "value": 0.73282443,
    "unit": "fraction"
   },
   "q11_sip_minus_fd_april_p50": {
-   "value": 57634.98583658,
+   "value": 42585.86356562,
    "unit": "rupees"
   },
   "q11_lump_beat_stp12_1995_2004": {
@@ -1971,7 +1971,7 @@
    "unit": "fraction"
   },
   "q11_sip_beat_fd_april_2005_on": {
-   "value": 0.6056338,
+   "value": 0.50704225,
    "unit": "fraction"
   },
   "q11_example_sip_xirr": {
@@ -2069,6 +2069,19 @@
   },
   "q12_pause_fall_p90": {
    "value": -0.00617363,
+   "unit": "fraction"
+  },
+  "q12_pause_lab_p50": {
+   "value": -0.02026591,
+   "unit": "fraction",
+   "note": "median paired effect on 10-year XIRR, Nifty 500, starts from April 2005"
+  },
+  "q12_pause_lab_p10": {
+   "value": -0.04241381,
+   "unit": "fraction"
+  },
+  "q12_pause_lab_p90": {
+   "value": -0.00415731,
    "unit": "fraction"
   },
   "q12_pe_double_p50": {
@@ -2428,6 +2441,11 @@
    "value": 0.31679389,
    "unit": "fraction"
   },
+  "q16_n500_red12_all_starts": {
+   "value": 0.29189189,
+   "unit": "fraction",
+   "note": "every start month to the data end (the October denominator)"
+  },
   "q16_n500_red12_episodes": {
    "value": 16,
    "unit": "count"
@@ -2589,6 +2607,11 @@
    "value": 0.29186603,
    "unit": "fraction"
   },
+  "q16_n50_red12_all_starts": {
+   "value": 0.2555205,
+   "unit": "fraction",
+   "note": "every start month to the data end (the October denominator)"
+  },
   "q16_n50_red12_episodes": {
    "value": 12,
    "unit": "count"
@@ -2649,6 +2672,11 @@
    "value": 0.25899281,
    "unit": "fraction"
   },
+  "q16_mid150_red12_all_starts": {
+   "value": 0.24291498,
+   "unit": "fraction",
+   "note": "every start month to the data end (the October denominator)"
+  },
   "q16_mid150_red12_episodes": {
    "value": 7,
    "unit": "count"
@@ -2708,6 +2736,11 @@
   "q16_small250_red12": {
    "value": 0.33093525,
    "unit": "fraction"
+  },
+  "q16_small250_red12_all_starts": {
+   "value": 0.34412955,
+   "unit": "fraction",
+   "note": "every start month to the data end (the October denominator)"
   },
   "q16_small250_red12_episodes": {
    "value": 5,
@@ -3549,11 +3582,178 @@
   "x0_fy26_cohort_xirr": {
    "value": -0.18187401,
    "unit": "fraction"
+  },
+  "const_expense_equity": {
+   "value": 0.002,
+   "unit": "fraction",
+   "note": "yearly cost of an equity index fund"
+  },
+  "const_expense_gold": {
+   "value": 0.005,
+   "unit": "fraction",
+   "note": "plan parameter"
+  },
+  "const_expense_gsec": {
+   "value": 0.003,
+   "unit": "fraction",
+   "note": "plan parameter"
+  },
+  "const_tax_fd": {
+   "value": 0.3,
+   "unit": "fraction",
+   "note": "FD interest tax slab, plus 4% cess"
+  },
+  "const_tax_cess": {
+   "value": 0.04,
+   "unit": "fraction",
+   "note": "plan parameter"
+  },
+  "const_tax_lt": {
+   "value": 0.125,
+   "unit": "fraction",
+   "note": "long-term capital gains"
+  },
+  "const_tax_st": {
+   "value": 0.2,
+   "unit": "fraction",
+   "note": "short-term capital gains"
+  },
+  "const_exit_load": {
+   "value": 0.01,
+   "unit": "fraction",
+   "note": "plan parameter"
+  },
+  "const_extra_cost": {
+   "value": 0.01,
+   "unit": "fraction",
+   "note": "plan parameter"
+  },
+  "const_calculator": {
+   "value": 0.12,
+   "unit": "fraction",
+   "note": "plan parameter"
+  },
+  "const_fall": {
+   "value": 0.2,
+   "unit": "fraction",
+   "note": "the fall that pauses or deploys"
+  },
+  "const_band_10": {
+   "value": 0.1,
+   "unit": "fraction",
+   "note": "depth band and lab resume level"
+  },
+  "const_near_high": {
+   "value": 0.02,
+   "unit": "fraction",
+   "note": "plan parameter"
+  },
+  "const_stepup": {
+   "value": 0.1,
+   "unit": "fraction",
+   "note": "plan parameter"
+  },
+  "const_mix_equity": {
+   "value": 0.6,
+   "unit": "fraction",
+   "note": "plan parameter"
+  },
+  "const_choppy": {
+   "value": 0.3,
+   "unit": "fraction",
+   "note": "illustration swing"
+  },
+  "const_lt_exempt": {
+   "value": 125000,
+   "unit": "rupees",
+   "note": "long-term gains exempt each year"
+  },
+  "x0_invested": {
+   "value": 120000.0,
+   "unit": "rupees"
+  },
+  "x0_value": {
+   "value": 107987.67551968,
+   "unit": "rupees"
+  },
+  "data_years": {
+   "value": 31.8,
+   "unit": "years"
+  },
+  "predictions_total": {
+   "value": 11,
+   "unit": "count"
+  },
+  "predictions_held": {
+   "value": 4,
+   "unit": "count"
+  },
+  "predictions_failed": {
+   "value": 7,
+   "unit": "count"
+  },
+  "q3_n500_10y_inflation_gap": {
+   "value": 0.06225639,
+   "unit": "fraction"
+  },
+  "q16_case2008_value_now_lakh": {
+   "value": 8239963.31150425,
+   "unit": "rupees"
   }
  },
  "context_numbers": {
   "sip_amount": 10000.0,
-  "calculator_rate_pct": 12
+  "calculator_rate_pct": 12,
+  "questions": 22,
+  "chapters": 6,
+  "horizon_steps_36": 36,
+  "months_12": 12,
+  "months_24": 24,
+  "instalments_120": 120,
+  "lakh_12": 12,
+  "lakh_24": 24,
+  "lakh_1_2": 1.2,
+  "illus_from": 100,
+  "illus_to": 200,
+  "thirty_years": 30,
+  "day_31": 31,
+  "data_end_day": 14,
+  "deposit_terms_1": 1,
+  "deposit_terms_3": 3,
+  "two": 2,
+  "three": 3,
+  "four": 4,
+  "five": 5,
+  "nine": 9,
+  "ten": 10,
+  "fifteen": 15,
+  "nineteen": 19,
+  "twenty": 20,
+  "one_in_n": 1,
+  "half_point": 0.5,
+  "corr_half": 0.5,
+  "months_60": 60,
+  "months_84": 84,
+  "y1995": 1995,
+  "y1997": 1997,
+  "y1999": 1999,
+  "y2000": 2000,
+  "y2004": 2004,
+  "y2005": 2005,
+  "y2007": 2007,
+  "y2008": 2008,
+  "y2009": 2009,
+  "y2010": 2010,
+  "y2012": 2012,
+  "y2014": 2014,
+  "y2015": 2015,
+  "y2016": 2016,
+  "y2019": 2019,
+  "y2020": 2020,
+  "y2021": 2021,
+  "y2024": 2024,
+  "y2025": 2025,
+  "y2026": 2026
  },
  "labels": {
   "data_end": "14 October 2026",

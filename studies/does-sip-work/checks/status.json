@@ -1,5 +1,5 @@
 {
- "at": "2026-10-15T06:53:52+00:00",
+ "at": "2026-10-15T07:43:21+00:00",
  "items": [
   {
    "check": "plan_shape",
@@ -8,18 +8,203 @@
   },
   {
    "check": "plan_frozen",
-   "status": "pending",
-   "detail": "run `desk freeze` after the plan is approved and committed"
+   "status": "ok",
+   "detail": "frozen at b974bf7"
   },
   {
-   "check": "results",
-   "status": "pending",
-   "detail": "run compute.py"
+   "check": "results_fresh",
+   "status": "ok",
+   "detail": "computed 2026-10-15T07:42:56+00:00"
   },
   {
-   "check": "figures",
-   "status": "pending",
-   "detail": "run figures.py"
+   "check": "checks_passed",
+   "status": "ok",
+   "detail": "40 checks passed"
+  },
+  {
+   "check": "declared_checks",
+   "status": "ok",
+   "detail": "every declared check recorded"
+  },
+  {
+   "check": "questions_answered",
+   "status": "ok",
+   "detail": "every sub-question has facts"
+  },
+  {
+   "check": "figures_fresh",
+   "status": "ok",
+   "detail": ""
+  },
+  {
+   "check": "figures_complete",
+   "status": "ok",
+   "detail": "45 figures"
+  },
+  {
+   "check": "numbers_traced",
+   "status": "ok",
+   "detail": "687 figures checked, 0 untraced",
+   "failures": [],
+   "warnings": [
+    {
+     "text": "1.2",
+     "sentence": "In April 2025, someone who started a ₹10,000-a-month SIP in the Nifty 500 had put in ₹1.2 lakh by March 2026.",
+     "why": "matches 5 facts; the claims critic must confirm the sentence uses the right one"
+    },
+    {
+     "text": "1.08",
+     "sentence": "Their statement said it was worth about ₹1.08 lakh: 10% down, and an XIRR, the annualised return the app shows, of −18% a year.",
+     "why": "matches 8 facts; the claims critic must confirm the sentence uses the right one"
+    },
+    {
+     "text": "10",
+     "sentence": "Their statement said it was worth about ₹1.08 lakh: 10% down, and an XIRR, the annualised return the app shows, of −18% a year.",
+     "why": "matches 10 facts; the claims critic must confirm the sentence uses the right one"
+    },
+    {
+     "text": "12",
+     "sentence": "Only 12% of first years since 1995 had been worse.",
+     "why": "matches 20 facts; the claims critic must confirm the sentence uses the right one"
+    },
+    {
+     "text": "Two",
+     "sentence": "Two stories went around at once.",
+     "why": "matches 17 facts; the claims critic must confirm the sentence uses the right one"
+    },
+    {
+     "text": "12",
+     "sentence": "The other said SIP is broken: the success stories came from cheap markets and 12% deposits, and they won't repeat.",
+     "why": "matches 20 facts; the claims critic must confirm the sentence uses the right one"
+    },
+    {
+     "text": "30",
+     "sentence": "That is more than 30 years of the Nifty 500 total-return index, which includes dividends, plus mid caps, small caps, gold, government bonds and mixes of them from 2005.",
+     "why": "matches 7 facts; the claims critic must confirm the sentence uses the right one"
+    },
+    {
+     "text": "six",
+     "sentence": "I answered 22 questions in six chapters.",
+     "why": "matches 6 facts; the claims critic must confirm the sentence uses the right one"
+    },
+    {
+     "text": "eleven",
+     "sentence": "Of the eleven predictions, four held.",
+     "why": "matches 5 facts; the claims critic must confirm the sentence uses the right one"
+    },
+    {
+     "text": "four",
+     "sentence": "Of the eleven predictions, four held.",
+     "why": "matches 6 facts; the claims critic must confirm the sentence uses the right one"
+    },
+    {
+     "text": "three",
+     "sentence": "It isn't: a ten-year SIP started every month since 1995 overlaps heavily with its neighbours, and there are only about three separate decades in the record.",
+     "why": "matches 5 facts; the claims critic must confirm the sentence uses the right one"
+    },
+    {
+     "text": "two",
+     "sentence": "Where a result rests on one or two market episodes, I say so.",
+     "why": "matches 17 facts; the claims critic must confirm the sentence uses the right one"
+    },
+    {
+     "text": "0.2",
+     "sentence": "- **Index funds, not your fund.** Every SIP here buys an index at a 0.2% yearly cost, roughly what a direct-plan index fund charges.",
+     "why": "matches 10 facts; the claims critic must confirm the sentence uses the right one"
+    },
+    {
+     "text": "0.4",
+     "sentence": "- **Does a SIP work?** Over ten years, yes: no Nifty 500 SIP since 1995 lost money, and only 0.4% ended behind a fixed deposit.",
+     "why": "matches 9 facts; the claims critic must confirm the sentence uses the right one"
+    },
+    {
+     "text": "five",
+     "sentence": "Over one to five years, often not: 29% of one-year SIPs lost money.",
+     "why": "matches 5 facts; the claims critic must confirm the sentence uses the right one"
+    },
+    {
+     "text": "29",
+     "sentence": "Over one to five years, often not: 29% of one-year SIPs lost money.",
+     "why": "matches 6 facts; the claims critic must confirm the sentence uses the right one"
+    },
+    {
+     "text": "five",
+     "sentence": "The first five years' instalments did most of the work.",
+     "why": "matches 5 facts; the claims critic must confirm the sentence uses the right one"
+    },
+    {
+     "text": "100",
+     "sentence": "- **What if my SIP is in the red?** Keeping going beat stopping in 100% of the cases since 1995.",
+     "why": "matches 23 facts; the claims critic must confirm the sentence uses the right one"
+    },
+    {
+     "text": "1",
+     "sentence": "Chapter 1.",
+     "why": "matches 72 facts; the claims critic must confirm the sentence uses the right one"
+    },
+    {
+     "text": "29",
+     "sentence": "A Nifty 500 SIP started in any month since January 1995 lost money in 29% of one-year windows, 16% of three-year windows, 7% of five-year windows and none of the ten-year ones.",
+     "why": "matches 6 facts; the claims critic must confirm the sentence uses the right one"
+    }
+   ]
+  },
+  {
+   "check": "headline_confirmatory",
+   "status": "ok",
+   "detail": "title, dek and finding use only confirmatory facts",
+   "failures": []
+  },
+  {
+   "check": "style",
+   "status": "ok",
+   "detail": "0 errors, 4 warnings",
+   "errors": [],
+   "warnings": [
+    {
+     "rule": "intensifier",
+     "severity": "warn",
+     "line": 259,
+     "text": "really",
+     "message": "Intensifier. Use the number instead."
+    },
+    {
+     "rule": "long_sentence",
+     "severity": "warn",
+     "line": 177,
+     "text": "Pausing the SIP during a 20% fall and keeping the paused money in an FD cost 3.8 points a year if the pause lasted until…",
+     "message": "47 words; split it."
+    },
+    {
+     "rule": "long_sentence",
+     "severity": "warn",
+     "line": 235,
+     "text": "For each of the 83 Nifty 500 start months since 1995 that were in the red at 12 months, I compared four paths over the s…",
+     "message": "74 words; split it."
+    },
+    {
+     "rule": "long_sentence",
+     "severity": "warn",
+     "line": 314,
+     "text": "What not to conclude: that SIPs always win (small caps lost money over ten years in one start month, and the next 30 yea…",
+     "message": "49 words; split it."
+    }
+   ]
+  },
+  {
+   "check": "sections",
+   "status": "ok",
+   "detail": "a section per sub-question, plus the fixed sections"
+  },
+  {
+   "check": "reader_copy_clean",
+   "status": "ok",
+   "detail": "no internal names or unverified citations"
+  },
+  {
+   "check": "front_matter",
+   "status": "ok",
+   "detail": ""
   },
   {
    "check": "recompute",
