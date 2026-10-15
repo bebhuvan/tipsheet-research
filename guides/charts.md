@@ -55,7 +55,7 @@ A figure with no job is cut. Record the job in the entry (`"job": "answer"`).
 
 - **The title states the finding**, with its number, from `results.json`. The numeric gate checks titles, subtitles and read lines like prose.
 - **One point per chart.** The subject is in colour; context and benchmarks are grey (`tone: "hist"` for the benchmark).
-- **Fewer, bigger charts.** `big: true` for every figure in an article. One headline chart per section, plus at most one supporting chart.
+- **Big charts, as many as the question needs.** `big: true` for every figure in an article. Each section has one headline chart, plus as many supporting charts as it has distinct jobs (by index, by horizon, in rupees as well as percentages). Never two charts doing the same job with the same fact. The owner's rule (2026-10-15): where more charts help the reader understand, use them.
 - **Show the spread, not just the centre**: `outcomes`, `range`, `fan` or `histogram` for anything with a distribution. A median alone hides the reader's real risk.
 - **Show sample sizes** on the chart or in the subtitle when they differ between rows.
 - **Uncertainty**: confidence intervals with `forest`, or a band, when the chart makes a comparison.
