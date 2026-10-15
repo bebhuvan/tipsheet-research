@@ -5635,7 +5635,7 @@
  "q18": {
   "title": "A SIP's return in its first year said little about its ending, and if anything pointed the wrong way (correlation -0.35)",
   "sub": "Nifty 500 SIPs since 1995: rank correlation between the return shown at each age and the final ten-year return, every six months.",
-  "read": "Above zero, a good early number meant a good ending; below zero, the opposite. It stays near zero for years and first passes 0.5 eight years in.",
+  "read": "Above zero, a good early number meant a good ending; below zero, the opposite. It stays near zero for years and first passes 0.5 at 99 months.",
   "source": "NSE total-return indices (Nifty 500 from 1995); RBI deposit rates; tipsheet calculations",
   "job": "answer",
   "evidence": "tested",

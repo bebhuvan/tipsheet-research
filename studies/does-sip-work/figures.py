@@ -459,7 +459,7 @@ c18 = [r for r in chart("q18_corr_by_age") if r["age"] % 6 == 0]
 FIGS["q18"] = {
     "title": f"A SIP's return in its first year said little about its ending, and if anything pointed the wrong way (correlation {v('q18_n500_10y_corr_12m'):.2f})",
     "sub": "Nifty 500 SIPs since 1995: rank correlation between the return shown at each age and the final ten-year return, every six months.",
-    "read": "Above zero, a good early number meant a good ending; below zero, the opposite. It stays near zero for years and first passes 0.5 eight years in.",
+    "read": "Above zero, a good early number meant a good ending; below zero, the opposite. It stays near zero for years and first passes 0.5 at 99 months.",
     "source": SRC, "job": "answer", "evidence": "tested",
     "spec": {"kind": "hbars", "room": "tall", "fmt": "num", "digits": 2, "sign": True, "series": [ser("c", "Correlation with the ending", COL["Nifty 500"])]},
     "data": {"categories": [f"{r['age']} months" for r in c18], "series": {"c": [round(r["corr"], 2) for r in c18]}},

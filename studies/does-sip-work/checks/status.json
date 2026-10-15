@@ -1,5 +1,5 @@
 {
- "at": "2026-10-15T09:00:08+00:00",
+ "at": "2026-10-15T10:01:29+00:00",
  "items": [
   {
    "check": "plan_shape",
@@ -49,7 +49,7 @@
   {
    "check": "numbers_traced",
    "status": "ok",
-   "detail": "773 figures checked, 0 untraced",
+   "detail": "772 figures checked, 0 untraced",
    "failures": [],
    "warnings": [
     {
@@ -76,11 +76,6 @@
      "text": "Two",
      "sentence": "Two stories went around at once.",
      "why": "matches 18 facts; the claims critic must confirm the sentence uses the right one"
-    },
-    {
-     "text": "12",
-     "sentence": "The other said SIP is broken: the success stories came from cheap markets and 12% deposits, and they won't repeat.",
-     "why": "matches 28 facts; the claims critic must confirm the sentence uses the right one"
     },
     {
      "text": "30",
@@ -151,6 +146,11 @@
      "text": "1",
      "sentence": "Chapter 1.",
      "why": "matches 77 facts; the claims critic must confirm the sentence uses the right one"
+    },
+    {
+     "text": "29",
+     "sentence": "A Nifty 500 SIP started in any month since January 1995 lost money in 29% of one-year windows, 16% of three-year windows, 7% of five-year windows and none of the ten-year ones.",
+     "why": "matches 6 facts; the claims critic must confirm the sentence uses the right one"
     }
    ]
   },
@@ -237,8 +237,8 @@
   },
   {
    "check": "audit",
-   "status": "pending",
-   "detail": "run `desk audit` once the article is final"
+   "status": "ok",
+   "detail": "214 sentences audited, 8 issues handled"
   },
   {
    "check": "report",
@@ -248,7 +248,7 @@
   {
    "check": "budget",
    "status": "ok",
-   "detail": "₹61 of ₹250"
+   "detail": "₹144 of ₹250"
   },
   {
    "check": "human_read",

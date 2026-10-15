@@ -15,3 +15,31 @@
 {"at": "2026-10-15T08:53:43+00:00", "role": "recompute", "purpose": "attempt 0", "model": "deepseek-flash", "tokens_in": 2738, "tokens_out": 39360, "usd": 0.04805, "inr": 4.23}
 {"at": "2026-10-15T08:54:02+00:00", "role": "recompute", "purpose": "attempt 1", "model": "deepseek-flash", "tokens_in": 7288, "tokens_out": 4363, "usd": 0.00742, "inr": 0.65}
 {"at": "2026-10-15T08:58:55+00:00", "role": "review", "purpose": "review attempt 0", "model": "gemini-3.8-flash", "tokens_in": 61855, "tokens_out": 3673, "usd": 0.06017, "inr": 5.29}
+{"at": "2026-10-15T09:01:49+00:00", "role": "audit", "purpose": "audit batch 1, attempt 0", "model": "deepseek-flash", "tokens_in": 5799, "tokens_out": 18330, "usd": 0.02374, "inr": 2.09}
+{"at": "2026-10-15T09:03:50+00:00", "role": "audit", "purpose": "audit batch 2, attempt 0", "model": "deepseek-flash", "tokens_in": 9268, "tokens_out": 27036, "usd": 0.03522, "inr": 3.1}
+{"at": "2026-10-15T09:06:24+00:00", "role": "audit", "purpose": "audit batch 3, attempt 0", "model": "deepseek-flash", "tokens_in": 8408, "tokens_out": 30814, "usd": 0.0395, "inr": 3.48}
+{"at": "2026-10-15T09:08:29+00:00", "role": "audit", "purpose": "audit batch 4, attempt 0", "model": "deepseek-flash", "tokens_in": 8390, "tokens_out": 26954, "usd": 0.03486, "inr": 3.07}
+{"at": "2026-10-15T09:10:36+00:00", "role": "audit", "purpose": "audit batch 5, attempt 0", "model": "deepseek-flash", "tokens_in": 8625, "tokens_out": 24055, "usd": 0.03145, "inr": 2.77}
+{"at": "2026-10-15T09:13:08+00:00", "role": "audit", "purpose": "audit batch 6, attempt 0", "model": "deepseek-flash", "tokens_in": 8564, "tokens_out": 29951, "usd": 0.03851, "inr": 3.39}
+{"at": "2026-10-15T09:15:10+00:00", "role": "audit", "purpose": "audit batch 7, attempt 0", "model": "deepseek-flash", "tokens_in": 6994, "tokens_out": 24038, "usd": 0.03094, "inr": 2.72}
+{"at": "2026-10-15T09:17:18+00:00", "role": "audit", "purpose": "audit batch 8, attempt 0", "model": "deepseek-flash", "tokens_in": 6041, "tokens_out": 25055, "usd": 0.03188, "inr": 2.81}
+{"at": "2026-10-15T09:19:55+00:00", "role": "audit", "purpose": "audit batch 9, attempt 0", "model": "deepseek-flash", "tokens_in": 7906, "tokens_out": 31325, "usd": 0.03996, "inr": 3.52}
+{"at": "2026-10-15T09:25:13+00:00", "role": "audit", "purpose": "audit batch 10, attempt 0", "model": "deepseek-flash", "tokens_in": 5137, "tokens_out": 64000, "usd": 0.07834, "inr": 6.89}
+{"at": "2026-10-15T09:26:56+00:00", "role": "audit", "purpose": "audit batch 10, attempt 1", "model": "deepseek-flash", "tokens_in": 5137, "tokens_out": 22603, "usd": 0.02866, "inr": 2.52}
+{"at": "2026-10-15T09:28:55+00:00", "role": "audit", "purpose": "audit batch 11, attempt 0", "model": "deepseek-flash", "tokens_in": 8722, "tokens_out": 26037, "usd": 0.03386, "inr": 2.98}
+{"at": "2026-10-15T09:30:35+00:00", "role": "audit", "purpose": "audit batch 12, attempt 0", "model": "deepseek-flash", "tokens_in": 6812, "tokens_out": 21183, "usd": 0.02746, "inr": 2.42}
+{"at": "2026-10-15T09:32:25+00:00", "role": "audit", "purpose": "audit batch 13, attempt 0", "model": "deepseek-flash", "tokens_in": 5317, "tokens_out": 22661, "usd": 0.02879, "inr": 2.53}
+{"at": "2026-10-15T09:37:46+00:00", "role": "audit", "purpose": "audit batch 14, attempt 0", "model": "deepseek-flash", "tokens_in": 4299, "tokens_out": 64000, "usd": 0.07809, "inr": 6.87}
+{"at": "2026-10-15T09:40:31+00:00", "role": "audit", "purpose": "audit batch 14, attempt 1", "model": "deepseek-flash", "tokens_in": 4299, "tokens_out": 33871, "usd": 0.04193, "inr": 3.69}
+{"at": "2026-10-15T09:42:08+00:00", "role": "audit", "purpose": "audit batch 1, attempt 0", "model": "deepseek-flash", "tokens_in": 15448, "tokens_out": 12832, "usd": 0.02003, "inr": 1.76}
+{"at": "2026-10-15T09:44:01+00:00", "role": "audit", "purpose": "audit batch 2, attempt 0", "model": "deepseek-flash", "tokens_in": 12361, "tokens_out": 25859, "usd": 0.03474, "inr": 3.06}
+{"at": "2026-10-15T09:45:24+00:00", "role": "audit", "purpose": "audit batch 3, attempt 0", "model": "deepseek-flash", "tokens_in": 12907, "tokens_out": 17709, "usd": 0.02512, "inr": 2.21}
+{"at": "2026-10-15T09:46:44+00:00", "role": "audit", "purpose": "audit batch 4, attempt 0", "model": "deepseek-flash", "tokens_in": 12116, "tokens_out": 16165, "usd": 0.02303, "inr": 2.03}
+{"at": "2026-10-15T09:48:17+00:00", "role": "audit", "purpose": "audit batch 5, attempt 0", "model": "deepseek-flash", "tokens_in": 14079, "tokens_out": 21118, "usd": 0.02957, "inr": 2.6}
+{"at": "2026-10-15T09:51:18+00:00", "role": "audit", "purpose": "audit batch 6, attempt 0", "model": "deepseek-flash", "tokens_in": 12895, "tokens_out": 34839, "usd": 0.04568, "inr": 4.02}
+{"at": "2026-10-15T09:52:50+00:00", "role": "audit", "purpose": "audit batch 7, attempt 0", "model": "deepseek-flash", "tokens_in": 10699, "tokens_out": 19918, "usd": 0.02711, "inr": 2.39}
+{"at": "2026-10-15T09:53:39+00:00", "role": "audit", "purpose": "audit batch 8, attempt 0", "model": "deepseek-flash", "tokens_in": 9340, "tokens_out": 10728, "usd": 0.01568, "inr": 1.38}
+{"at": "2026-10-15T09:55:35+00:00", "role": "audit", "purpose": "audit batch 9, attempt 0", "model": "deepseek-flash", "tokens_in": 15618, "tokens_out": 24735, "usd": 0.03437, "inr": 3.02}
+{"at": "2026-10-15T09:57:02+00:00", "role": "audit", "purpose": "audit batch 10, attempt 0", "model": "deepseek-flash", "tokens_in": 7558, "tokens_out": 18429, "usd": 0.02438, "inr": 2.15}
+{"at": "2026-10-15T09:58:40+00:00", "role": "audit", "purpose": "audit batch 11, attempt 0", "model": "deepseek-flash", "tokens_in": 3945, "tokens_out": 21626, "usd": 0.02713, "inr": 2.39}
+{"at": "2026-10-15T10:00:52+00:00", "role": "audit", "purpose": "audit batch 1, attempt 0", "model": "deepseek-flash", "tokens_in": 2722, "tokens_out": 14573, "usd": 0.0183, "inr": 1.61}

@@ -11,5 +11,14 @@
  "r10": "fixed: the date-of-month figure now sits after the sentence about SIP dates.",
  "r11": "fixed: rewritten as 'Aiming for ₹1 crore of current purchasing power, with the goal adjusted for inflation…'.",
  "r12": "fixed: the opening now gives AMFI's count of open SIP accounts (new fact q22_outstanding_latest).",
- "r13": "fixed: 8.3% in the text and the scorecard, matching the exact 8.35% (8.347%). The numeric gate had passed 8.4% by matching a different fact, a known limit of the gate."
+ "r13": "fixed: 8.3% in the text and the scorecard, matching the exact 8.35% (8.347%). The numeric gate had passed 8.4% by matching a different fact, a known limit of the gate.",
+ "a2": "rejected: q8_n500_10y_worst_year_median is the median ten-year return of SIPs started in the worst start year (2010, label q8_worst_year); the sentence is right. The key's name misled the auditor.",
+ "a3": "rejected: q8_n500_10y_best_year_median is the median ten-year return of SIPs started in 1997 (label q8_best_year); the sentence is right.",
+ "a4": "rejected: 10–20% and 'more than 20%' are the plan's depth bands (plan Q16 estimand), not results.",
+ "a5": "rejected: 10–20% and 'more than 20%' are the plan's depth bands (plan Q16 estimand), not results.",
+ "a6": "rejected: matches q16_n500_gap_lo (0.0024, i.e. 0.24 points), the lower end of the indicative interval.",
+ "a7": "rejected: 24 months is the plan's alternative age for 'in the red' (Q17 robustness), a definition, not a result.",
+ "a11": "rejected: 20 years is a horizon in the plan, not a result.",
+ "a12": "rejected: the 12-month STP is a definition from the plan (Q11), not a result.",
+ "a1_round2": "fixed: '12% deposits' replaced by 'double-digit deposit rates'; the number had no fact behind it."
 }

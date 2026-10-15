@@ -47,8 +47,10 @@ def _items(S: Study) -> list[dict]:
     facts = R["facts"]
     by_sentence: dict[str, dict] = {}
     for m in rep["mentions"]:
-        keys = [k for k in m["matches"] if k in facts][:6]
-        if m["kind"] in ("year", "date") or not keys:
+        # Number words ("ten-year", "one in twenty") describe rather than claim, and every fact the number matched
+        # is passed on: capping the list once hid the right fact and produced false alarms (first SIP study).
+        keys = [k for k in m["matches"] if k in facts][:60]
+        if m["kind"] in ("year", "date", "word") or not keys:
             continue
         s = by_sentence.setdefault(m["sentence"], {"sentence": m["sentence"], "numbers": []})
         s["numbers"].append({"printed": m["text"] + (m["unit"] or ""),
@@ -60,12 +62,24 @@ def _items(S: Study) -> list[dict]:
     return items
 
 
-def main(slug: str, batch: int = 20) -> int:
+def main(slug: str, batch: int = 20, full: bool = False) -> int:
+    """Audit sentences not audited before (unless full=True). A sentence whose text and matched facts are unchanged
+    keeps its earlier verdict and issue ids, so a small edit costs one small call, not a full rerun."""
     S = Study(slug)
     items = _items(S)
+    prev_path = S.checks_dir / "audit.json"
+    prev = json.loads(prev_path.read_text()) if prev_path.is_file() and not full else {}
+    done = {json.dumps([d["sentence"], d["numbers"]], ensure_ascii=False, sort_keys=True) for d in prev.get("audited", [])}
+    fp = lambda it: json.dumps([it["sentence"], it["numbers"]], ensure_ascii=False, sort_keys=True)
+    current = {fp(it) for it in items}
+    carried = [i for i in prev.get("issues", []) if any(fp(it) in done and it["sentence"] == i["sentence"] for it in items)]
+    audited = [d for d in prev.get("audited", []) if json.dumps([d["sentence"], d["numbers"]], ensure_ascii=False, sort_keys=True) in current]
+    todo = [it for it in items if fp(it) not in done]
+    print(f"{len(items)} sentences with numbers; {len(items) - len(todo)} unchanged since the last audit; {len(todo)} to audit")
     issues, checked = [], 0
-    for b in range(0, len(items), batch):
-        chunk = items[b:b + batch]
+    next_id = 1 + max([int(i["id"][1:]) for i in prev.get("issues", [])] or [0])
+    for b in range(0, len(todo), batch):
+        chunk = todo[b:b + batch]
         out = None
         for attempt in range(2):
             reply = complete(S.dir, "audit", [{"role": "system", "content": PROMPT},
@@ -86,12 +100,15 @@ def main(slug: str, batch: int = 20) -> int:
             if iss.get("sentence_id") in known:
                 iss["sentence"] = known[iss["sentence_id"]]["sentence"]
                 issues.append(iss)
-    for n, iss in enumerate(issues, 1):
+    for n, iss in enumerate(issues, next_id):
         iss["id"] = f"a{n}"
+    audited += [{"sentence": it["sentence"], "numbers": it["numbers"]} for it in todo]
+    all_issues = carried + issues
     write_json(S.checks_dir / "audit.json", {"article_sha256": sha256_file(S.article_path),
                                              "figures_sha256": sha256_file(S.figures_path) if S.figures_path.is_file() else None,
-                                             "sentences": len(items), "checked": checked, "issues": issues})
-    print(f"{len(items)} sentences with numbers sent; {len(issues)} issues")
+                                             "sentences": len(items), "checked": checked, "audited": audited, "issues": all_issues})
+    print(f"{len(todo)} sentences audited now; {len(issues)} new issues; {len(carried)} carried forward")
+    issues = issues
     for iss in issues:
         print(f"\n{iss['id']} [{iss['severity']}] {iss['number']}: {iss['problem']}\n  in: {iss['sentence'][:160]}\n  right fact: {iss.get('right_fact', '')}")
     return 0
