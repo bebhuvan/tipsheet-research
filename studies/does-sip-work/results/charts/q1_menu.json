@@ -1,0 +1,86 @@
+[
+{
+"asset": "Nifty 500",
+"horizon": 5,
+"lost": 0.01507537688442211,
+"below_fd": 0.07537688442211055,
+"starts": 199
+},
+{
+"asset": "Nifty 50",
+"horizon": 5,
+"lost": 0.005025125628140704,
+"below_fd": 0.07537688442211055,
+"starts": 199
+},
+{
+"asset": "Nifty Midcap 150",
+"horizon": 5,
+"lost": 0.020100502512562814,
+"below_fd": 0.07537688442211055,
+"starts": 199
+},
+{
+"asset": "Nifty Smallcap 250",
+"horizon": 5,
+"lost": 0.08542713567839195,
+"below_fd": 0.23618090452261306,
+"starts": 199
+},
+{
+"asset": "Gold",
+"horizon": 5,
+"lost": 0.05527638190954774,
+"below_fd": 0.2864321608040201,
+"starts": 199
+},
+{
+"asset": "G-sec 5-year",
+"horizon": 5,
+"lost": 0.0,
+"below_fd": 0.010050251256281407,
+"starts": 199
+},
+{
+"asset": "Nifty 500",
+"horizon": 10,
+"lost": 0.0,
+"below_fd": 0.007194244604316547,
+"starts": 139
+},
+{
+"asset": "Nifty 50",
+"horizon": 10,
+"lost": 0.0,
+"below_fd": 0.007194244604316547,
+"starts": 139
+},
+{
+"asset": "Nifty Midcap 150",
+"horizon": 10,
+"lost": 0.0,
+"below_fd": 0.0,
+"starts": 139
+},
+{
+"asset": "Nifty Smallcap 250",
+"horizon": 10,
+"lost": 0.007194244604316547,
+"below_fd": 0.03597122302158273,
+"starts": 139
+},
+{
+"asset": "Gold",
+"horizon": 10,
+"lost": 0.0,
+"below_fd": 0.15827338129496402,
+"starts": 139
+},
+{
+"asset": "G-sec 5-year",
+"horizon": 10,
+"lost": 0.0,
+"below_fd": 0.0,
+"starts": 139
+}
+]

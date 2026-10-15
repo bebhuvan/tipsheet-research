@@ -338,4 +338,9 @@ Q1: shares lost money and below FD at 3, 5 and 10 years (Nifty 500). Q5: median 
 
 ## Amendments
 
-None yet.
+**2026-10-15, after the first full run (code and replication, no prediction regraded).** The plan allows differences from the October targets of up to 1 point from conventions alone, and asks for anything larger to be investigated. Four were:
+- *Q11b, SIP against FD-then-April:* a bug in my code. Each April's own instalment stayed in the FD for another year instead of moving with the balance, as the plan's estimand requires. Fixed. The pre-fix result (SIP ahead in 78.6% of windows) is kept in the report.
+- *Q12, pausing:* a definition difference. The plan says only "pausing during a 20% fall". My rule pauses from the first session 20% or more below the peak until the index is back at its previous peak, with the paused money kept in the FD (as Q17's path D). The October lab paused from a month-end more than 20% below the peak until a month-end back above −10%. Both are reported, labelled; the lab's rule is added as `pause_lab`.
+- *Q5 and Q15, the deepest fall below the money put in:* the lab used daily statement values; this plan specifies month-end values, so its falls are shallower. No change.
+- *Q5, the mixes' medians (about 1.3 points higher):* the lab taxed debt and gold at slab rates and used NSE's 10-year G-sec index; this plan is before tax and uses the 5-year index. No change.
+- *Q16, the share in the red at 12 and 24 months:* the October figure counted every start month to the data end; this plan counts start months with a full 10 years. Both are now recorded (`…_all_starts`).

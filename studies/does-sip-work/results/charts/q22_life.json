@@ -1,0 +1,452 @@
+[
+{
+"month": "2019-04",
+"life": null,
+"cleanup_window": true
+},
+{
+"month": "2019-05",
+"life": null,
+"cleanup_window": true
+},
+{
+"month": "2019-06",
+"life": null,
+"cleanup_window": true
+},
+{
+"month": "2019-07",
+"life": null,
+"cleanup_window": true
+},
+{
+"month": "2019-08",
+"life": null,
+"cleanup_window": true
+},
+{
+"month": "2019-09",
+"life": null,
+"cleanup_window": true
+},
+{
+"month": "2019-10",
+"life": null,
+"cleanup_window": true
+},
+{
+"month": "2019-11",
+"life": null,
+"cleanup_window": true
+},
+{
+"month": "2019-12",
+"life": null,
+"cleanup_window": true
+},
+{
+"month": "2020-01",
+"life": null,
+"cleanup_window": true
+},
+{
+"month": "2020-02",
+"life": null,
+"cleanup_window": true
+},
+{
+"month": "2020-03",
+"life": 4.572999120492524,
+"cleanup_window": false
+},
+{
+"month": "2020-04",
+"life": 4.603781882145999,
+"cleanup_window": false
+},
+{
+"month": "2020-05",
+"life": 4.65287456445993,
+"cleanup_window": false
+},
+{
+"month": "2020-06",
+"life": 4.617185269768769,
+"cleanup_window": false
+},
+{
+"month": "2020-07",
+"life": 4.5721469478977514,
+"cleanup_window": false
+},
+{
+"month": "2020-08",
+"life": 4.509817289337333,
+"cleanup_window": false
+},
+{
+"month": "2020-09",
+"life": 4.451006532462339,
+"cleanup_window": false
+},
+{
+"month": "2020-10",
+"life": 4.347383346223253,
+"cleanup_window": false
+},
+{
+"month": "2020-11",
+"life": 4.297464362306043,
+"cleanup_window": false
+},
+{
+"month": "2020-12",
+"life": 4.279092702169625,
+"cleanup_window": false
+},
+{
+"month": "2021-01",
+"life": 4.297391934315383,
+"cleanup_window": false
+},
+{
+"month": "2021-02",
+"life": 4.271154525126515,
+"cleanup_window": false
+},
+{
+"month": "2021-03",
+"life": 4.329846582984659,
+"cleanup_window": false
+},
+{
+"month": "2021-04",
+"life": 4.32672138622891,
+"cleanup_window": false
+},
+{
+"month": "2021-05",
+"life": 4.420213976781243,
+"cleanup_window": false
+},
+{
+"month": "2021-06",
+"life": 4.522272215973003,
+"cleanup_window": false
+},
+{
+"month": "2021-07",
+"life": 4.6214420201572715,
+"cleanup_window": false
+},
+{
+"month": "2021-08",
+"life": 4.677049534934025,
+"cleanup_window": false
+},
+{
+"month": "2021-09",
+"life": 4.705302871515405,
+"cleanup_window": false
+},
+{
+"month": "2021-10",
+"life": 4.834044768349818,
+"cleanup_window": false
+},
+{
+"month": "2021-11",
+"life": 4.877014073016521,
+"cleanup_window": false
+},
+{
+"month": "2021-12",
+"life": 4.917242761246368,
+"cleanup_window": false
+},
+{
+"month": "2022-01",
+"life": 4.825463582489008,
+"cleanup_window": false
+},
+{
+"month": "2022-02",
+"life": 4.799944325879187,
+"cleanup_window": false
+},
+{
+"month": "2022-03",
+"life": 4.747481108312343,
+"cleanup_window": false
+},
+{
+"month": "2022-04",
+"life": 4.70308001047029,
+"cleanup_window": false
+},
+{
+"month": "2022-05",
+"life": 4.635756551141166,
+"cleanup_window": false
+},
+{
+"month": "2022-06",
+"life": 4.543437320887579,
+"cleanup_window": false
+},
+{
+"month": "2022-07",
+"life": 4.533602258975393,
+"cleanup_window": false
+},
+{
+"month": "2022-08",
+"life": 4.548862008594621,
+"cleanup_window": false
+},
+{
+"month": "2022-09",
+"life": 4.600236406619385,
+"cleanup_window": false
+},
+{
+"month": "2022-10",
+"life": 4.61353032659409,
+"cleanup_window": false
+},
+{
+"month": "2022-11",
+"life": 4.655910666153254,
+"cleanup_window": false
+},
+{
+"month": "2022-12",
+"life": 4.512119649303765,
+"cleanup_window": false
+},
+{
+"month": "2023-01",
+"life": 4.546664716208309,
+"cleanup_window": false
+},
+{
+"month": "2023-02",
+"life": 4.4972083035075165,
+"cleanup_window": false
+},
+{
+"month": "2023-03",
+"life": 4.443132597457035,
+"cleanup_window": false
+},
+{
+"month": "2023-04",
+"life": 4.405019887532575,
+"cleanup_window": false
+},
+{
+"month": "2023-05",
+"life": 4.362221034344514,
+"cleanup_window": false
+},
+{
+"month": "2023-06",
+"life": 4.335505310484134,
+"cleanup_window": false
+},
+{
+"month": "2023-07",
+"life": 4.226894409937888,
+"cleanup_window": false
+},
+{
+"month": "2023-08",
+"life": 4.120262519955064,
+"cleanup_window": false
+},
+{
+"month": "2023-09",
+"life": 3.9980933153880662,
+"cleanup_window": false
+},
+{
+"month": "2023-10",
+"life": 3.9314448812537024,
+"cleanup_window": false
+},
+{
+"month": "2023-11",
+"life": 3.8781530122993537,
+"cleanup_window": false
+},
+{
+"month": "2023-12",
+"life": 3.870552458185504,
+"cleanup_window": false
+},
+{
+"month": "2024-01",
+"life": 3.8128973222885763,
+"cleanup_window": false
+},
+{
+"month": "2024-02",
+"life": 3.8156780646662014,
+"cleanup_window": false
+},
+{
+"month": "2024-03",
+"life": 3.7425235102732093,
+"cleanup_window": false
+},
+{
+"month": "2024-04",
+"life": 3.5600425514504317,
+"cleanup_window": false
+},
+{
+"month": "2024-05",
+"life": 3.1945802027864905,
+"cleanup_window": false
+},
+{
+"month": "2024-06",
+"life": 3.085350362206887,
+"cleanup_window": false
+},
+{
+"month": "2024-07",
+"life": 3.00598648213711,
+"cleanup_window": false
+},
+{
+"month": "2024-08",
+"life": 2.9341065160994964,
+"cleanup_window": false
+},
+{
+"month": "2024-09",
+"life": 2.843435943214214,
+"cleanup_window": false
+},
+{
+"month": "2024-10",
+"life": 2.74719131614654,
+"cleanup_window": false
+},
+{
+"month": "2024-11",
+"life": 2.6158588054738456,
+"cleanup_window": false
+},
+{
+"month": "2024-12",
+"life": 2.486579606784888,
+"cleanup_window": false
+},
+{
+"month": "2025-01",
+"life": 2.2690086113693515,
+"cleanup_window": true
+},
+{
+"month": "2025-02",
+"life": 2.0923302160717054,
+"cleanup_window": true
+},
+{
+"month": "2025-03",
+"life": 1.9554354664285112,
+"cleanup_window": true
+},
+{
+"month": "2025-04",
+"life": 1.3822300020897935,
+"cleanup_window": true
+},
+{
+"month": "2025-05",
+"life": 1.4107177535395061,
+"cleanup_window": true
+},
+{
+"month": "2025-06",
+"life": 1.3977497404448382,
+"cleanup_window": true
+},
+{
+"month": "2025-07",
+"life": 1.4243671833108427,
+"cleanup_window": true
+},
+{
+"month": "2025-08",
+"life": 1.43559952102374,
+"cleanup_window": true
+},
+{
+"month": "2025-09",
+"life": 1.4480437743481145,
+"cleanup_window": true
+},
+{
+"month": "2025-10",
+"life": 1.4569180793729228,
+"cleanup_window": true
+},
+{
+"month": "2025-11",
+"life": 1.468755102796584,
+"cleanup_window": true
+},
+{
+"month": "2025-12",
+"life": 1.4674388511974639,
+"cleanup_window": true
+},
+{
+"month": "2026-01",
+"life": 1.5073435738237835,
+"cleanup_window": true
+},
+{
+"month": "2026-02",
+"life": 1.5420926081633255,
+"cleanup_window": true
+},
+{
+"month": "2026-03",
+"life": 1.5371171330214495,
+"cleanup_window": true
+},
+{
+"month": "2026-04",
+"life": 1.8361906771465246,
+"cleanup_window": false
+},
+{
+"month": "2026-05",
+"life": 1.811717871051493,
+"cleanup_window": false
+},
+{
+"month": "2026-06",
+"life": 1.8123362746449745,
+"cleanup_window": false
+},
+{
+"month": "2026-07",
+"life": 1.8089191489361702,
+"cleanup_window": false
+},
+{
+"month": "2026-08",
+"life": 1.7916923538330807,
+"cleanup_window": false
+},
+{
+"month": "2026-09",
+"life": 1.7973985672311907,
+"cleanup_window": false
+}
+]

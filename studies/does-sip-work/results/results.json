@@ -1,0 +1,3745 @@
+{
+ "study": "does-sip-work",
+ "computed_at": "2026-10-15T07:20:58+00:00",
+ "plan_commit": "b974bf7d91d8d30a2a9bdb25817c51fcfb235a0b",
+ "compute_sha256": "300c5ee6b6d786588e73e9290846d6f1a68cc2d91b6e767dfca598f15eb05681",
+ "inputs": {
+  "portal:asset_tri_daily": {
+   "file": "asset_tri_daily.parquet",
+   "size": 577322,
+   "mtime_ns": 1792045922008902137,
+   "sha256": "c3cf5febecc324f79f8cf53bb5881a6d692439563041df1c943cb0eb2bc2a96b"
+  },
+  "portal:macro_cpi_monthly": {
+   "file": "macro_cpi_monthly.parquet",
+   "size": 41580,
+   "mtime_ns": 1792046134746311370,
+   "sha256": "40cbfa3aca7ec2fb85e03847e1d74308b6926f23e79742e603ec9a146d7734dd"
+  },
+  "databank:nifty_index_valuations": {
+   "file": "niftyindices_nifty_index_valuations_warehouse_20261015t055811986094z.parquet",
+   "size": 1388365,
+   "mtime_ns": 1792043892288442210,
+   "sha256": "03dd032cf5f22aed4cec34ad06877e957a7e3a7d56bd717d8769e677ad42ac53"
+  },
+  "databank:india_data_hub_series": {
+   "file": "india_data_hub_india_data_hub_series_warehouse_20261015t050209340117z.parquet",
+   "size": 8291282,
+   "mtime_ns": 1792040532258591496,
+   "sha256": "a00cfc6a943192030712685e8261424d1fbf7b90017fb87b0073323355341b6d"
+  },
+  "reference:rbi_deposit_rates_1_3y.csv": {
+   "file": "rbi_deposit_rates_1_3y.csv",
+   "size": 2067,
+   "mtime_ns": 1792046513485011908,
+   "sha256": "0bf470c69f861d3c0c2ec8e0048dfe385839018db9fd2f5ca364a86ece06999d"
+  }
+ },
+ "facts": {
+  "q1_n500_1y_lost": {
+   "value": 0.29189189,
+   "unit": "fraction",
+   "note": "before tax"
+  },
+  "q1_n500_1y_lost_after_tax": {
+   "value": 0.29189189,
+   "unit": "fraction"
+  },
+  "q1_n500_1y_below_fd": {
+   "value": 0.38108108,
+   "unit": "fraction",
+   "note": "before tax on the SIP; FD after tax"
+  },
+  "q1_n500_1y_below_fd_after_tax": {
+   "value": 0.3972973,
+   "unit": "fraction"
+  },
+  "q1_n500_1y_below_inflation": {
+   "value": 0.35405405,
+   "unit": "fraction"
+  },
+  "q1_n500_1y_starts": {
+   "value": 370,
+   "unit": "count"
+  },
+  "q1_n500_1y_independent": {
+   "value": 31.8,
+   "unit": "plain"
+  },
+  "q1_n500_1y_loss_episodes": {
+   "value": 24,
+   "unit": "count"
+  },
+  "q1_n500_3y_lost": {
+   "value": 0.15606936,
+   "unit": "fraction",
+   "note": "before tax"
+  },
+  "q1_n500_3y_lost_after_tax": {
+   "value": 0.15606936,
+   "unit": "fraction"
+  },
+  "q1_n500_3y_below_fd": {
+   "value": 0.25433526,
+   "unit": "fraction",
+   "note": "before tax on the SIP; FD after tax"
+  },
+  "q1_n500_3y_below_fd_after_tax": {
+   "value": 0.26011561,
+   "unit": "fraction"
+  },
+  "q1_n500_3y_below_inflation": {
+   "value": 0.27456647,
+   "unit": "fraction"
+  },
+  "q1_n500_3y_starts": {
+   "value": 346,
+   "unit": "count"
+  },
+  "q1_n500_3y_independent": {
+   "value": 10.6,
+   "unit": "plain"
+  },
+  "q1_n500_3y_loss_episodes": {
+   "value": 8,
+   "unit": "count"
+  },
+  "q1_n500_5y_lost": {
+   "value": 0.06521739,
+   "unit": "fraction",
+   "note": "before tax"
+  },
+  "q1_n500_5y_lost_after_tax": {
+   "value": 0.06521739,
+   "unit": "fraction"
+  },
+  "q1_n500_5y_below_fd": {
+   "value": 0.1552795,
+   "unit": "fraction",
+   "note": "before tax on the SIP; FD after tax"
+  },
+  "q1_n500_5y_below_fd_after_tax": {
+   "value": 0.1552795,
+   "unit": "fraction"
+  },
+  "q1_n500_5y_below_inflation": {
+   "value": 0.20807453,
+   "unit": "fraction"
+  },
+  "q1_n500_5y_starts": {
+   "value": 322,
+   "unit": "count"
+  },
+  "q1_n500_5y_independent": {
+   "value": 6.3,
+   "unit": "plain"
+  },
+  "q1_n500_5y_loss_episodes": {
+   "value": 10,
+   "unit": "count"
+  },
+  "q1_n500_5y_below_fd_low": {
+   "value": 0.14596273,
+   "unit": "fraction",
+   "note": "FD at the bottom of RBI's range"
+  },
+  "q1_n500_5y_below_fd_1995_2004": {
+   "value": 0.29166667,
+   "unit": "fraction"
+  },
+  "q1_n500_5y_lost_1995_2004": {
+   "value": 0.15,
+   "unit": "fraction"
+  },
+  "q1_n500_5y_below_fd_2005_on": {
+   "value": 0.07425743,
+   "unit": "fraction"
+  },
+  "q1_n500_5y_lost_2005_on": {
+   "value": 0.01485149,
+   "unit": "fraction"
+  },
+  "q1_n500_7y_lost": {
+   "value": 0.01342282,
+   "unit": "fraction",
+   "note": "before tax"
+  },
+  "q1_n500_7y_lost_after_tax": {
+   "value": 0.01342282,
+   "unit": "fraction"
+  },
+  "q1_n500_7y_below_fd": {
+   "value": 0.08724832,
+   "unit": "fraction",
+   "note": "before tax on the SIP; FD after tax"
+  },
+  "q1_n500_7y_below_fd_after_tax": {
+   "value": 0.08724832,
+   "unit": "fraction"
+  },
+  "q1_n500_7y_below_inflation": {
+   "value": 0.16107383,
+   "unit": "fraction"
+  },
+  "q1_n500_7y_starts": {
+   "value": 298,
+   "unit": "count"
+  },
+  "q1_n500_7y_independent": {
+   "value": 4.5,
+   "unit": "plain"
+  },
+  "q1_n500_7y_loss_episodes": {
+   "value": 3,
+   "unit": "count"
+  },
+  "q1_n500_10y_lost": {
+   "value": 0.0,
+   "unit": "fraction",
+   "note": "before tax"
+  },
+  "q1_n500_10y_lost_after_tax": {
+   "value": 0.0,
+   "unit": "fraction"
+  },
+  "q1_n500_10y_below_fd": {
+   "value": 0.00381679,
+   "unit": "fraction",
+   "note": "before tax on the SIP; FD after tax"
+  },
+  "q1_n500_10y_below_fd_after_tax": {
+   "value": 0.00381679,
+   "unit": "fraction"
+  },
+  "q1_n500_10y_below_inflation": {
+   "value": 0.00763359,
+   "unit": "fraction"
+  },
+  "q1_n500_10y_starts": {
+   "value": 262,
+   "unit": "count"
+  },
+  "q1_n500_10y_independent": {
+   "value": 3.2,
+   "unit": "plain"
+  },
+  "q1_n500_10y_loss_episodes": {
+   "value": 0,
+   "unit": "count"
+  },
+  "q1_n500_10y_below_fd_low": {
+   "value": 0.00381679,
+   "unit": "fraction",
+   "note": "FD at the bottom of RBI's range"
+  },
+  "q1_n500_10y_below_fd_1995_2004": {
+   "value": 0.0,
+   "unit": "fraction"
+  },
+  "q1_n500_10y_lost_1995_2004": {
+   "value": 0.0,
+   "unit": "fraction"
+  },
+  "q1_n500_10y_below_fd_2005_on": {
+   "value": 0.00704225,
+   "unit": "fraction"
+  },
+  "q1_n500_10y_lost_2005_on": {
+   "value": 0.0,
+   "unit": "fraction"
+  },
+  "q1_n500_15y_lost": {
+   "value": 0.0,
+   "unit": "fraction",
+   "note": "before tax"
+  },
+  "q1_n500_15y_lost_after_tax": {
+   "value": 0.0,
+   "unit": "fraction"
+  },
+  "q1_n500_15y_below_fd": {
+   "value": 0.0,
+   "unit": "fraction",
+   "note": "before tax on the SIP; FD after tax"
+  },
+  "q1_n500_15y_below_fd_after_tax": {
+   "value": 0.0,
+   "unit": "fraction"
+  },
+  "q1_n500_15y_below_inflation": {
+   "value": 0.0,
+   "unit": "fraction"
+  },
+  "q1_n500_15y_starts": {
+   "value": 202,
+   "unit": "count"
+  },
+  "q1_n500_15y_independent": {
+   "value": 2.1,
+   "unit": "plain"
+  },
+  "q1_n500_15y_loss_episodes": {
+   "value": 0,
+   "unit": "count"
+  },
+  "q1_n500_20y_lost": {
+   "value": 0.0,
+   "unit": "fraction",
+   "note": "before tax"
+  },
+  "q1_n500_20y_lost_after_tax": {
+   "value": 0.0,
+   "unit": "fraction"
+  },
+  "q1_n500_20y_below_fd": {
+   "value": 0.0,
+   "unit": "fraction",
+   "note": "before tax on the SIP; FD after tax"
+  },
+  "q1_n500_20y_below_fd_after_tax": {
+   "value": 0.0,
+   "unit": "fraction"
+  },
+  "q1_n500_20y_below_inflation": {
+   "value": 0.0,
+   "unit": "fraction"
+  },
+  "q1_n500_20y_starts": {
+   "value": 142,
+   "unit": "count"
+  },
+  "q1_n500_20y_independent": {
+   "value": 1.6,
+   "unit": "plain"
+  },
+  "q1_n500_20y_loss_episodes": {
+   "value": 0,
+   "unit": "count"
+  },
+  "q1_n500_no_loss_from_years": {
+   "value": 8,
+   "unit": "years"
+  },
+  "q2_n500_1y_p5": {
+   "value": -0.30552865,
+   "unit": "fraction"
+  },
+  "q2_n500_1y_p50": {
+   "value": 0.12064514,
+   "unit": "fraction"
+  },
+  "q2_n500_1y_p95": {
+   "value": 0.88415093,
+   "unit": "fraction"
+  },
+  "q2_n500_1y_worst": {
+   "value": -0.68445218,
+   "unit": "fraction"
+  },
+  "q2_n500_1y_best": {
+   "value": 1.64171276,
+   "unit": "fraction"
+  },
+  "q2_n500_3y_p5": {
+   "value": -0.09462473,
+   "unit": "fraction"
+  },
+  "q2_n500_3y_p50": {
+   "value": 0.1491755,
+   "unit": "fraction"
+  },
+  "q2_n500_3y_p95": {
+   "value": 0.47502783,
+   "unit": "fraction"
+  },
+  "q2_n500_3y_worst": {
+   "value": -0.25639084,
+   "unit": "fraction"
+  },
+  "q2_n500_3y_best": {
+   "value": 0.5607493,
+   "unit": "fraction"
+  },
+  "q2_n500_5y_p5": {
+   "value": -0.00506799,
+   "unit": "fraction"
+  },
+  "q2_n500_5y_p50": {
+   "value": 0.15010238,
+   "unit": "fraction"
+  },
+  "q2_n500_5y_p95": {
+   "value": 0.40732002,
+   "unit": "fraction"
+  },
+  "q2_n500_5y_worst": {
+   "value": -0.08613161,
+   "unit": "fraction"
+  },
+  "q2_n500_5y_best": {
+   "value": 0.50656134,
+   "unit": "fraction"
+  },
+  "q2_n500_7y_p5": {
+   "value": 0.02683723,
+   "unit": "fraction"
+  },
+  "q2_n500_7y_p50": {
+   "value": 0.1464167,
+   "unit": "fraction"
+  },
+  "q2_n500_7y_p95": {
+   "value": 0.33395958,
+   "unit": "fraction"
+  },
+  "q2_n500_7y_worst": {
+   "value": -0.00343503,
+   "unit": "fraction"
+  },
+  "q2_n500_7y_best": {
+   "value": 0.44190891,
+   "unit": "fraction"
+  },
+  "q2_n500_10y_p5": {
+   "value": 0.09830002,
+   "unit": "fraction"
+  },
+  "q2_n500_10y_p50": {
+   "value": 0.1457277,
+   "unit": "fraction"
+  },
+  "q2_n500_10y_p95": {
+   "value": 0.26029957,
+   "unit": "fraction"
+  },
+  "q2_n500_10y_worst": {
+   "value": 0.04291346,
+   "unit": "fraction"
+  },
+  "q2_n500_10y_best": {
+   "value": 0.32693049,
+   "unit": "fraction"
+  },
+  "q2_n500_10y_value_p5": {
+   "value": 1996497.93741897,
+   "unit": "rupees"
+  },
+  "q2_n500_10y_value_today_p5": {
+   "value": 2589582.76862838,
+   "unit": "rupees",
+   "note": "in today's rupees (CPI)"
+  },
+  "q2_n500_10y_value_p50": {
+   "value": 2569842.35503916,
+   "unit": "rupees"
+  },
+  "q2_n500_10y_value_today_p50": {
+   "value": 3750686.43197924,
+   "unit": "rupees",
+   "note": "in today's rupees (CPI)"
+  },
+  "q2_n500_10y_value_p95": {
+   "value": 4768546.96388003,
+   "unit": "rupees"
+  },
+  "q2_n500_10y_value_today_p95": {
+   "value": 16179174.69744322,
+   "unit": "rupees",
+   "note": "in today's rupees (CPI)"
+  },
+  "q2_n500_10y_invested": {
+   "value": 1200000.0,
+   "unit": "rupees"
+  },
+  "q2_n500_15y_p5": {
+   "value": 0.11041242,
+   "unit": "fraction"
+  },
+  "q2_n500_15y_p50": {
+   "value": 0.14830721,
+   "unit": "fraction"
+  },
+  "q2_n500_15y_p95": {
+   "value": 0.18513905,
+   "unit": "fraction"
+  },
+  "q2_n500_15y_worst": {
+   "value": 0.06929121,
+   "unit": "fraction"
+  },
+  "q2_n500_15y_best": {
+   "value": 0.19853659,
+   "unit": "fraction"
+  },
+  "q2_n500_15y_value_p5": {
+   "value": 4384056.92322713,
+   "unit": "rupees"
+  },
+  "q2_n500_15y_value_today_p5": {
+   "value": 5504443.03175455,
+   "unit": "rupees",
+   "note": "in today's rupees (CPI)"
+  },
+  "q2_n500_15y_value_p50": {
+   "value": 6077345.21951683,
+   "unit": "rupees"
+  },
+  "q2_n500_15y_value_today_p50": {
+   "value": 8631773.64708696,
+   "unit": "rupees",
+   "note": "in today's rupees (CPI)"
+  },
+  "q2_n500_15y_value_p95": {
+   "value": 8382199.49893457,
+   "unit": "rupees"
+  },
+  "q2_n500_15y_value_today_p95": {
+   "value": 21212694.23827241,
+   "unit": "rupees",
+   "note": "in today's rupees (CPI)"
+  },
+  "q2_n500_15y_invested": {
+   "value": 1800000.0,
+   "unit": "rupees"
+  },
+  "q2_n500_20y_p5": {
+   "value": 0.12710348,
+   "unit": "fraction"
+  },
+  "q2_n500_20y_p50": {
+   "value": 0.14820556,
+   "unit": "fraction"
+  },
+  "q2_n500_20y_p95": {
+   "value": 0.16213221,
+   "unit": "fraction"
+  },
+  "q2_n500_20y_worst": {
+   "value": 0.116566,
+   "unit": "fraction"
+  },
+  "q2_n500_20y_best": {
+   "value": 0.1655587,
+   "unit": "fraction"
+  },
+  "q2_n500_20y_value_p5": {
+   "value": 10032338.69119665,
+   "unit": "rupees"
+  },
+  "q2_n500_20y_value_today_p5": {
+   "value": 10904784.56383106,
+   "unit": "rupees",
+   "note": "in today's rupees (CPI)"
+  },
+  "q2_n500_20y_value_p50": {
+   "value": 12986261.05558656,
+   "unit": "rupees"
+  },
+  "q2_n500_20y_value_today_p50": {
+   "value": 17536075.75744759,
+   "unit": "rupees",
+   "note": "in today's rupees (CPI)"
+  },
+  "q2_n500_20y_value_p95": {
+   "value": 15429286.21384944,
+   "unit": "rupees"
+  },
+  "q2_n500_20y_value_today_p95": {
+   "value": 25228292.298278,
+   "unit": "rupees",
+   "note": "in today's rupees (CPI)"
+  },
+  "q2_n500_20y_invested": {
+   "value": 2400000.0,
+   "unit": "rupees"
+  },
+  "q2_n500_10y_share_below_12pct": {
+   "value": 0.20229008,
+   "unit": "fraction"
+  },
+  "q2_n500_10y_median_1995_2004": {
+   "value": 0.20731497,
+   "unit": "fraction"
+  },
+  "q2_n500_10y_median_2005_on": {
+   "value": 0.13514922,
+   "unit": "fraction"
+  },
+  "q2_n50_10y_p50": {
+   "value": 0.13418057,
+   "unit": "fraction"
+  },
+  "q2_n50_10y_worst": {
+   "value": 0.04412365,
+   "unit": "fraction"
+  },
+  "q2_n50_10y_best": {
+   "value": 0.22905412,
+   "unit": "fraction"
+  },
+  "q3_n500_5y_real_p50": {
+   "value": 0.07811954,
+   "unit": "fraction"
+  },
+  "q3_n500_5y_real_p5": {
+   "value": -0.06223363,
+   "unit": "fraction"
+  },
+  "q3_n500_5y_real_below_zero": {
+   "value": 0.20807453,
+   "unit": "fraction"
+  },
+  "q3_n500_10y_real_p50": {
+   "value": 0.08347131,
+   "unit": "fraction"
+  },
+  "q3_n500_10y_real_p5": {
+   "value": 0.01960004,
+   "unit": "fraction"
+  },
+  "q3_n500_10y_real_below_zero": {
+   "value": 0.00763359,
+   "unit": "fraction"
+  },
+  "q3_n500_10y_real_p50_1995_2004": {
+   "value": 0.13547179,
+   "unit": "fraction"
+  },
+  "q3_n500_10y_real_p50_2005_on": {
+   "value": 0.07121651,
+   "unit": "fraction"
+  },
+  "q3_n500_15y_real_p50": {
+   "value": 0.07801474,
+   "unit": "fraction"
+  },
+  "q3_n500_15y_real_p5": {
+   "value": 0.0423684,
+   "unit": "fraction"
+  },
+  "q3_n500_15y_real_below_zero": {
+   "value": 0.0,
+   "unit": "fraction"
+  },
+  "q3_n500_20y_real_p50": {
+   "value": 0.07672756,
+   "unit": "fraction"
+  },
+  "q3_n500_20y_real_p5": {
+   "value": 0.0637389,
+   "unit": "fraction"
+  },
+  "q3_n500_20y_real_below_zero": {
+   "value": 0.0,
+   "unit": "fraction"
+  },
+  "q3_n500_index_nominal": {
+   "value": 0.11872665,
+   "unit": "fraction",
+   "note": "total return, 1995-01-01 to 2026-10-14"
+  },
+  "q3_n500_index_real": {
+   "value": 0.05235553,
+   "unit": "fraction"
+  },
+  "q3_n500_fd_nominal": {
+   "value": 0.05529298,
+   "unit": "fraction",
+   "note": "FD after tax, same dates"
+  },
+  "q3_n500_fd_real": {
+   "value": -0.00731478,
+   "unit": "fraction"
+  },
+  "q3_n50_index_nominal": {
+   "value": 0.12882135,
+   "unit": "fraction",
+   "note": "total return, 1999-06-30 to 2026-10-14"
+  },
+  "q3_n50_index_real": {
+   "value": 0.06598677,
+   "unit": "fraction"
+  },
+  "q3_n50_fd_nominal": {
+   "value": 0.05150198,
+   "unit": "fraction",
+   "note": "FD after tax, same dates"
+  },
+  "q3_n50_fd_real": {
+   "value": -0.00702871,
+   "unit": "fraction"
+  },
+  "q4_500_5y_p50": {
+   "value": 0.1421776,
+   "unit": "fraction"
+  },
+  "q4_500_5y_p5": {
+   "value": 0.04592188,
+   "unit": "fraction"
+  },
+  "q4_500_5y_worst": {
+   "value": -0.04684406,
+   "unit": "fraction"
+  },
+  "q4_500_5y_below_fd": {
+   "value": 0.07537688,
+   "unit": "fraction"
+  },
+  "q4_500_5y_deepest_worst": {
+   "value": -0.44292124,
+   "unit": "fraction"
+  },
+  "q4_500_5y_longest_red_max": {
+   "value": 23,
+   "unit": "months"
+  },
+  "q4_50_5y_p50": {
+   "value": 0.12560348,
+   "unit": "fraction"
+  },
+  "q4_50_5y_p5": {
+   "value": 0.05346902,
+   "unit": "fraction"
+  },
+  "q4_50_5y_worst": {
+   "value": -0.03041216,
+   "unit": "fraction"
+  },
+  "q4_50_5y_below_fd": {
+   "value": 0.07537688,
+   "unit": "fraction"
+  },
+  "q4_50_5y_deepest_worst": {
+   "value": -0.40705541,
+   "unit": "fraction"
+  },
+  "q4_50_5y_longest_red_max": {
+   "value": 20,
+   "unit": "months"
+  },
+  "q4_midcap150_5y_p50": {
+   "value": 0.18884639,
+   "unit": "fraction"
+  },
+  "q4_midcap150_5y_p5": {
+   "value": 0.05016101,
+   "unit": "fraction"
+  },
+  "q4_midcap150_5y_worst": {
+   "value": -0.06926745,
+   "unit": "fraction"
+  },
+  "q4_midcap150_5y_below_fd": {
+   "value": 0.07537688,
+   "unit": "fraction"
+  },
+  "q4_midcap150_5y_deepest_worst": {
+   "value": -0.51570846,
+   "unit": "fraction"
+  },
+  "q4_midcap150_5y_longest_red_max": {
+   "value": 22,
+   "unit": "months"
+  },
+  "q4_smallcap250_5y_p50": {
+   "value": 0.17407705,
+   "unit": "fraction"
+  },
+  "q4_smallcap250_5y_p5": {
+   "value": -0.01820673,
+   "unit": "fraction"
+  },
+  "q4_smallcap250_5y_worst": {
+   "value": -0.17010444,
+   "unit": "fraction"
+  },
+  "q4_smallcap250_5y_below_fd": {
+   "value": 0.2361809,
+   "unit": "fraction"
+  },
+  "q4_smallcap250_5y_deepest_worst": {
+   "value": -0.54237555,
+   "unit": "fraction"
+  },
+  "q4_smallcap250_5y_longest_red_max": {
+   "value": 33,
+   "unit": "months"
+  },
+  "q4_gold_5y_p50": {
+   "value": 0.11932973,
+   "unit": "fraction"
+  },
+  "q4_gold_5y_p5": {
+   "value": -0.00048034,
+   "unit": "fraction"
+  },
+  "q4_gold_5y_worst": {
+   "value": -0.03497344,
+   "unit": "fraction"
+  },
+  "q4_gold_5y_below_fd": {
+   "value": 0.28643216,
+   "unit": "fraction"
+  },
+  "q4_gold_5y_deepest_worst": {
+   "value": -0.15405422,
+   "unit": "fraction"
+  },
+  "q4_gold_5y_longest_red_max": {
+   "value": 23,
+   "unit": "months"
+  },
+  "q4_gsec5year_5y_p50": {
+   "value": 0.07383612,
+   "unit": "fraction"
+  },
+  "q4_gsec5year_5y_p5": {
+   "value": 0.05672882,
+   "unit": "fraction"
+  },
+  "q4_gsec5year_5y_worst": {
+   "value": 0.05328728,
+   "unit": "fraction"
+  },
+  "q4_gsec5year_5y_below_fd": {
+   "value": 0.01005025,
+   "unit": "fraction"
+  },
+  "q4_gsec5year_5y_deepest_worst": {
+   "value": -0.0429364,
+   "unit": "fraction"
+  },
+  "q4_gsec5year_5y_longest_red_max": {
+   "value": 6,
+   "unit": "months"
+  },
+  "q4_500_10y_p50": {
+   "value": 0.13480902,
+   "unit": "fraction"
+  },
+  "q4_500_10y_p5": {
+   "value": 0.09349785,
+   "unit": "fraction"
+  },
+  "q4_500_10y_worst": {
+   "value": 0.04291346,
+   "unit": "fraction"
+  },
+  "q4_500_10y_below_fd": {
+   "value": 0.00719424,
+   "unit": "fraction"
+  },
+  "q4_500_10y_deepest_worst": {
+   "value": -0.44292124,
+   "unit": "fraction"
+  },
+  "q4_500_10y_longest_red_max": {
+   "value": 23,
+   "unit": "months"
+  },
+  "q4_50_10y_p50": {
+   "value": 0.12441292,
+   "unit": "fraction"
+  },
+  "q4_50_10y_p5": {
+   "value": 0.08978117,
+   "unit": "fraction"
+  },
+  "q4_50_10y_worst": {
+   "value": 0.04412365,
+   "unit": "fraction"
+  },
+  "q4_50_10y_below_fd": {
+   "value": 0.00719424,
+   "unit": "fraction"
+  },
+  "q4_50_10y_deepest_worst": {
+   "value": -0.40705541,
+   "unit": "fraction"
+  },
+  "q4_50_10y_longest_red_max": {
+   "value": 20,
+   "unit": "months"
+  },
+  "q4_midcap150_10y_p50": {
+   "value": 0.17879729,
+   "unit": "fraction"
+  },
+  "q4_midcap150_10y_p5": {
+   "value": 0.12002536,
+   "unit": "fraction"
+  },
+  "q4_midcap150_10y_worst": {
+   "value": 0.06060634,
+   "unit": "fraction"
+  },
+  "q4_midcap150_10y_below_fd": {
+   "value": 0.0,
+   "unit": "fraction"
+  },
+  "q4_midcap150_10y_deepest_worst": {
+   "value": -0.51570846,
+   "unit": "fraction"
+  },
+  "q4_midcap150_10y_longest_red_max": {
+   "value": 22,
+   "unit": "months"
+  },
+  "q4_smallcap250_10y_p50": {
+   "value": 0.15342107,
+   "unit": "fraction"
+  },
+  "q4_smallcap250_10y_p5": {
+   "value": 0.07355966,
+   "unit": "fraction"
+  },
+  "q4_smallcap250_10y_worst": {
+   "value": -0.00469794,
+   "unit": "fraction"
+  },
+  "q4_smallcap250_10y_below_fd": {
+   "value": 0.03597122,
+   "unit": "fraction"
+  },
+  "q4_smallcap250_10y_deepest_worst": {
+   "value": -0.54237555,
+   "unit": "fraction"
+  },
+  "q4_smallcap250_10y_longest_red_max": {
+   "value": 26,
+   "unit": "months"
+  },
+  "q4_gold_10y_p50": {
+   "value": 0.08949419,
+   "unit": "fraction"
+  },
+  "q4_gold_10y_p5": {
+   "value": 0.04438402,
+   "unit": "fraction"
+  },
+  "q4_gold_10y_worst": {
+   "value": 0.03792962,
+   "unit": "fraction"
+  },
+  "q4_gold_10y_below_fd": {
+   "value": 0.15827338,
+   "unit": "fraction"
+  },
+  "q4_gold_10y_deepest_worst": {
+   "value": -0.15405422,
+   "unit": "fraction"
+  },
+  "q4_gold_10y_longest_red_max": {
+   "value": 23,
+   "unit": "months"
+  },
+  "q4_gsec5year_10y_p50": {
+   "value": 0.08041879,
+   "unit": "fraction"
+  },
+  "q4_gsec5year_10y_p5": {
+   "value": 0.0685305,
+   "unit": "fraction"
+  },
+  "q4_gsec5year_10y_worst": {
+   "value": 0.06513769,
+   "unit": "fraction"
+  },
+  "q4_gsec5year_10y_below_fd": {
+   "value": 0.0,
+   "unit": "fraction"
+  },
+  "q4_gsec5year_10y_deepest_worst": {
+   "value": -0.0429364,
+   "unit": "fraction"
+  },
+  "q4_gsec5year_10y_longest_red_max": {
+   "value": 6,
+   "unit": "months"
+  },
+  "q4_menu_10y_starts": {
+   "value": 139,
+   "unit": "count"
+  },
+  "q4_menu_10y_independent": {
+   "value": 2.1,
+   "unit": "plain"
+  },
+  "q5_n500_5y_p50": {
+   "value": 0.1421776,
+   "unit": "fraction"
+  },
+  "q5_n500_5y_p5": {
+   "value": 0.04592188,
+   "unit": "fraction"
+  },
+  "q5_n500_5y_worst": {
+   "value": -0.04684406,
+   "unit": "fraction"
+  },
+  "q5_n500_5y_deepest_worst": {
+   "value": -0.44292124,
+   "unit": "fraction"
+  },
+  "q5_m6040_5y_p50": {
+   "value": 0.11971004,
+   "unit": "fraction"
+  },
+  "q5_m6040_5y_p5": {
+   "value": 0.06540838,
+   "unit": "fraction"
+  },
+  "q5_m6040_5y_worst": {
+   "value": 0.01530335,
+   "unit": "fraction"
+  },
+  "q5_m6040_5y_deepest_worst": {
+   "value": -0.24143611,
+   "unit": "fraction"
+  },
+  "q5_m6040_5y_given_up_median": {
+   "value": 44764.88756658,
+   "unit": "rupees",
+   "note": "median final value, Nifty 500 minus mix"
+  },
+  "q5_m6040_5y_gained_p5": {
+   "value": 33779.38137993,
+   "unit": "rupees",
+   "note": "5th-percentile final value, mix minus Nifty 500"
+  },
+  "q5_m6040_5y_gained_worst": {
+   "value": 91289.96919835,
+   "unit": "rupees"
+  },
+  "q5_m6040_5y_hole_reduction": {
+   "value": 72957.66052247,
+   "unit": "rupees",
+   "note": "worst rupee shortfall below money put in, mix less deep by"
+  },
+  "q5_m602020_5y_p50": {
+   "value": 0.12497929,
+   "unit": "fraction"
+  },
+  "q5_m602020_5y_p5": {
+   "value": 0.08313639,
+   "unit": "fraction"
+  },
+  "q5_m602020_5y_worst": {
+   "value": 0.02476113,
+   "unit": "fraction"
+  },
+  "q5_m602020_5y_deepest_worst": {
+   "value": -0.25326159,
+   "unit": "fraction"
+  },
+  "q5_m602020_5y_given_up_median": {
+   "value": 34678.05957008,
+   "unit": "rupees",
+   "note": "median final value, Nifty 500 minus mix"
+  },
+  "q5_m602020_5y_gained_p5": {
+   "value": 65898.64557449,
+   "unit": "rupees",
+   "note": "5th-percentile final value, mix minus Nifty 500"
+  },
+  "q5_m602020_5y_gained_worst": {
+   "value": 106395.74920203,
+   "unit": "rupees"
+  },
+  "q5_m602020_5y_hole_reduction": {
+   "value": 78212.32610142,
+   "unit": "rupees",
+   "note": "worst rupee shortfall below money put in, mix less deep by"
+  },
+  "q5_mthirds_5y_p50": {
+   "value": 0.1244227,
+   "unit": "fraction"
+  },
+  "q5_mthirds_5y_p5": {
+   "value": 0.07523683,
+   "unit": "fraction"
+  },
+  "q5_mthirds_5y_worst": {
+   "value": 0.06344086,
+   "unit": "fraction"
+  },
+  "q5_mthirds_5y_deepest_worst": {
+   "value": -0.1272132,
+   "unit": "fraction"
+  },
+  "q5_mthirds_5y_given_up_median": {
+   "value": 35740.92108088,
+   "unit": "rupees",
+   "note": "median final value, Nifty 500 minus mix"
+  },
+  "q5_mthirds_5y_gained_p5": {
+   "value": 51276.75694115,
+   "unit": "rupees",
+   "note": "5th-percentile final value, mix minus Nifty 500"
+  },
+  "q5_mthirds_5y_gained_worst": {
+   "value": 171754.85858314,
+   "unit": "rupees"
+  },
+  "q5_mthirds_5y_hole_reduction": {
+   "value": 108118.20094968,
+   "unit": "rupees",
+   "note": "worst rupee shortfall below money put in, mix less deep by"
+  },
+  "q5_n500_10y_p50": {
+   "value": 0.13480902,
+   "unit": "fraction"
+  },
+  "q5_n500_10y_p5": {
+   "value": 0.09349785,
+   "unit": "fraction"
+  },
+  "q5_n500_10y_worst": {
+   "value": 0.04291346,
+   "unit": "fraction"
+  },
+  "q5_n500_10y_deepest_worst": {
+   "value": -0.44292124,
+   "unit": "fraction"
+  },
+  "q5_m6040_10y_p50": {
+   "value": 0.11821498,
+   "unit": "fraction"
+  },
+  "q5_m6040_10y_p5": {
+   "value": 0.09745446,
+   "unit": "fraction"
+  },
+  "q5_m6040_10y_worst": {
+   "value": 0.06653355,
+   "unit": "fraction"
+  },
+  "q5_m6040_10y_deepest_worst": {
+   "value": -0.24143611,
+   "unit": "fraction"
+  },
+  "q5_m6040_10y_given_up_median": {
+   "value": 205939.66639996,
+   "unit": "rupees",
+   "note": "median final value, Nifty 500 minus mix"
+  },
+  "q5_m6040_10y_gained_p5": {
+   "value": 40838.38702682,
+   "unit": "rupees",
+   "note": "5th-percentile final value, mix minus Nifty 500"
+  },
+  "q5_m6040_10y_gained_worst": {
+   "value": 195201.68253528,
+   "unit": "rupees"
+  },
+  "q5_m6040_10y_hole_reduction": {
+   "value": 72957.66052247,
+   "unit": "rupees",
+   "note": "worst rupee shortfall below money put in, mix less deep by"
+  },
+  "q5_m602020_10y_p50": {
+   "value": 0.12382824,
+   "unit": "fraction"
+  },
+  "q5_m602020_10y_p5": {
+   "value": 0.09571083,
+   "unit": "fraction"
+  },
+  "q5_m602020_10y_worst": {
+   "value": 0.0658949,
+   "unit": "fraction"
+  },
+  "q5_m602020_10y_deepest_worst": {
+   "value": -0.25326159,
+   "unit": "fraction"
+  },
+  "q5_m602020_10y_given_up_median": {
+   "value": 139147.7488849,
+   "unit": "rupees",
+   "note": "median final value, Nifty 500 minus mix"
+  },
+  "q5_m602020_10y_gained_p5": {
+   "value": 21821.74053207,
+   "unit": "rupees",
+   "note": "5th-percentile final value, mix minus Nifty 500"
+  },
+  "q5_m602020_10y_gained_worst": {
+   "value": 189572.58593509,
+   "unit": "rupees"
+  },
+  "q5_m602020_10y_hole_reduction": {
+   "value": 78212.32610142,
+   "unit": "rupees",
+   "note": "worst rupee shortfall below money put in, mix less deep by"
+  },
+  "q5_mthirds_10y_p50": {
+   "value": 0.11031372,
+   "unit": "fraction"
+  },
+  "q5_mthirds_10y_p5": {
+   "value": 0.08546346,
+   "unit": "fraction"
+  },
+  "q5_mthirds_10y_worst": {
+   "value": 0.07511159,
+   "unit": "fraction"
+  },
+  "q5_mthirds_10y_deepest_worst": {
+   "value": -0.1272132,
+   "unit": "fraction"
+  },
+  "q5_mthirds_10y_given_up_median": {
+   "value": 298340.88366073,
+   "unit": "rupees",
+   "note": "median final value, Nifty 500 minus mix"
+  },
+  "q5_mthirds_10y_gained_p5": {
+   "value": -82264.1561003,
+   "unit": "rupees",
+   "note": "5th-percentile final value, mix minus Nifty 500"
+  },
+  "q5_mthirds_10y_gained_worst": {
+   "value": 272815.40060267,
+   "unit": "rupees"
+  },
+  "q5_mthirds_10y_hole_reduction": {
+   "value": 108118.20094968,
+   "unit": "rupees",
+   "note": "worst rupee shortfall below money put in, mix less deep by"
+  },
+  "q5_n500_15y_p50": {
+   "value": 0.13537435,
+   "unit": "fraction"
+  },
+  "q5_n500_15y_p5": {
+   "value": 0.09399148,
+   "unit": "fraction"
+  },
+  "q5_n500_15y_worst": {
+   "value": 0.06929121,
+   "unit": "fraction"
+  },
+  "q5_n500_15y_deepest_worst": {
+   "value": -0.44292124,
+   "unit": "fraction"
+  },
+  "q5_m6040_15y_p50": {
+   "value": 0.12028878,
+   "unit": "fraction"
+  },
+  "q5_m6040_15y_p5": {
+   "value": 0.09976103,
+   "unit": "fraction"
+  },
+  "q5_m6040_15y_worst": {
+   "value": 0.08261721,
+   "unit": "fraction"
+  },
+  "q5_m6040_15y_deepest_worst": {
+   "value": -0.24143611,
+   "unit": "fraction"
+  },
+  "q5_m6040_15y_given_up_median": {
+   "value": 664851.91092916,
+   "unit": "rupees",
+   "note": "median final value, Nifty 500 minus mix"
+  },
+  "q5_m6040_15y_gained_p5": {
+   "value": 189592.16504083,
+   "unit": "rupees",
+   "note": "5th-percentile final value, mix minus Nifty 500"
+  },
+  "q5_m6040_15y_gained_worst": {
+   "value": 362080.52377419,
+   "unit": "rupees"
+  },
+  "q5_m6040_15y_hole_reduction": {
+   "value": 72957.66052247,
+   "unit": "rupees",
+   "note": "worst rupee shortfall below money put in, mix less deep by"
+  },
+  "q5_m602020_15y_p50": {
+   "value": 0.12748312,
+   "unit": "fraction"
+  },
+  "q5_m602020_15y_p5": {
+   "value": 0.10870239,
+   "unit": "fraction"
+  },
+  "q5_m602020_15y_worst": {
+   "value": 0.08960714,
+   "unit": "fraction"
+  },
+  "q5_m602020_15y_deepest_worst": {
+   "value": -0.25326159,
+   "unit": "fraction"
+  },
+  "q5_m602020_15y_given_up_median": {
+   "value": 360987.09776181,
+   "unit": "rupees",
+   "note": "median final value, Nifty 500 minus mix"
+  },
+  "q5_m602020_15y_gained_p5": {
+   "value": 504696.89823386,
+   "unit": "rupees",
+   "note": "5th-percentile final value, mix minus Nifty 500"
+  },
+  "q5_m602020_15y_gained_worst": {
+   "value": 570482.76682392,
+   "unit": "rupees"
+  },
+  "q5_m602020_15y_hole_reduction": {
+   "value": 78212.32610142,
+   "unit": "rupees",
+   "note": "worst rupee shortfall below money put in, mix less deep by"
+  },
+  "q5_mthirds_15y_p50": {
+   "value": 0.11474869,
+   "unit": "fraction"
+  },
+  "q5_mthirds_15y_p5": {
+   "value": 0.1055028,
+   "unit": "fraction"
+  },
+  "q5_mthirds_15y_worst": {
+   "value": 0.09493185,
+   "unit": "fraction"
+  },
+  "q5_mthirds_15y_deepest_worst": {
+   "value": -0.1272132,
+   "unit": "fraction"
+  },
+  "q5_mthirds_15y_given_up_median": {
+   "value": 884102.153716,
+   "unit": "rupees",
+   "note": "median final value, Nifty 500 minus mix"
+  },
+  "q5_mthirds_15y_gained_p5": {
+   "value": 387377.38226883,
+   "unit": "rupees",
+   "note": "5th-percentile final value, mix minus Nifty 500"
+  },
+  "q5_mthirds_15y_gained_worst": {
+   "value": 738464.91273548,
+   "unit": "rupees"
+  },
+  "q5_mthirds_15y_hole_reduction": {
+   "value": 108118.20094968,
+   "unit": "rupees",
+   "note": "worst rupee shortfall below money put in, mix less deep by"
+  },
+  "q5_P5_holds": {
+   "value": true,
+   "unit": "text"
+  },
+  "q5_m602020_10y_p50_norebal": {
+   "value": 0.11549893,
+   "unit": "fraction"
+  },
+  "q6_m602020_10y_diff_p50": {
+   "value": 0.00810503,
+   "unit": "fraction",
+   "note": "rebalanced each April minus never, paired by start month"
+  },
+  "q6_m602020_10y_diff_p10": {
+   "value": 0.00177663,
+   "unit": "fraction"
+  },
+  "q6_m602020_10y_diff_p90": {
+   "value": 0.01025539,
+   "unit": "fraction"
+  },
+  "q6_m602020_10y_deep_on_p50": {
+   "value": -0.0486333,
+   "unit": "fraction"
+  },
+  "q6_m602020_10y_deep_off_p50": {
+   "value": -0.04697893,
+   "unit": "fraction"
+  },
+  "q6_m602020_10y_semi_diff_p50": {
+   "value": 0.00423763,
+   "unit": "fraction",
+   "note": "rebalanced April and October minus never"
+  },
+  "q6_P6_holds": {
+   "value": false,
+   "unit": "text"
+  },
+  "q6_m602020_15y_diff_p50": {
+   "value": 0.00762781,
+   "unit": "fraction",
+   "note": "rebalanced each April minus never, paired by start month"
+  },
+  "q6_m602020_15y_diff_p10": {
+   "value": 0.00549063,
+   "unit": "fraction"
+  },
+  "q6_m602020_15y_diff_p90": {
+   "value": 0.01128795,
+   "unit": "fraction"
+  },
+  "q6_m602020_15y_deep_on_p50": {
+   "value": -0.07416612,
+   "unit": "fraction"
+  },
+  "q6_m602020_15y_deep_off_p50": {
+   "value": -0.07416612,
+   "unit": "fraction"
+  },
+  "q6_m602020_15y_semi_diff_p50": {
+   "value": 0.00421796,
+   "unit": "fraction",
+   "note": "rebalanced April and October minus never"
+  },
+  "q6_m6040_10y_diff_p50": {
+   "value": 0.00498239,
+   "unit": "fraction",
+   "note": "rebalanced each April minus never, paired by start month"
+  },
+  "q6_m6040_10y_diff_p10": {
+   "value": 0.00086758,
+   "unit": "fraction"
+  },
+  "q6_m6040_10y_diff_p90": {
+   "value": 0.00782215,
+   "unit": "fraction"
+  },
+  "q6_m6040_10y_deep_on_p50": {
+   "value": -0.06592246,
+   "unit": "fraction"
+  },
+  "q6_m6040_10y_deep_off_p50": {
+   "value": -0.06592246,
+   "unit": "fraction"
+  },
+  "q6_m6040_10y_semi_diff_p50": {
+   "value": 0.00244727,
+   "unit": "fraction",
+   "note": "rebalanced April and October minus never"
+  },
+  "q6_m6040_15y_diff_p50": {
+   "value": 0.0042891,
+   "unit": "fraction",
+   "note": "rebalanced each April minus never, paired by start month"
+  },
+  "q6_m6040_15y_diff_p10": {
+   "value": 0.00227843,
+   "unit": "fraction"
+  },
+  "q6_m6040_15y_diff_p90": {
+   "value": 0.00816548,
+   "unit": "fraction"
+  },
+  "q6_m6040_15y_deep_on_p50": {
+   "value": -0.09867858,
+   "unit": "fraction"
+  },
+  "q6_m6040_15y_deep_off_p50": {
+   "value": -0.11318588,
+   "unit": "fraction"
+  },
+  "q6_m6040_15y_semi_diff_p50": {
+   "value": 0.0018469,
+   "unit": "fraction",
+   "note": "rebalanced April and October minus never"
+  },
+  "q7_n500_5y_xirr_range": {
+   "value": 0.41238801,
+   "unit": "fraction",
+   "note": "95th minus 5th percentile"
+  },
+  "q7_n500_5y_multiple_range": {
+   "value": 1.69519257,
+   "unit": "ratio"
+  },
+  "q7_n500_5y_multiple_p5": {
+   "value": 0.98723153,
+   "unit": "ratio"
+  },
+  "q7_n500_5y_multiple_p95": {
+   "value": 2.68242411,
+   "unit": "ratio"
+  },
+  "q7_n500_10y_xirr_range": {
+   "value": 0.16199955,
+   "unit": "fraction",
+   "note": "95th minus 5th percentile"
+  },
+  "q7_n500_10y_multiple_range": {
+   "value": 2.31004086,
+   "unit": "ratio"
+  },
+  "q7_n500_10y_multiple_p5": {
+   "value": 1.66374828,
+   "unit": "ratio"
+  },
+  "q7_n500_10y_multiple_p95": {
+   "value": 3.97378914,
+   "unit": "ratio"
+  },
+  "q7_n500_10y_xirr_range_1995_2004": {
+   "value": 0.16408106,
+   "unit": "fraction"
+  },
+  "q7_n500_10y_xirr_range_2005_on": {
+   "value": 0.07011382,
+   "unit": "fraction"
+  },
+  "q7_n500_15y_xirr_range": {
+   "value": 0.07472663,
+   "unit": "fraction",
+   "note": "95th minus 5th percentile"
+  },
+  "q7_n500_15y_multiple_range": {
+   "value": 2.22119032,
+   "unit": "ratio"
+  },
+  "q7_n500_15y_multiple_p5": {
+   "value": 2.43558718,
+   "unit": "ratio"
+  },
+  "q7_n500_15y_multiple_p95": {
+   "value": 4.6567775,
+   "unit": "ratio"
+  },
+  "q7_n500_20y_xirr_range": {
+   "value": 0.03502873,
+   "unit": "fraction",
+   "note": "95th minus 5th percentile"
+  },
+  "q7_n500_20y_multiple_range": {
+   "value": 2.24872813,
+   "unit": "ratio"
+  },
+  "q7_n500_20y_multiple_p5": {
+   "value": 4.18014112,
+   "unit": "ratio"
+  },
+  "q7_n500_20y_multiple_p95": {
+   "value": 6.42886926,
+   "unit": "ratio"
+  },
+  "q8_n500_10y_best_year_median": {
+   "value": 0.26513082,
+   "unit": "fraction"
+  },
+  "q8_n500_10y_worst_year_median": {
+   "value": 0.09279584,
+   "unit": "fraction"
+  },
+  "q8_n500_10y_year_spread": {
+   "value": 0.17233498,
+   "unit": "fraction"
+  },
+  "q8_n500_10y_near_high_p50": {
+   "value": 0.13571664,
+   "unit": "fraction"
+  },
+  "q8_n500_10y_near_high_n": {
+   "value": 42,
+   "unit": "count"
+  },
+  "q8_n500_10y_mid_p50": {
+   "value": 0.14091568,
+   "unit": "fraction"
+  },
+  "q8_n500_10y_mid_n": {
+   "value": 44,
+   "unit": "count"
+  },
+  "q8_n500_10y_far_p50": {
+   "value": 0.14907878,
+   "unit": "fraction"
+  },
+  "q8_n500_10y_far_n": {
+   "value": 176,
+   "unit": "count"
+  },
+  "q8_n500_10y_near_high_p50_1995_2004": {
+   "value": 0.22113996,
+   "unit": "fraction"
+  },
+  "q8_n500_10y_far_p50_1995_2004": {
+   "value": 0.20866539,
+   "unit": "fraction"
+  },
+  "q8_n500_10y_near_high_p50_2005_on": {
+   "value": 0.12905024,
+   "unit": "fraction"
+  },
+  "q8_n500_10y_far_p50_2005_on": {
+   "value": 0.12807218,
+   "unit": "fraction"
+  },
+  "q9_n500_15y_first5_share_p50": {
+   "value": 0.54655618,
+   "unit": "fraction",
+   "note": "share of final value from the first five years' instalments"
+  },
+  "q9_n500_15y_last5_share_p50": {
+   "value": 0.14399235,
+   "unit": "fraction"
+  },
+  "q9_n500_15y_corr_first3": {
+   "value": -0.35238018,
+   "unit": "ratio"
+  },
+  "q9_n500_15y_corr_last3": {
+   "value": 0.00591468,
+   "unit": "ratio"
+  },
+  "q9_n500_15y_starts": {
+   "value": 202,
+   "unit": "count"
+  },
+  "q9_n500_15y_independent": {
+   "value": 2.1,
+   "unit": "plain"
+  },
+  "q9_g36_p50": {
+   "value": 5353525.27665623,
+   "unit": "rupees"
+  },
+  "q9_g36_p5": {
+   "value": 3954500.35868371,
+   "unit": "rupees"
+  },
+  "q9_g36_worst": {
+   "value": 3908346.11227667,
+   "unit": "rupees"
+  },
+  "q9_g36_ahead": {
+   "value": 0.18811881,
+   "unit": "fraction"
+  },
+  "q9_g12_p50": {
+   "value": 5926086.77428593,
+   "unit": "rupees"
+  },
+  "q9_g12_p5": {
+   "value": 3991246.45631418,
+   "unit": "rupees"
+  },
+  "q9_g12_worst": {
+   "value": 3695945.4238938,
+   "unit": "rupees"
+  },
+  "q9_g12_ahead": {
+   "value": 0.37128713,
+   "unit": "fraction"
+  },
+  "q9_g36_low_p50": {
+   "value": 5327067.42587561,
+   "unit": "rupees"
+  },
+  "q9_g36_low_p5": {
+   "value": 3921557.76429453,
+   "unit": "rupees"
+  },
+  "q9_g36_low_worst": {
+   "value": 3872206.7429306,
+   "unit": "rupees"
+  },
+  "q9_g36_low_ahead": {
+   "value": 0.17821782,
+   "unit": "fraction"
+  },
+  "q9_stay_p50": {
+   "value": 6077345.21951683,
+   "unit": "rupees"
+  },
+  "q9_stay_p5": {
+   "value": 4384056.92322713,
+   "unit": "rupees"
+  },
+  "q9_stay_worst": {
+   "value": 3110855.89211481,
+   "unit": "rupees"
+  },
+  "q9_P9_holds": {
+   "value": false,
+   "unit": "text"
+  },
+  "q9_g36_ahead_1995_2004": {
+   "value": 0.225,
+   "unit": "fraction"
+  },
+  "q9_g36_ahead_2005_on": {
+   "value": 0.13414634,
+   "unit": "fraction"
+  },
+  "q10_n500_10y_need_50": {
+   "value": 38912.89277099,
+   "unit": "rupees",
+   "note": "monthly amount for ₹1 crore"
+  },
+  "q10_n500_10y_need_50_stepup": {
+   "value": 27233.63462254,
+   "unit": "rupees"
+  },
+  "q10_n500_10y_need_50_real": {
+   "value": 26661.78626594,
+   "unit": "rupees",
+   "note": "₹1 crore in today's rupees"
+  },
+  "q10_n500_10y_need_80": {
+   "value": 44725.91003302,
+   "unit": "rupees",
+   "note": "monthly amount for ₹1 crore"
+  },
+  "q10_n500_10y_need_80_stepup": {
+   "value": 30804.55959268,
+   "unit": "rupees"
+  },
+  "q10_n500_10y_need_80_real": {
+   "value": 33305.2195681,
+   "unit": "rupees",
+   "note": "₹1 crore in today's rupees"
+  },
+  "q10_n500_10y_need_95": {
+   "value": 50087.70513897,
+   "unit": "rupees",
+   "note": "monthly amount for ₹1 crore"
+  },
+  "q10_n500_10y_need_95_stepup": {
+   "value": 34268.27309014,
+   "unit": "rupees"
+  },
+  "q10_n500_10y_need_95_real": {
+   "value": 38616.2594266,
+   "unit": "rupees",
+   "note": "₹1 crore in today's rupees"
+  },
+  "q10_calc12_10y_amount": {
+   "value": 44635.70555443,
+   "unit": "rupees",
+   "note": "what a 12% calculator asks for"
+  },
+  "q10_calc12_10y_reached": {
+   "value": 0.79770992,
+   "unit": "fraction"
+  },
+  "q10_n500_15y_need_50": {
+   "value": 16454.55316227,
+   "unit": "rupees",
+   "note": "monthly amount for ₹1 crore"
+  },
+  "q10_n500_15y_need_50_stepup": {
+   "value": 9964.66920172,
+   "unit": "rupees"
+  },
+  "q10_n500_15y_need_50_real": {
+   "value": 11585.10453222,
+   "unit": "rupees",
+   "note": "₹1 crore in today's rupees"
+  },
+  "q10_n500_15y_need_80": {
+   "value": 19458.95771258,
+   "unit": "rupees",
+   "note": "monthly amount for ₹1 crore"
+  },
+  "q10_n500_15y_need_80_stepup": {
+   "value": 11131.62366274,
+   "unit": "rupees"
+  },
+  "q10_n500_15y_need_80_real": {
+   "value": 16042.30023453,
+   "unit": "rupees",
+   "note": "₹1 crore in today's rupees"
+  },
+  "q10_n500_15y_need_95": {
+   "value": 22809.92280693,
+   "unit": "rupees",
+   "note": "monthly amount for ₹1 crore"
+  },
+  "q10_n500_15y_need_95_stepup": {
+   "value": 13041.07606462,
+   "unit": "rupees"
+  },
+  "q10_n500_15y_need_95_real": {
+   "value": 18167.14232904,
+   "unit": "rupees",
+   "note": "₹1 crore in today's rupees"
+  },
+  "q10_calc12_15y_amount": {
+   "value": 21011.4315131,
+   "unit": "rupees",
+   "note": "what a 12% calculator asks for"
+  },
+  "q10_calc12_15y_reached": {
+   "value": 0.8960396,
+   "unit": "fraction"
+  },
+  "q10_n500_15y_need_80_1995_2004": {
+   "value": 16663.34996581,
+   "unit": "rupees"
+  },
+  "q10_n500_15y_need_80_2005_on": {
+   "value": 20639.65926908,
+   "unit": "rupees"
+  },
+  "q10_n500_20y_need_50": {
+   "value": 7700.44584596,
+   "unit": "rupees",
+   "note": "monthly amount for ₹1 crore"
+  },
+  "q10_n500_20y_need_50_stepup": {
+   "value": 4197.25967887,
+   "unit": "rupees"
+  },
+  "q10_n500_20y_need_50_real": {
+   "value": 5702.53010897,
+   "unit": "rupees",
+   "note": "₹1 crore in today's rupees"
+  },
+  "q10_n500_20y_need_80": {
+   "value": 9003.86664805,
+   "unit": "rupees",
+   "note": "monthly amount for ₹1 crore"
+  },
+  "q10_n500_20y_need_80_stepup": {
+   "value": 4618.07954906,
+   "unit": "rupees"
+  },
+  "q10_n500_20y_need_80_real": {
+   "value": 7914.6379568,
+   "unit": "rupees",
+   "note": "₹1 crore in today's rupees"
+  },
+  "q10_n500_20y_need_95": {
+   "value": 9967.76555079,
+   "unit": "rupees",
+   "note": "monthly amount for ₹1 crore"
+  },
+  "q10_n500_20y_need_95_stepup": {
+   "value": 5080.77963224,
+   "unit": "rupees"
+  },
+  "q10_n500_20y_need_95_real": {
+   "value": 9170.28662186,
+   "unit": "rupees",
+   "note": "₹1 crore in today's rupees"
+  },
+  "q10_calc12_20y_amount": {
+   "value": 10871.25078412,
+   "unit": "rupees",
+   "note": "what a 12% calculator asks for"
+  },
+  "q10_calc12_20y_reached": {
+   "value": 0.98591549,
+   "unit": "fraction"
+  },
+  "q10_m602020_10y_need_50": {
+   "value": 43750.20112985,
+   "unit": "rupees",
+   "note": "monthly amount for ₹1 crore"
+  },
+  "q10_m602020_10y_need_50_real": {
+   "value": 33946.19553099,
+   "unit": "rupees",
+   "note": "₹1 crore in today's rupees"
+  },
+  "q10_m602020_10y_need_80": {
+   "value": 48420.05046945,
+   "unit": "rupees",
+   "note": "monthly amount for ₹1 crore"
+  },
+  "q10_m602020_10y_need_80_real": {
+   "value": 36352.24937315,
+   "unit": "rupees",
+   "note": "₹1 crore in today's rupees"
+  },
+  "q10_m602020_10y_need_95": {
+   "value": 50796.31969803,
+   "unit": "rupees",
+   "note": "monthly amount for ₹1 crore"
+  },
+  "q10_m602020_10y_need_95_real": {
+   "value": 37928.39561347,
+   "unit": "rupees",
+   "note": "₹1 crore in today's rupees"
+  },
+  "q10_m602020_15y_need_50": {
+   "value": 19707.92636914,
+   "unit": "rupees",
+   "note": "monthly amount for ₹1 crore"
+  },
+  "q10_m602020_15y_need_50_real": {
+   "value": 17068.81851654,
+   "unit": "rupees",
+   "note": "₹1 crore in today's rupees"
+  },
+  "q10_m602020_15y_need_80": {
+   "value": 20882.07987931,
+   "unit": "rupees",
+   "note": "monthly amount for ₹1 crore"
+  },
+  "q10_m602020_15y_need_80_real": {
+   "value": 17736.00051955,
+   "unit": "rupees",
+   "note": "₹1 crore in today's rupees"
+  },
+  "q10_m602020_15y_need_95": {
+   "value": 23124.30143392,
+   "unit": "rupees",
+   "note": "monthly amount for ₹1 crore"
+  },
+  "q10_m602020_15y_need_95_real": {
+   "value": 18337.76591058,
+   "unit": "rupees",
+   "note": "₹1 crore in today's rupees"
+  },
+  "q10_m602020_20y_need_50": {
+   "value": 9268.65147207,
+   "unit": "rupees",
+   "note": "monthly amount for ₹1 crore"
+  },
+  "q10_m602020_20y_need_50_real": {
+   "value": 8802.36646054,
+   "unit": "rupees",
+   "note": "₹1 crore in today's rupees"
+  },
+  "q10_m602020_20y_need_80": {
+   "value": 9438.45212198,
+   "unit": "rupees",
+   "note": "monthly amount for ₹1 crore"
+  },
+  "q10_m602020_20y_need_80_real": {
+   "value": 9200.62690354,
+   "unit": "rupees",
+   "note": "₹1 crore in today's rupees"
+  },
+  "q10_m602020_20y_need_95": {
+   "value": 9828.42802335,
+   "unit": "rupees",
+   "note": "monthly amount for ₹1 crore"
+  },
+  "q10_m602020_20y_need_95_real": {
+   "value": 9451.00841581,
+   "unit": "rupees",
+   "note": "₹1 crore in today's rupees"
+  },
+  "q10_late_target_80": {
+   "value": 11106339.52155059,
+   "unit": "rupees",
+   "note": "the 20-year SIP's 80% outcome at ₹10,000 a month"
+  },
+  "q10_late_need_15y": {
+   "value": 21611.77910914,
+   "unit": "rupees",
+   "note": "monthly amount a 15-year SIP needs to match it 80% of the time"
+  },
+  "q10_P10_holds": {
+   "value": false,
+   "unit": "text"
+  },
+  "q11_lump_beat_stp12": {
+   "value": 0.56870229,
+   "unit": "fraction"
+  },
+  "q11_lump_minus_stp12_p50": {
+   "value": 106152.69567156,
+   "unit": "rupees"
+  },
+  "q11_lump_beat_stp36": {
+   "value": 0.6259542,
+   "unit": "fraction"
+  },
+  "q11_lump_minus_stp36_p50": {
+   "value": 353624.78635999,
+   "unit": "rupees"
+  },
+  "q11_sip_beat_fd_april": {
+   "value": 0.78625954,
+   "unit": "fraction"
+  },
+  "q11_sip_minus_fd_april_p50": {
+   "value": 57634.98583658,
+   "unit": "rupees"
+  },
+  "q11_lump_beat_stp12_1995_2004": {
+   "value": 0.5,
+   "unit": "fraction"
+  },
+  "q11_sip_beat_fd_april_1995_2004": {
+   "value": 1.0,
+   "unit": "fraction"
+  },
+  "q11_lump_beat_stp12_2005_on": {
+   "value": 0.62676056,
+   "unit": "fraction"
+  },
+  "q11_sip_beat_fd_april_2005_on": {
+   "value": 0.6056338,
+   "unit": "fraction"
+  },
+  "q11_example_sip_xirr": {
+   "value": 0.15963243,
+   "unit": "fraction",
+   "note": "Nifty 500 SIP April 2014 to March 2024"
+  },
+  "q11_example_index_cagr": {
+   "value": 0.15552212,
+   "unit": "fraction",
+   "note": "the same index, same dates, lump sum"
+  },
+  "q12_best_day": {
+   "value": 24,
+   "unit": "plain"
+  },
+  "q12_stepup_extra_per_rupee_p50": {
+   "value": 1.54609759,
+   "unit": "ratio",
+   "note": "extra final value per extra rupee saved"
+  },
+  "q12_best_date_p50": {
+   "value": 0.001434,
+   "unit": "fraction",
+   "note": "median paired effect on 10-year XIRR, Nifty 500, starts from April 2005"
+  },
+  "q12_best_date_p10": {
+   "value": 0.00098462,
+   "unit": "fraction"
+  },
+  "q12_best_date_p90": {
+   "value": 0.00217239,
+   "unit": "fraction"
+  },
+  "q12_weekly_p50": {
+   "value": 0.00054476,
+   "unit": "fraction",
+   "note": "median paired effect on 10-year XIRR, Nifty 500, starts from April 2005"
+  },
+  "q12_weekly_p10": {
+   "value": 0.00032254,
+   "unit": "fraction"
+  },
+  "q12_weekly_p90": {
+   "value": 0.00081544,
+   "unit": "fraction"
+  },
+  "q12_stepup_p50": {
+   "value": 0.00166736,
+   "unit": "fraction",
+   "note": "median paired effect on 10-year XIRR, Nifty 500, starts from April 2005"
+  },
+  "q12_stepup_p10": {
+   "value": -0.00197802,
+   "unit": "fraction"
+  },
+  "q12_stepup_p90": {
+   "value": 0.00448109,
+   "unit": "fraction"
+  },
+  "q12_cost_1pct_p50": {
+   "value": -0.01125113,
+   "unit": "fraction",
+   "note": "median paired effect on 10-year XIRR, Nifty 500, starts from April 2005"
+  },
+  "q12_cost_1pct_p10": {
+   "value": -0.01143975,
+   "unit": "fraction"
+  },
+  "q12_cost_1pct_p90": {
+   "value": -0.01092848,
+   "unit": "fraction"
+  },
+  "q12_wait_fall_p50": {
+   "value": 0.01183532,
+   "unit": "fraction",
+   "note": "median paired effect on 10-year XIRR, Nifty 500, starts from April 2005"
+  },
+  "q12_wait_fall_p10": {
+   "value": -0.02519552,
+   "unit": "fraction"
+  },
+  "q12_wait_fall_p90": {
+   "value": 0.02167496,
+   "unit": "fraction"
+  },
+  "q12_pause_fall_p50": {
+   "value": -0.03845289,
+   "unit": "fraction",
+   "note": "median paired effect on 10-year XIRR, Nifty 500, starts from April 2005"
+  },
+  "q12_pause_fall_p10": {
+   "value": -0.06210845,
+   "unit": "fraction"
+  },
+  "q12_pause_fall_p90": {
+   "value": -0.00617363,
+   "unit": "fraction"
+  },
+  "q12_pe_double_p50": {
+   "value": 0.0,
+   "unit": "fraction",
+   "note": "median paired effect on 10-year XIRR, Nifty 500, starts from April 2005"
+  },
+  "q12_pe_double_p10": {
+   "value": 0.0,
+   "unit": "fraction"
+  },
+  "q12_pe_double_p90": {
+   "value": 0.0052218,
+   "unit": "fraction"
+  },
+  "q12_asset_gap": {
+   "value": 0.09837849,
+   "unit": "fraction",
+   "note": "spread of 10-year median XIRR across the menu's single assets"
+  },
+  "q12_start_year_gap": {
+   "value": 0.17233498,
+   "unit": "fraction"
+  },
+  "q12_starts": {
+   "value": 139,
+   "unit": "count"
+  },
+  "q12_n50_cost_1pct_p50": {
+   "value": -0.01116316,
+   "unit": "fraction"
+  },
+  "q13_12m_st_units": {
+   "value": 1.0,
+   "unit": "fraction"
+  },
+  "q13_12m_st_gain_share_p50": {
+   "value": 1.0,
+   "unit": "fraction",
+   "note": "among SIPs with a gain"
+  },
+  "q13_12m_cost_p50": {
+   "value": 0.01980083,
+   "unit": "fraction",
+   "note": "tax plus 1% exit load, share of value"
+  },
+  "q13_12m_cost_noload_p50": {
+   "value": 0.01190932,
+   "unit": "fraction"
+  },
+  "q13_12m_cost_50k_p50": {
+   "value": 0.01190932,
+   "unit": "fraction",
+   "note": "₹50,000 a month, no load"
+  },
+  "q13_12m_lump_cost_p50": {
+   "value": 0.01425475,
+   "unit": "fraction"
+  },
+  "q13_12m_share_with_gain": {
+   "value": 0.70810811,
+   "unit": "fraction"
+  },
+  "q13_18m_st_units": {
+   "value": 0.66666667,
+   "unit": "fraction"
+  },
+  "q13_18m_st_gain_share_p50": {
+   "value": 0.45960235,
+   "unit": "fraction",
+   "note": "among SIPs with a gain"
+  },
+  "q13_18m_cost_p50": {
+   "value": 0.01271781,
+   "unit": "fraction",
+   "note": "tax plus 1% exit load, share of value"
+  },
+  "q13_18m_cost_noload_p50": {
+   "value": 0.00752656,
+   "unit": "fraction"
+  },
+  "q13_18m_cost_50k_p50": {
+   "value": 0.00788421,
+   "unit": "fraction",
+   "note": "₹50,000 a month, no load"
+  },
+  "q13_18m_lump_cost_p50": {
+   "value": 0.0,
+   "unit": "fraction"
+  },
+  "q13_18m_share_with_gain": {
+   "value": 0.75549451,
+   "unit": "fraction"
+  },
+  "q13_24m_st_units": {
+   "value": 0.5,
+   "unit": "fraction"
+  },
+  "q13_24m_st_gain_share_p50": {
+   "value": 0.2662759,
+   "unit": "fraction",
+   "note": "among SIPs with a gain"
+  },
+  "q13_24m_cost_p50": {
+   "value": 0.00940396,
+   "unit": "fraction",
+   "note": "tax plus 1% exit load, share of value"
+  },
+  "q13_24m_cost_noload_p50": {
+   "value": 0.00558611,
+   "unit": "fraction"
+  },
+  "q13_24m_cost_50k_p50": {
+   "value": 0.00949329,
+   "unit": "fraction",
+   "note": "₹50,000 a month, no load"
+  },
+  "q13_24m_lump_cost_p50": {
+   "value": 0.0,
+   "unit": "fraction"
+  },
+  "q13_24m_share_with_gain": {
+   "value": 0.79608939,
+   "unit": "fraction"
+  },
+  "q13_36m_st_units": {
+   "value": 0.33333333,
+   "unit": "fraction"
+  },
+  "q13_36m_st_gain_share_p50": {
+   "value": 0.09240581,
+   "unit": "fraction",
+   "note": "among SIPs with a gain"
+  },
+  "q13_36m_cost_p50": {
+   "value": 0.0068081,
+   "unit": "fraction",
+   "note": "tax plus 1% exit load, share of value"
+  },
+  "q13_36m_cost_noload_p50": {
+   "value": 0.00438419,
+   "unit": "fraction"
+  },
+  "q13_36m_cost_50k_p50": {
+   "value": 0.01954689,
+   "unit": "fraction",
+   "note": "₹50,000 a month, no load"
+  },
+  "q13_36m_lump_cost_p50": {
+   "value": 0.00948648,
+   "unit": "fraction"
+  },
+  "q13_36m_share_with_gain": {
+   "value": 0.84393064,
+   "unit": "fraction"
+  },
+  "q13_60m_st_units": {
+   "value": 0.2,
+   "unit": "fraction"
+  },
+  "q13_60m_st_gain_share_p50": {
+   "value": 0.03204019,
+   "unit": "fraction",
+   "note": "among SIPs with a gain"
+  },
+  "q13_60m_cost_p50": {
+   "value": 0.02382491,
+   "unit": "fraction",
+   "note": "tax plus 1% exit load, share of value"
+  },
+  "q13_60m_cost_noload_p50": {
+   "value": 0.02260328,
+   "unit": "fraction"
+  },
+  "q13_60m_cost_50k_p50": {
+   "value": 0.03686499,
+   "unit": "fraction",
+   "note": "₹50,000 a month, no load"
+  },
+  "q13_60m_lump_cost_p50": {
+   "value": 0.04452594,
+   "unit": "fraction"
+  },
+  "q13_60m_share_with_gain": {
+   "value": 0.93478261,
+   "unit": "fraction"
+  },
+  "q13_P13_holds": {
+   "value": true,
+   "unit": "text"
+  },
+  "q14_n500_corr_vol": {
+   "value": 0.23247162,
+   "unit": "ratio"
+  },
+  "q14_n500_corr_total": {
+   "value": -0.17706447,
+   "unit": "ratio"
+  },
+  "q14_n500_edge_p50": {
+   "value": 0.00729082,
+   "unit": "fraction",
+   "note": "SIP XIRR minus the index's own return, same dates"
+  },
+  "q14_n500_edge_p5": {
+   "value": -0.06305029,
+   "unit": "fraction"
+  },
+  "q14_n500_edge_p95": {
+   "value": 0.07507908,
+   "unit": "fraction"
+  },
+  "q14_n500_edge_positive": {
+   "value": 0.59160305,
+   "unit": "fraction"
+  },
+  "q14_P14_holds": {
+   "value": false,
+   "unit": "text"
+  },
+  "q14_n500_corr_vol_1995_2004": {
+   "value": 0.45356622,
+   "unit": "ratio"
+  },
+  "q14_n500_corr_total_1995_2004": {
+   "value": -0.35104521,
+   "unit": "ratio"
+  },
+  "q14_n500_corr_vol_2005_on": {
+   "value": -0.05386732,
+   "unit": "ratio"
+  },
+  "q14_n500_corr_total_2005_on": {
+   "value": -0.4808913,
+   "unit": "ratio"
+  },
+  "q14_small250_corr_vol": {
+   "value": 0.27924393,
+   "unit": "ratio"
+  },
+  "q14_small250_corr_total": {
+   "value": -0.32502793,
+   "unit": "ratio"
+  },
+  "q14_gold_corr_vol": {
+   "value": -0.70580455,
+   "unit": "ratio"
+  },
+  "q14_gold_corr_total": {
+   "value": -0.17892667,
+   "unit": "ratio"
+  },
+  "q14_illus_smooth_xirr": {
+   "value": 0.07177222,
+   "unit": "fraction",
+   "note": "illustration, made-up path"
+  },
+  "q14_illus_choppy_xirr": {
+   "value": 0.07294376,
+   "unit": "fraction",
+   "note": "illustration, made-up path"
+  },
+  "q14_illus_index_cagr": {
+   "value": 0.07177346,
+   "unit": "fraction",
+   "note": "both made-up paths: 100 to 200 in 10 years"
+  },
+  "q15_n500_ever_red": {
+   "value": 0.96747967,
+   "unit": "fraction",
+   "note": "SIPs from 1995 to the data end, at any month-end"
+  },
+  "q15_n500_deepest": {
+   "value": -0.44292124,
+   "unit": "fraction"
+  },
+  "q15_n500_longest": {
+   "value": 38,
+   "unit": "months"
+  },
+  "q15_n500_worst_12m": {
+   "value": -0.43233174,
+   "unit": "fraction",
+   "note": "worst value against money put in at this age"
+  },
+  "q15_n500_worst_24m": {
+   "value": -0.41465609,
+   "unit": "fraction",
+   "note": "worst value against money put in at this age"
+  },
+  "q15_n500_worst_36m": {
+   "value": -0.34412711,
+   "unit": "fraction",
+   "note": "worst value against money put in at this age"
+  },
+  "q15_n500_ever_red_from_2005": {
+   "value": 0.96341463,
+   "unit": "fraction"
+  },
+  "q15_n500_longest_1995_2004": {
+   "value": 38,
+   "unit": "months"
+  },
+  "q15_n500_longest_2005_on": {
+   "value": 23,
+   "unit": "months"
+  },
+  "q16_n500_red_p50": {
+   "value": 0.17869818,
+   "unit": "fraction"
+  },
+  "q16_n500_red_p5": {
+   "value": 0.09389699,
+   "unit": "fraction"
+  },
+  "q16_n500_red_p25": {
+   "value": 0.13899745,
+   "unit": "fraction"
+  },
+  "q16_n500_red_p75": {
+   "value": 0.2326038,
+   "unit": "fraction"
+  },
+  "q16_n500_red_worst": {
+   "value": 0.06247528,
+   "unit": "fraction"
+  },
+  "q16_n500_red_below_fd": {
+   "value": 0.0,
+   "unit": "fraction"
+  },
+  "q16_n500_rest_p50": {
+   "value": 0.1407578,
+   "unit": "fraction"
+  },
+  "q16_n500_rest_p5": {
+   "value": 0.09997108,
+   "unit": "fraction"
+  },
+  "q16_n500_rest_p25": {
+   "value": 0.12080133,
+   "unit": "fraction"
+  },
+  "q16_n500_rest_p75": {
+   "value": 0.15973431,
+   "unit": "fraction"
+  },
+  "q16_n500_rest_worst": {
+   "value": 0.04291346,
+   "unit": "fraction"
+  },
+  "q16_n500_rest_below_fd": {
+   "value": 0.00558659,
+   "unit": "fraction"
+  },
+  "q16_n500_red12": {
+   "value": 0.31679389,
+   "unit": "fraction"
+  },
+  "q16_n500_red12_episodes": {
+   "value": 16,
+   "unit": "count"
+  },
+  "q16_n500_starts": {
+   "value": 262,
+   "unit": "count"
+  },
+  "q16_n500_b0_10_p50": {
+   "value": 0.16758995,
+   "unit": "fraction"
+  },
+  "q16_n500_b0_10_n": {
+   "value": 43,
+   "unit": "count"
+  },
+  "q16_n500_b10_20_p50": {
+   "value": 0.22354321,
+   "unit": "fraction"
+  },
+  "q16_n500_b10_20_n": {
+   "value": 29,
+   "unit": "count"
+  },
+  "q16_n500_b20_p50": {
+   "value": 0.14500358,
+   "unit": "fraction"
+  },
+  "q16_n500_b20_n": {
+   "value": 11,
+   "unit": "count"
+  },
+  "q16_n500_notred_p50": {
+   "value": 0.1407578,
+   "unit": "fraction"
+  },
+  "q16_n500_notred_n": {
+   "value": 179,
+   "unit": "count"
+  },
+  "q16_n500_units_while_red_p50": {
+   "value": 0.29832303,
+   "unit": "fraction"
+  },
+  "q16_n500_money_while_red_p50": {
+   "value": 0.175,
+   "unit": "fraction"
+  },
+  "q16_n500_units_to_money_ratio_p50": {
+   "value": 1.61773577,
+   "unit": "ratio"
+  },
+  "q16_n500_gap_p50": {
+   "value": 0.03794038,
+   "unit": "fraction"
+  },
+  "q16_n500_gap_lo": {
+   "value": 0.00237563,
+   "unit": "fraction",
+   "note": "indicative 90% block-bootstrap interval"
+  },
+  "q16_n500_gap_hi": {
+   "value": 0.09461619,
+   "unit": "fraction"
+  },
+  "q16_n500_red_p50_1995_2004": {
+   "value": 0.23170716,
+   "unit": "fraction"
+  },
+  "q16_n500_rest_p50_1995_2004": {
+   "value": 0.15378133,
+   "unit": "fraction"
+  },
+  "q16_n500_red_p50_2005_on": {
+   "value": 0.13662426,
+   "unit": "fraction"
+  },
+  "q16_n500_rest_p50_2005_on": {
+   "value": 0.13480902,
+   "unit": "fraction"
+  },
+  "q16_n500_red24_p50": {
+   "value": 0.1781655,
+   "unit": "fraction"
+  },
+  "q16_n500_rest24_p50": {
+   "value": 0.14453638,
+   "unit": "fraction"
+  },
+  "q16_n500_red24": {
+   "value": 0.24427481,
+   "unit": "fraction"
+  },
+  "q16_n500_red_p50_er1": {
+   "value": 0.17055391,
+   "unit": "fraction"
+  },
+  "q16_n500_rest_p50_er1": {
+   "value": 0.13169881,
+   "unit": "fraction"
+  },
+  "q16_n500_red_p50_15y": {
+   "value": 0.16093806,
+   "unit": "fraction"
+  },
+  "q16_n500_rest_p50_15y": {
+   "value": 0.14479744,
+   "unit": "fraction"
+  },
+  "q16_n50_red_p50": {
+   "value": 0.14268067,
+   "unit": "fraction"
+  },
+  "q16_n50_red_p5": {
+   "value": 0.08896706,
+   "unit": "fraction"
+  },
+  "q16_n50_red_p25": {
+   "value": 0.12109069,
+   "unit": "fraction"
+  },
+  "q16_n50_red_p75": {
+   "value": 0.20139221,
+   "unit": "fraction"
+  },
+  "q16_n50_red_worst": {
+   "value": 0.06300706,
+   "unit": "fraction"
+  },
+  "q16_n50_red_below_fd": {
+   "value": 0.0,
+   "unit": "fraction"
+  },
+  "q16_n50_rest_p50": {
+   "value": 0.13238365,
+   "unit": "fraction"
+  },
+  "q16_n50_rest_p5": {
+   "value": 0.09444625,
+   "unit": "fraction"
+  },
+  "q16_n50_rest_p25": {
+   "value": 0.11384802,
+   "unit": "fraction"
+  },
+  "q16_n50_rest_p75": {
+   "value": 0.14452456,
+   "unit": "fraction"
+  },
+  "q16_n50_rest_worst": {
+   "value": 0.04412365,
+   "unit": "fraction"
+  },
+  "q16_n50_rest_below_fd": {
+   "value": 0.00675676,
+   "unit": "fraction"
+  },
+  "q16_n50_red12": {
+   "value": 0.29186603,
+   "unit": "fraction"
+  },
+  "q16_n50_red12_episodes": {
+   "value": 12,
+   "unit": "count"
+  },
+  "q16_n50_starts": {
+   "value": 209,
+   "unit": "count"
+  },
+  "q16_mid150_red_p50": {
+   "value": 0.17854728,
+   "unit": "fraction"
+  },
+  "q16_mid150_red_p5": {
+   "value": 0.08415218,
+   "unit": "fraction"
+  },
+  "q16_mid150_red_p25": {
+   "value": 0.13454964,
+   "unit": "fraction"
+  },
+  "q16_mid150_red_p75": {
+   "value": 0.18758048,
+   "unit": "fraction"
+  },
+  "q16_mid150_red_worst": {
+   "value": 0.06060634,
+   "unit": "fraction"
+  },
+  "q16_mid150_red_below_fd": {
+   "value": 0.0,
+   "unit": "fraction"
+  },
+  "q16_mid150_rest_p50": {
+   "value": 0.18133717,
+   "unit": "fraction"
+  },
+  "q16_mid150_rest_p5": {
+   "value": 0.12974935,
+   "unit": "fraction"
+  },
+  "q16_mid150_rest_p25": {
+   "value": 0.15720071,
+   "unit": "fraction"
+  },
+  "q16_mid150_rest_p75": {
+   "value": 0.19651563,
+   "unit": "fraction"
+  },
+  "q16_mid150_rest_worst": {
+   "value": 0.11770854,
+   "unit": "fraction"
+  },
+  "q16_mid150_rest_below_fd": {
+   "value": 0.0,
+   "unit": "fraction"
+  },
+  "q16_mid150_red12": {
+   "value": 0.25899281,
+   "unit": "fraction"
+  },
+  "q16_mid150_red12_episodes": {
+   "value": 7,
+   "unit": "count"
+  },
+  "q16_mid150_starts": {
+   "value": 139,
+   "unit": "count"
+  },
+  "q16_small250_red_p50": {
+   "value": 0.15743843,
+   "unit": "fraction"
+  },
+  "q16_small250_red_p5": {
+   "value": 0.02416471,
+   "unit": "fraction"
+  },
+  "q16_small250_red_p25": {
+   "value": 0.11273712,
+   "unit": "fraction"
+  },
+  "q16_small250_red_p75": {
+   "value": 0.17125049,
+   "unit": "fraction"
+  },
+  "q16_small250_red_worst": {
+   "value": -0.00469794,
+   "unit": "fraction"
+  },
+  "q16_small250_red_below_fd": {
+   "value": 0.10869565,
+   "unit": "fraction"
+  },
+  "q16_small250_rest_p50": {
+   "value": 0.15103748,
+   "unit": "fraction"
+  },
+  "q16_small250_rest_p5": {
+   "value": 0.07889958,
+   "unit": "fraction"
+  },
+  "q16_small250_rest_p25": {
+   "value": 0.13125669,
+   "unit": "fraction"
+  },
+  "q16_small250_rest_p75": {
+   "value": 0.17902379,
+   "unit": "fraction"
+  },
+  "q16_small250_rest_worst": {
+   "value": 0.06822054,
+   "unit": "fraction"
+  },
+  "q16_small250_rest_below_fd": {
+   "value": 0.0,
+   "unit": "fraction"
+  },
+  "q16_small250_red12": {
+   "value": 0.33093525,
+   "unit": "fraction"
+  },
+  "q16_small250_red12_episodes": {
+   "value": 5,
+   "unit": "count"
+  },
+  "q16_small250_starts": {
+   "value": 139,
+   "unit": "count"
+  },
+  "q16_P16_holds": {
+   "value": false,
+   "unit": "text"
+  },
+  "q16_P16a_holds": {
+   "value": false,
+   "unit": "text"
+  },
+  "q16_P16b_holds": {
+   "value": false,
+   "unit": "text"
+  },
+  "q16_P16c_holds": {
+   "value": true,
+   "unit": "text"
+  },
+  "q16_case2008_deepest": {
+   "value": -0.41553748,
+   "unit": "fraction"
+  },
+  "q16_case2008_months_red": {
+   "value": 17,
+   "unit": "months"
+  },
+  "q16_case2008_longest_red": {
+   "value": 16,
+   "unit": "months"
+  },
+  "q16_case2008_xirr_10y": {
+   "value": 0.14500358,
+   "unit": "fraction"
+  },
+  "q16_case2008_value_now": {
+   "value": 8239963.31150425,
+   "unit": "rupees"
+  },
+  "q16_case2008_invested_now": {
+   "value": 2250000.0,
+   "unit": "rupees"
+  },
+  "q17_n500_m12_A_beat_B": {
+   "value": 1.0,
+   "unit": "fraction"
+  },
+  "q17_n500_m12_gap_B_p50": {
+   "value": 1312760.55666848,
+   "unit": "rupees",
+   "note": "keep going minus path B"
+  },
+  "q17_n500_m12_gap_B_worst": {
+   "value": 63506.55862469,
+   "unit": "rupees"
+  },
+  "q17_n500_m12_gap_B_best": {
+   "value": 4274025.20224195,
+   "unit": "rupees"
+  },
+  "q17_n500_m12_A_beat_C": {
+   "value": 1.0,
+   "unit": "fraction"
+  },
+  "q17_n500_m12_gap_C_p50": {
+   "value": 1482046.15292757,
+   "unit": "rupees",
+   "note": "keep going minus path C"
+  },
+  "q17_n500_m12_gap_C_worst": {
+   "value": 96781.95855003,
+   "unit": "rupees"
+  },
+  "q17_n500_m12_gap_C_best": {
+   "value": 5296101.9810863,
+   "unit": "rupees"
+  },
+  "q17_n500_m12_gap_C_p50_shallow": {
+   "value": 1379433.43946338,
+   "unit": "rupees",
+   "note": "less than 10% in the red"
+  },
+  "q17_n500_m12_gap_C_p50_deep": {
+   "value": 1025615.55364797,
+   "unit": "rupees",
+   "note": "more than 20% in the red"
+  },
+  "q17_n500_m12_A_beat_B_1995_2004": {
+   "value": 1.0,
+   "unit": "fraction"
+  },
+  "q17_n500_m12_A_beat_C_1995_2004": {
+   "value": 1.0,
+   "unit": "fraction"
+  },
+  "q17_n500_m12_A_beat_D_1995_2004": {
+   "value": 1.0,
+   "unit": "fraction"
+  },
+  "q17_n500_m12_A_beat_B_2005_on": {
+   "value": 1.0,
+   "unit": "fraction"
+  },
+  "q17_n500_m12_A_beat_C_2005_on": {
+   "value": 1.0,
+   "unit": "fraction"
+  },
+  "q17_n500_m12_A_beat_D_2005_on": {
+   "value": 1.0,
+   "unit": "fraction"
+  },
+  "q17_n500_m12_A_beat_D": {
+   "value": 1.0,
+   "unit": "fraction"
+  },
+  "q17_n500_m12_gap_D_p50": {
+   "value": 136484.61911607,
+   "unit": "rupees",
+   "note": "keep going minus path D"
+  },
+  "q17_n500_m12_gap_D_worst": {
+   "value": 6185.30758872,
+   "unit": "rupees"
+  },
+  "q17_n500_m12_gap_D_best": {
+   "value": 1668486.9330066,
+   "unit": "rupees"
+  },
+  "q17_n500_m12_n": {
+   "value": 83,
+   "unit": "count"
+  },
+  "q17_n500_m12_untaxed_A_beat_B": {
+   "value": 0.98795181,
+   "unit": "fraction"
+  },
+  "q17_n500_m12_untaxed_gap_B_p50": {
+   "value": 1138963.24064233,
+   "unit": "rupees",
+   "note": "keep going minus path B"
+  },
+  "q17_n500_m12_untaxed_gap_B_worst": {
+   "value": -94474.79587505,
+   "unit": "rupees"
+  },
+  "q17_n500_m12_untaxed_gap_B_best": {
+   "value": 4123810.36589699,
+   "unit": "rupees"
+  },
+  "q17_n500_m12_untaxed_A_beat_C": {
+   "value": 0.98795181,
+   "unit": "fraction"
+  },
+  "q17_n500_m12_untaxed_gap_C_p50": {
+   "value": 1255980.70408425,
+   "unit": "rupees",
+   "note": "keep going minus path C"
+  },
+  "q17_n500_m12_untaxed_gap_C_worst": {
+   "value": -105582.84084246,
+   "unit": "rupees"
+  },
+  "q17_n500_m12_untaxed_gap_C_best": {
+   "value": 5103592.07159383,
+   "unit": "rupees"
+  },
+  "q17_n500_m12_untaxed_A_beat_D": {
+   "value": 1.0,
+   "unit": "fraction"
+  },
+  "q17_n500_m12_untaxed_gap_D_p50": {
+   "value": 116153.86021303,
+   "unit": "rupees",
+   "note": "keep going minus path D"
+  },
+  "q17_n500_m12_untaxed_gap_D_worst": {
+   "value": 2035.31533117,
+   "unit": "rupees"
+  },
+  "q17_n500_m12_untaxed_gap_D_best": {
+   "value": 1578765.04543981,
+   "unit": "rupees"
+  },
+  "q17_n500_m12_untaxed_n": {
+   "value": 83,
+   "unit": "count"
+  },
+  "q17_n500_m12_fdlow_A_beat_B": {
+   "value": 1.0,
+   "unit": "fraction"
+  },
+  "q17_n500_m12_fdlow_gap_B_p50": {
+   "value": 1342536.04427166,
+   "unit": "rupees",
+   "note": "keep going minus path B"
+  },
+  "q17_n500_m12_fdlow_gap_B_worst": {
+   "value": 87303.16248121,
+   "unit": "rupees"
+  },
+  "q17_n500_m12_fdlow_gap_B_best": {
+   "value": 4321939.97996457,
+   "unit": "rupees"
+  },
+  "q17_n500_m12_fdlow_A_beat_C": {
+   "value": 1.0,
+   "unit": "fraction"
+  },
+  "q17_n500_m12_fdlow_gap_C_p50": {
+   "value": 1545553.45705732,
+   "unit": "rupees",
+   "note": "keep going minus path C"
+  },
+  "q17_n500_m12_fdlow_gap_C_worst": {
+   "value": 125656.87412968,
+   "unit": "rupees"
+  },
+  "q17_n500_m12_fdlow_gap_C_best": {
+   "value": 5356465.2485447,
+   "unit": "rupees"
+  },
+  "q17_n500_m12_fdlow_A_beat_D": {
+   "value": 1.0,
+   "unit": "fraction"
+  },
+  "q17_n500_m12_fdlow_gap_D_p50": {
+   "value": 140090.27706242,
+   "unit": "rupees",
+   "note": "keep going minus path D"
+  },
+  "q17_n500_m12_fdlow_gap_D_worst": {
+   "value": 6667.06408329,
+   "unit": "rupees"
+  },
+  "q17_n500_m12_fdlow_gap_D_best": {
+   "value": 1694610.43383115,
+   "unit": "rupees"
+  },
+  "q17_n500_m12_fdlow_n": {
+   "value": 83,
+   "unit": "count"
+  },
+  "q17_n500_m24_A_beat_B": {
+   "value": 0.984375,
+   "unit": "fraction"
+  },
+  "q17_n500_m24_gap_B_p50": {
+   "value": 1056541.0168272,
+   "unit": "rupees",
+   "note": "keep going minus path B"
+  },
+  "q17_n500_m24_gap_B_worst": {
+   "value": -105617.13423369,
+   "unit": "rupees"
+  },
+  "q17_n500_m24_gap_B_best": {
+   "value": 2194195.79294539,
+   "unit": "rupees"
+  },
+  "q17_n500_m24_A_beat_C": {
+   "value": 0.984375,
+   "unit": "fraction"
+  },
+  "q17_n500_m24_gap_C_p50": {
+   "value": 1520147.37809726,
+   "unit": "rupees",
+   "note": "keep going minus path C"
+  },
+  "q17_n500_m24_gap_C_worst": {
+   "value": -43249.74426809,
+   "unit": "rupees"
+  },
+  "q17_n500_m24_gap_C_best": {
+   "value": 3295731.94095869,
+   "unit": "rupees"
+  },
+  "q17_n500_m24_A_beat_D": {
+   "value": 1.0,
+   "unit": "fraction"
+  },
+  "q17_n500_m24_gap_D_p50": {
+   "value": 117294.11299009,
+   "unit": "rupees",
+   "note": "keep going minus path D"
+  },
+  "q17_n500_m24_gap_D_worst": {
+   "value": 9352.21708816,
+   "unit": "rupees"
+  },
+  "q17_n500_m24_gap_D_best": {
+   "value": 1087300.07784983,
+   "unit": "rupees"
+  },
+  "q17_n500_m24_n": {
+   "value": 64,
+   "unit": "count"
+  },
+  "q17_n50_m12_A_beat_B": {
+   "value": 1.0,
+   "unit": "fraction"
+  },
+  "q17_n50_m12_gap_B_p50": {
+   "value": 806242.18678551,
+   "unit": "rupees",
+   "note": "keep going minus path B"
+  },
+  "q17_n50_m12_gap_B_worst": {
+   "value": 66205.319525,
+   "unit": "rupees"
+  },
+  "q17_n50_m12_gap_B_best": {
+   "value": 1961024.49557752,
+   "unit": "rupees"
+  },
+  "q17_n50_m12_A_beat_C": {
+   "value": 1.0,
+   "unit": "fraction"
+  },
+  "q17_n50_m12_gap_C_p50": {
+   "value": 1045031.45004414,
+   "unit": "rupees",
+   "note": "keep going minus path C"
+  },
+  "q17_n50_m12_gap_C_worst": {
+   "value": 99129.18640459,
+   "unit": "rupees"
+  },
+  "q17_n50_m12_gap_C_best": {
+   "value": 2512839.11523327,
+   "unit": "rupees"
+  },
+  "q17_n50_m12_A_beat_D": {
+   "value": 1.0,
+   "unit": "fraction"
+  },
+  "q17_n50_m12_gap_D_p50": {
+   "value": 135381.8437974,
+   "unit": "rupees",
+   "note": "keep going minus path D"
+  },
+  "q17_n50_m12_gap_D_worst": {
+   "value": 2668.70370537,
+   "unit": "rupees"
+  },
+  "q17_n50_m12_gap_D_best": {
+   "value": 1350159.69602187,
+   "unit": "rupees"
+  },
+  "q17_n50_m12_n": {
+   "value": 61,
+   "unit": "count"
+  },
+  "q17_mid150_m12_A_beat_B": {
+   "value": 1.0,
+   "unit": "fraction"
+  },
+  "q17_mid150_m12_gap_B_p50": {
+   "value": 1179383.62395809,
+   "unit": "rupees",
+   "note": "keep going minus path B"
+  },
+  "q17_mid150_m12_gap_B_worst": {
+   "value": 36408.40997542,
+   "unit": "rupees"
+  },
+  "q17_mid150_m12_gap_B_best": {
+   "value": 1692715.89650115,
+   "unit": "rupees"
+  },
+  "q17_mid150_m12_A_beat_C": {
+   "value": 1.0,
+   "unit": "fraction"
+  },
+  "q17_mid150_m12_gap_C_p50": {
+   "value": 1508296.60905662,
+   "unit": "rupees",
+   "note": "keep going minus path C"
+  },
+  "q17_mid150_m12_gap_C_worst": {
+   "value": 81496.82406688,
+   "unit": "rupees"
+  },
+  "q17_mid150_m12_gap_C_best": {
+   "value": 2137884.23652638,
+   "unit": "rupees"
+  },
+  "q17_mid150_m12_A_beat_D": {
+   "value": 1.0,
+   "unit": "fraction"
+  },
+  "q17_mid150_m12_gap_D_p50": {
+   "value": 190923.63743923,
+   "unit": "rupees",
+   "note": "keep going minus path D"
+  },
+  "q17_mid150_m12_gap_D_worst": {
+   "value": 15173.60055116,
+   "unit": "rupees"
+  },
+  "q17_mid150_m12_gap_D_best": {
+   "value": 552261.50759981,
+   "unit": "rupees"
+  },
+  "q17_mid150_m12_n": {
+   "value": 36,
+   "unit": "count"
+  },
+  "q17_small250_m12_A_beat_B": {
+   "value": 0.89130435,
+   "unit": "fraction"
+  },
+  "q17_small250_m12_gap_B_p50": {
+   "value": 958976.7563674,
+   "unit": "rupees",
+   "note": "keep going minus path B"
+  },
+  "q17_small250_m12_gap_B_worst": {
+   "value": -346622.5208046,
+   "unit": "rupees"
+  },
+  "q17_small250_m12_gap_B_best": {
+   "value": 1523767.13212472,
+   "unit": "rupees"
+  },
+  "q17_small250_m12_A_beat_C": {
+   "value": 0.91304348,
+   "unit": "fraction"
+  },
+  "q17_small250_m12_gap_C_p50": {
+   "value": 1229817.95091634,
+   "unit": "rupees",
+   "note": "keep going minus path C"
+  },
+  "q17_small250_m12_gap_C_worst": {
+   "value": -379595.32193428,
+   "unit": "rupees"
+  },
+  "q17_small250_m12_gap_C_best": {
+   "value": 1862716.11437692,
+   "unit": "rupees"
+  },
+  "q17_small250_m12_A_beat_D": {
+   "value": 0.97826087,
+   "unit": "fraction"
+  },
+  "q17_small250_m12_gap_D_p50": {
+   "value": 132552.04239156,
+   "unit": "rupees",
+   "note": "keep going minus path D"
+  },
+  "q17_small250_m12_gap_D_worst": {
+   "value": -8231.36975987,
+   "unit": "rupees"
+  },
+  "q17_small250_m12_gap_D_best": {
+   "value": 497142.42935652,
+   "unit": "rupees"
+  },
+  "q17_small250_m12_n": {
+   "value": 46,
+   "unit": "count"
+  },
+  "q17_P17_holds": {
+   "value": false,
+   "unit": "text"
+  },
+  "q18_n500_10y_corr_6m": {
+   "value": -0.28561682,
+   "unit": "ratio"
+  },
+  "q18_n500_bottom_third_stays_6m": {
+   "value": 0.20454545,
+   "unit": "fraction"
+  },
+  "q18_n500_10y_corr_12m": {
+   "value": -0.3465821,
+   "unit": "ratio"
+  },
+  "q18_n500_bottom_third_stays_12m": {
+   "value": 0.20454545,
+   "unit": "fraction"
+  },
+  "q18_n500_10y_corr_24m": {
+   "value": -0.11629269,
+   "unit": "ratio"
+  },
+  "q18_n500_bottom_third_stays_24m": {
+   "value": 0.32954545,
+   "unit": "fraction"
+  },
+  "q18_n500_10y_corr_36m": {
+   "value": 0.09599318,
+   "unit": "ratio"
+  },
+  "q18_n500_bottom_third_stays_36m": {
+   "value": 0.47727273,
+   "unit": "fraction"
+  },
+  "q18_n500_10y_corr_60m": {
+   "value": -0.0203112,
+   "unit": "ratio"
+  },
+  "q18_n500_bottom_third_stays_60m": {
+   "value": 0.36363636,
+   "unit": "fraction"
+  },
+  "q18_n500_10y_corr_84m": {
+   "value": 0.35132353,
+   "unit": "ratio"
+  },
+  "q18_n500_bottom_third_stays_84m": {
+   "value": 0.46590909,
+   "unit": "fraction"
+  },
+  "q18_n500_10y_first_age_above_half": {
+   "value": 99,
+   "unit": "months"
+  },
+  "q18_n500_10y_corr_12m_1995_2004": {
+   "value": -0.56446975,
+   "unit": "ratio"
+  },
+  "q18_n500_10y_corr_12m_2005_on": {
+   "value": -0.12939682,
+   "unit": "ratio"
+  },
+  "q18_n500_15y_corr_6m": {
+   "value": -0.23409388,
+   "unit": "ratio"
+  },
+  "q18_n500_15y_corr_12m": {
+   "value": -0.35639706,
+   "unit": "ratio"
+  },
+  "q18_n500_15y_corr_24m": {
+   "value": -0.36055517,
+   "unit": "ratio"
+  },
+  "q18_n500_15y_corr_36m": {
+   "value": -0.21019057,
+   "unit": "ratio"
+  },
+  "q18_n500_15y_corr_60m": {
+   "value": 0.17611474,
+   "unit": "ratio"
+  },
+  "q18_n500_15y_corr_84m": {
+   "value": 0.24523022,
+   "unit": "ratio"
+  },
+  "q18_n500_15y_first_age_above_half": {
+   "value": 93,
+   "unit": "months"
+  },
+  "q18_mid150_10y_corr_6m": {
+   "value": -0.13715984,
+   "unit": "ratio"
+  },
+  "q18_mid150_10y_corr_12m": {
+   "value": -0.04820144,
+   "unit": "ratio"
+  },
+  "q18_mid150_10y_corr_24m": {
+   "value": 0.24143617,
+   "unit": "ratio"
+  },
+  "q18_mid150_10y_corr_36m": {
+   "value": 0.6215738,
+   "unit": "ratio"
+  },
+  "q18_mid150_10y_corr_60m": {
+   "value": -0.28901202,
+   "unit": "ratio"
+  },
+  "q18_mid150_10y_corr_84m": {
+   "value": 0.17196926,
+   "unit": "ratio"
+  },
+  "q18_mid150_10y_first_age_above_half": {
+   "value": 33,
+   "unit": "months"
+  },
+  "q18_small250_10y_corr_6m": {
+   "value": -0.11854417,
+   "unit": "ratio"
+  },
+  "q18_small250_10y_corr_12m": {
+   "value": -0.1042808,
+   "unit": "ratio"
+  },
+  "q18_small250_10y_corr_24m": {
+   "value": 0.13621699,
+   "unit": "ratio"
+  },
+  "q18_small250_10y_corr_36m": {
+   "value": 0.54862594,
+   "unit": "ratio"
+  },
+  "q18_small250_10y_corr_60m": {
+   "value": -0.39393628,
+   "unit": "ratio"
+  },
+  "q18_small250_10y_corr_84m": {
+   "value": 0.02325394,
+   "unit": "ratio"
+  },
+  "q18_small250_10y_first_age_above_half": {
+   "value": 33,
+   "unit": "months"
+  },
+  "q18_P18_holds": {
+   "value": true,
+   "unit": "text"
+  },
+  "q19_pe12_median": {
+   "value": 18.9,
+   "unit": "ratio"
+  },
+  "q19_red_cheap_p50": {
+   "value": 0.14842106,
+   "unit": "fraction"
+  },
+  "q19_red_dear_p50": {
+   "value": 0.14268067,
+   "unit": "fraction"
+  },
+  "q19_red_cheap_n": {
+   "value": 38,
+   "unit": "count"
+  },
+  "q19_red_dear_n": {
+   "value": 23,
+   "unit": "count"
+  },
+  "q19_red_cheap_episodes": {
+   "value": 11,
+   "unit": "count"
+  },
+  "q19_red_dear_episodes": {
+   "value": 8,
+   "unit": "count"
+  },
+  "q19_corr_red": {
+   "value": -0.1542326,
+   "unit": "ratio"
+  },
+  "q19_corr_all": {
+   "value": -0.29164954,
+   "unit": "ratio"
+  },
+  "q19_P19_holds": {
+   "value": false,
+   "unit": "text"
+  },
+  "q19_red_cheap_p50_startpe": {
+   "value": 0.16578861,
+   "unit": "fraction",
+   "note": "P/E at the start month"
+  },
+  "q19_red_dear_p50_startpe": {
+   "value": 0.14048316,
+   "unit": "fraction"
+  },
+  "q19_pe_now": {
+   "value": 19.33,
+   "unit": "ratio",
+   "note": "Nifty 50 trailing P/E on 2026-10-14, consolidated earnings basis"
+  },
+  "q19_pe_now_pctile": {
+   "value": 0.35160544,
+   "unit": "fraction",
+   "note": "percentile against 1999 to now (bases differ before 2021)"
+  },
+  "q19_fd_now": {
+   "value": 6.7,
+   "unit": "pct"
+  },
+  "q19_fd_now_pctile": {
+   "value": 0.25336091,
+   "unit": "fraction",
+   "note": "against every day since 1995"
+  },
+  "q20_trend_growth": {
+   "value": 0.2325049,
+   "unit": "fraction",
+   "note": "yearly growth of SIP inflows, log-linear trend"
+  },
+  "q20_n500_industry": {
+   "value": 0.11171912,
+   "unit": "fraction"
+  },
+  "q20_n500_constant": {
+   "value": 0.12391409,
+   "unit": "fraction"
+  },
+  "q20_n500_trend": {
+   "value": 0.1130728,
+   "unit": "fraction"
+  },
+  "q20_n500_industry_minus_trend": {
+   "value": -0.00135368,
+   "unit": "fraction"
+  },
+  "q20_n500_index": {
+   "value": 0.13616073,
+   "unit": "fraction"
+  },
+  "q20_n500_industry_ex12": {
+   "value": 0.15206849,
+   "unit": "fraction"
+  },
+  "q20_n500_trend_ex12": {
+   "value": 0.15361135,
+   "unit": "fraction"
+  },
+  "q20_mid150_industry": {
+   "value": 0.16771657,
+   "unit": "fraction"
+  },
+  "q20_mid150_constant": {
+   "value": 0.17453504,
+   "unit": "fraction"
+  },
+  "q20_mid150_trend": {
+   "value": 0.16961607,
+   "unit": "fraction"
+  },
+  "q20_mid150_industry_minus_trend": {
+   "value": -0.0018995,
+   "unit": "fraction"
+  },
+  "q20_small250_industry": {
+   "value": 0.16706901,
+   "unit": "fraction"
+  },
+  "q20_small250_constant": {
+   "value": 0.16819268,
+   "unit": "fraction"
+  },
+  "q20_small250_trend": {
+   "value": 0.16957026,
+   "unit": "fraction"
+  },
+  "q20_small250_industry_minus_trend": {
+   "value": -0.00250125,
+   "unit": "fraction"
+  },
+  "q21_1995_2015_falls": {
+   "value": 11,
+   "unit": "count"
+  },
+  "q21_1995_2015_median_depth": {
+   "value": -0.2006323,
+   "unit": "fraction"
+  },
+  "q21_1995_2015_worst_depth": {
+   "value": -0.67020596,
+   "unit": "fraction"
+  },
+  "q21_1995_2015_median_recovery": {
+   "value": 6.04467806,
+   "unit": "months"
+  },
+  "q21_2016_on_falls": {
+   "value": 7,
+   "unit": "count"
+  },
+  "q21_2016_on_median_depth": {
+   "value": -0.15642209,
+   "unit": "fraction"
+  },
+  "q21_2016_on_worst_depth": {
+   "value": -0.38105932,
+   "unit": "fraction"
+  },
+  "q21_2016_on_median_recovery": {
+   "value": 8.26215506,
+   "unit": "months"
+  },
+  "q22_life_latest": {
+   "value": 1.79739857,
+   "unit": "years",
+   "note": "outstanding accounts / closures in the last 12 months"
+  },
+  "q22_life_max_outside_cleanup": {
+   "value": 4.91724276,
+   "unit": "years"
+  },
+  "q22_life_min_outside_cleanup": {
+   "value": 1.79169235,
+   "unit": "years"
+  },
+  "q22_life_min_with_cleanup": {
+   "value": 1.38223,
+   "unit": "years"
+  },
+  "q22_P22_holds": {
+   "value": true,
+   "unit": "text"
+  },
+  "q22_life_new_flow_latest": {
+   "value": 1.50821352,
+   "unit": "years",
+   "note": "using new accounts as the flow"
+  },
+  "q22_stoppage_latest": {
+   "value": 0.78533038,
+   "unit": "ratio"
+  },
+  "q22_stoppage_max": {
+   "value": 3.52792871,
+   "unit": "ratio"
+  },
+  "q22_inflow_per_account_latest": {
+   "value": 2983.74506383,
+   "unit": "rupees"
+  },
+  "q22_corr_closures_trailing": {
+   "value": 0.02633205,
+   "unit": "ratio",
+   "note": "descriptive; clean-up months left out"
+  },
+  "x0_fy26_cohort_12m": {
+   "value": -0.1001027,
+   "unit": "fraction",
+   "note": "Nifty 500 SIP April 2025 to March 2026, value against money put in"
+  },
+  "x0_fy26_cohort_pctile": {
+   "value": 0.11891892,
+   "unit": "fraction",
+   "note": "share of 12-month results since 1995 that were worse"
+  },
+  "x0_fy26_cohort_xirr": {
+   "value": -0.18187401,
+   "unit": "fraction"
+  }
+ },
+ "context_numbers": {
+  "sip_amount": 10000.0,
+  "calculator_rate_pct": 12
+ },
+ "labels": {
+  "data_end": "14 October 2026",
+  "menu_from": "April 2005",
+  "q3_n500_from": "January 1995",
+  "q3_n50_from": "June 1999",
+  "q8_best_year": "1997",
+  "q8_worst_year": "2010",
+  "q15_n500_deepest_start": "October 2007",
+  "q15_n500_longest_start": "January 2000",
+  "q20_from": "April 2016",
+  "q20_to": "September 2026",
+  "q22_latest_month": "September 2026",
+  "q22_stoppage_max_month": "April 2025"
+ },
+ "allow_phrases": [
+  "Nifty 500",
+  "Nifty 50",
+  "Midcap 150",
+  "Smallcap 250",
+  "60/40",
+  "60/20/20",
+  "G-sec 5-year",
+  "₹1 crore"
+ ],
+ "checks": {
+  "input_no_duplicates[d]": {
+   "passed": true,
+   "detail": "0 duplicate rows on ['d']"
+  },
+  "input_daily_move[Nifty 500]": {
+   "passed": true,
+   "detail": "0 of 7876 values outside [-0.25, 0.25]"
+  },
+  "input_daily_move[Nifty 50]": {
+   "passed": true,
+   "detail": "0 of 6788 values outside [-0.25, 0.25]"
+  },
+  "input_daily_move[Nifty Midcap 150]": {
+   "passed": true,
+   "detail": "0 of 5341 values outside [-0.25, 0.25]"
+  },
+  "input_daily_move[Nifty Smallcap 250]": {
+   "passed": true,
+   "detail": "0 of 5341 values outside [-0.25, 0.25]"
+  },
+  "input_daily_move[Gold]": {
+   "passed": true,
+   "detail": "0 of 6509 values outside [-0.25, 0.25]"
+  },
+  "input_daily_move[G-sec 5-year]": {
+   "passed": true,
+   "detail": "0 of 6241 values outside [-0.25, 0.25]"
+  },
+  "input_cpi_monthly_change": {
+   "passed": true,
+   "detail": "0 of 455 values outside [-0.05, 0.08]"
+  },
+  "q1:era_split": {
+   "passed": true,
+   "detail": "below-FD and loss shares split at 2005 starts recorded for 5 and 10 years"
+  },
+  "q1:robustness": {
+   "passed": true,
+   "detail": "FD at the bottom of RBI's range and after-tax versions recorded"
+  },
+  "q2:era_split": {
+   "passed": true,
+   "detail": "10-year medians by era recorded"
+  },
+  "q2:robustness": {
+   "passed": true,
+   "detail": "Nifty 50 from 1999 recorded"
+  },
+  "q3:era_split": {
+   "passed": true,
+   "detail": "real 10-year medians by era recorded"
+  },
+  "q4:era_split": {
+   "passed": true,
+   "detail": "not possible within the menu's 2005 window; back-calculated mid/small-cap history flagged instead"
+  },
+  "q4:robustness": {
+   "passed": true,
+   "detail": "Nifty 50 recorded as the large-cap line beside the Nifty 500"
+  },
+  "q5:robustness": {
+   "passed": true,
+   "detail": "60/40 and equal thirds recorded beside 60/20/20; 60/20/20 without rebalancing recorded"
+  },
+  "q6:robustness": {
+   "passed": true,
+   "detail": "six-monthly rebalancing and 15-year windows recorded"
+  },
+  "q7:era_split": {
+   "passed": true,
+   "detail": "10-year ranges by era recorded"
+  },
+  "q8:era_split": {
+   "passed": true,
+   "detail": "band medians by era recorded"
+  },
+  "q9:era_split": {
+   "passed": true,
+   "detail": "glide outcome by era recorded"
+  },
+  "q9:robustness": {
+   "passed": true,
+   "detail": "12-month switch and FD at the bottom of the range recorded"
+  },
+  "q10:era_split": {
+   "passed": true,
+   "detail": "15-year 80% amounts by era recorded"
+  },
+  "q10:robustness": {
+   "passed": true,
+   "detail": "real ₹1 crore and 60/20/20 recorded"
+  },
+  "q11:era_split": {
+   "passed": true,
+   "detail": "lump sum and FD-then-April by era recorded"
+  },
+  "q12:truncation_stable": {
+   "passed": true,
+   "detail": "P/E 'cheap' flags for 168 months to 2015-12-31 identical when later data is removed"
+  },
+  "q12:robustness": {
+   "passed": true,
+   "detail": "Nifty 50 cost effect recorded; 15-year date effect not computed (see notes)"
+  },
+  "q13:robustness": {
+   "passed": true,
+   "detail": "no exit load and ₹50,000 a month recorded"
+  },
+  "q14:era_split": {
+   "passed": true,
+   "detail": "correlations by era recorded"
+  },
+  "q14:robustness": {
+   "passed": true,
+   "detail": "Smallcap 250 and gold recorded"
+  },
+  "q15:era_split": {
+   "passed": true,
+   "detail": "longest stretch by era recorded"
+  },
+  "q16:era_split": {
+   "passed": true,
+   "detail": "red and rest medians by era recorded"
+  },
+  "q16:robustness": {
+   "passed": true,
+   "detail": "24 months, 1% expense ratio and 15-year ending recorded"
+  },
+  "q17:era_split": {
+   "passed": true,
+   "detail": "A-beat shares by era recorded"
+  },
+  "q17:robustness": {
+   "passed": true,
+   "detail": "untaxed FD, FD at the bottom of range, 24 months and the other three indices recorded"
+  },
+  "q18:era_split": {
+   "passed": true,
+   "detail": "12-month correlation by era recorded"
+  },
+  "q18:robustness": {
+   "passed": true,
+   "detail": "Midcap 150, Smallcap 250 and 15-year ending recorded"
+  },
+  "q19:era_split": {
+   "passed": true,
+   "detail": "not possible: about 1.7 independent windows; recorded as such"
+  },
+  "q19:robustness": {
+   "passed": true,
+   "detail": "P/E at the start month recorded"
+  },
+  "q20:robustness": {
+   "passed": true,
+   "detail": "Midcap 150 and Smallcap 250 recorded"
+  },
+  "q22:robustness": {
+   "passed": true,
+   "detail": "with the clean-up months and with new accounts as the flow recorded"
+  }
+ },
+ "exploratory_tried": []
+}

@@ -1,0 +1,38 @@
+[
+{
+"asset": "Nifty 500",
+"ever_red": 0.9634146341463414,
+"deepest": -0.44292124481489326,
+"longest": 23
+},
+{
+"asset": "Nifty 50",
+"ever_red": 0.967479674796748,
+"deepest": -0.4070554113458601,
+"longest": 20
+},
+{
+"asset": "Nifty Midcap 150",
+"ever_red": 0.9512195121951219,
+"deepest": -0.5157084580283691,
+"longest": 22
+},
+{
+"asset": "Nifty Smallcap 250",
+"ever_red": 0.967479674796748,
+"deepest": -0.5423755524701654,
+"longest": 33
+},
+{
+"asset": "Gold",
+"ever_red": 0.8739837398373984,
+"deepest": -0.1540542206106612,
+"longest": 23
+},
+{
+"asset": "G-sec 5-year",
+"ever_red": 0.5447154471544715,
+"deepest": -0.04293639933286486,
+"longest": 6
+}
+]

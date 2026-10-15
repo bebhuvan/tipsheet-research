@@ -1,0 +1,155 @@
+[
+{
+"asset": "Nifty 500",
+"horizon": 10,
+"confidence": 0.5,
+"flat": 38912.89277099498,
+"starts": 262,
+"stepup_first_year": 27233.634622538706,
+"real": 26661.78626594225
+},
+{
+"asset": "Nifty 500",
+"horizon": 10,
+"confidence": 0.8,
+"flat": 44725.91003301799,
+"starts": 262,
+"stepup_first_year": 30804.55959267735,
+"real": 33305.21956809527
+},
+{
+"asset": "Nifty 500",
+"horizon": 10,
+"confidence": 0.95,
+"flat": 50087.705138968384,
+"starts": 262,
+"stepup_first_year": 34268.273090136,
+"real": 38616.259426597484
+},
+{
+"asset": "Nifty 500",
+"horizon": 15,
+"confidence": 0.5,
+"flat": 16454.553162268836,
+"starts": 202,
+"stepup_first_year": 9964.669201718403,
+"real": 11585.104532224133
+},
+{
+"asset": "Nifty 500",
+"horizon": 15,
+"confidence": 0.8,
+"flat": 19458.957712583426,
+"starts": 202,
+"stepup_first_year": 11131.62366273583,
+"real": 16042.300234532955
+},
+{
+"asset": "Nifty 500",
+"horizon": 15,
+"confidence": 0.95,
+"flat": 22809.922806930506,
+"starts": 202,
+"stepup_first_year": 13041.076064623225,
+"real": 18167.14232904411
+},
+{
+"asset": "Nifty 500",
+"horizon": 20,
+"confidence": 0.5,
+"flat": 7700.445845956639,
+"starts": 142,
+"stepup_first_year": 4197.259678870954,
+"real": 5702.530108968644
+},
+{
+"asset": "Nifty 500",
+"horizon": 20,
+"confidence": 0.8,
+"flat": 9003.86664804919,
+"starts": 142,
+"stepup_first_year": 4618.079549058623,
+"real": 7914.6379568043585
+},
+{
+"asset": "Nifty 500",
+"horizon": 20,
+"confidence": 0.95,
+"flat": 9967.765550793223,
+"starts": 142,
+"stepup_first_year": 5080.779632238783,
+"real": 9170.286621863168
+},
+{
+"asset": "60/20/20",
+"horizon": 10,
+"confidence": 0.5,
+"flat": 43750.2011298504,
+"starts": 139,
+"real": 33946.195530993136
+},
+{
+"asset": "60/20/20",
+"horizon": 10,
+"confidence": 0.8,
+"flat": 48420.05046945029,
+"starts": 139,
+"real": 36352.249373153165
+},
+{
+"asset": "60/20/20",
+"horizon": 10,
+"confidence": 0.95,
+"flat": 50796.31969803125,
+"starts": 139,
+"real": 37928.395613468085
+},
+{
+"asset": "60/20/20",
+"horizon": 15,
+"confidence": 0.5,
+"flat": 19707.92636913532,
+"starts": 79,
+"real": 17068.8185165436
+},
+{
+"asset": "60/20/20",
+"horizon": 15,
+"confidence": 0.8,
+"flat": 20882.079879314733,
+"starts": 79,
+"real": 17736.00051955363
+},
+{
+"asset": "60/20/20",
+"horizon": 15,
+"confidence": 0.95,
+"flat": 23124.301433915196,
+"starts": 79,
+"real": 18337.76591057701
+},
+{
+"asset": "60/20/20",
+"horizon": 20,
+"confidence": 0.5,
+"flat": 9268.651472071473,
+"starts": 19,
+"real": 8802.36646054144
+},
+{
+"asset": "60/20/20",
+"horizon": 20,
+"confidence": 0.8,
+"flat": 9438.452121982871,
+"starts": 19,
+"real": 9200.626903536535
+},
+{
+"asset": "60/20/20",
+"horizon": 20,
+"confidence": 0.95,
+"flat": 9828.428023347105,
+"starts": 19,
+"real": 9451.00841580527
+}
+]
