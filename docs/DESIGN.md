@@ -87,6 +87,10 @@ The owner's own sites set the bar: This Indian Life (thisindianlife.today) and H
 
 The old bench's router with role profiles, nine critics, red team, reader panel, scoreboard, mock calibration, state machine, three tiers of work, and the public-repo export. Each can return when a real study shows it is needed.
 
+## Canonical studies (decided 2026-10-15)
+
+The owner wants a few reference pieces that cover a topic completely, starting with SIPs. A canonical study keeps the argument by organising its many questions into chapters, each making one claim, and naming three to five headline findings for the deep treatment (`guides/questions.md`, "Two shapes"). It marks each question as known (a replication of earlier work, with its earlier value as a target) or new (frozen with a prediction). `desk check` accepts up to 24 questions when chapters and headline findings are present.
+
 ## Public by default (decided 2026-10-15)
 
 The repository is public, so the method can be checked as well as the results:

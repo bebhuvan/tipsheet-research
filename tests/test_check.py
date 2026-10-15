@@ -212,3 +212,14 @@ def test_scrub_removes_local_paths():
     from desk.config import ROOT, scrub
     s = scrub(f"error in {ROOT}/studies/x/compute.py and {Path.home()}/secret")
     assert str(Path.home()) not in s and "./studies/x/compute.py" in s
+
+
+def test_canonical_plan_shape(study):
+    d, _ = study
+    canon = PLAN.replace("## Sub-questions", "## Headline findings\n\nQ1.\n\n## Chapter 1. First claim").replace(
+        "### Q2.", "## Chapter 2. Second claim\n\n### Q2.")
+    (d / "plan.md").write_text(canon)
+    S = Study(SLUG)
+    assert S.chapters() == ["First claim", "Second claim"] and not S.plan_problems()
+    (d / "plan.md").write_text(canon.replace("## Headline findings", "## Highlights"))
+    assert any("Headline findings" in p for p in Study(SLUG).plan_problems())

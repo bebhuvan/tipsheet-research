@@ -6,6 +6,18 @@ This step decides whether a study is worth reading. Both early pilots failed her
 
 One big question a real investor has, broken into three to five sub-questions. Together the answers make an argument: by the end the reader believes something they didn't, or believes it for better reasons. Each sub-question is either a real test, with a plausible answer either way, or a needed step towards one.
 
+## Two shapes
+
+- **A study** (the default): one big question, three to five sub-questions, one argument.
+- **A canonical study**: the site's reference piece on a big topic (SIPs, IPOs, index funds). It takes as many questions as the topic honestly demands, organised so it still argues rather than lists:
+  - **Chapters** (`## Chapter 1. …`, two to seven), each making one claim the reader can repeat. The chapters in order form the argument.
+  - **Sub-questions** inside chapters (`### Q1.`, numbered through the whole plan, at most 24).
+  - **Headline findings** (`## Headline findings`): the three to five questions that get the deep treatment in the article (mechanism, rupee story, the big chart). Every other question is answered compactly: one chart, a short answer, its number.
+  - **Status per question**: `new` (frozen here, with a prediction) or `known` (already computed elsewhere: say where, give the earlier value as a replication target, no prediction). A canonical study often re-verifies a lot of known results with fresh code; that is useful, as long as it is labelled.
+  - **No silent gaps.** Every obvious question on the topic is either in a chapter, answered as naive context, or listed under "Questions I won't ask" with its reason.
+
+The October SIP article failed as a canonical piece: seventeen questions at equal depth, no chapters, no argument. The chapter claims and the headline findings exist to prevent that.
+
 ## The procedure
 
 ### 1. State the big question in the reader's words

@@ -64,11 +64,23 @@ class Study:
             out.append(Question(qid, title, checks))
         return out
 
+    def chapters(self) -> list[str]:
+        """Chapter titles of a canonical study (`## Chapter 1. …`), in order."""
+        return re.findall(r"^## Chapter \d+\.\s*(.+)$", above_amendments(self.plan), flags=re.M)
+
     def plan_problems(self) -> list[str]:
         probs = []
         qs = self.questions()
-        if not 1 <= len(qs) <= 6:
-            probs.append(f"plan has {len(qs)} sub-questions; the desk wants three to five")
+        chapters = self.chapters()
+        if chapters:
+            if not 2 <= len(chapters) <= 7:
+                probs.append(f"canonical plan has {len(chapters)} chapters; the desk wants two to seven")
+            if not 1 <= len(qs) <= 24:
+                probs.append(f"canonical plan has {len(qs)} sub-questions; the desk caps it at 24")
+            if not re.search(r"^## Headline findings\b", self.plan, flags=re.M):
+                probs.append("canonical plan needs a '## Headline findings' section naming the 3-5 questions told in depth")
+        elif not 1 <= len(qs) <= 6:
+            probs.append(f"plan has {len(qs)} sub-questions; the desk wants three to five (or chapters: guides/questions.md)")
         for q in qs:
             sec = re.search(rf"^### {q.id.upper()}\..*?(?=^### |^## |\Z)", self.plan, flags=re.M | re.S).group(0)
             if not re.search(r"\*\*Checks:\*\*", sec):
