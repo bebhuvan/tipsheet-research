@@ -1,27 +1,27 @@
 {
- "results_sha256": "c73fea75c2355fc5a6530c67423062b2b5b3639cc8bf324090aa7dad068aa9a2",
+ "results_sha256": "07a1faca919026ac8dca999302494106538eaa61ebc5cbd4379ba8313e37ba73",
  "attempts": [
   {
    "attempt": 0,
    "model": "deepseek-flash",
-   "inr": 3.45,
+   "inr": 4.23,
    "ok": false,
-   "error": " "
+   "error": "Traceback (most recent call last):\n  File \"./desk/_sandbox_boot.py\", line 153, in <module>\n    main()\n    ~~~~^^\n  File \"./desk/_sandbox_boot.py\", line 149, in main\n    runpy.run_path(SCRIPT, run_name=\"__main__\")\n    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen runpy>\", line 287, in run_path\n  File \"<frozen runpy>\", line 98, in _run_module_code\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"./.cache/recompute/does-sip-work/script_0.py\", line 240, in <module>\n    fd_C = fd_single(last_dates_ts[k+11], proceeds, last_dates_ts[k+119])\n  File \"./.cache/recompute/does-sip-work/script_0.py\", line 67, in fd_single\n    if a >= b:\n       ^^^^^^\nTypeError: '>=' not supported between instances of 'Timestamp' and 'numpy.float64'\n "
   },
   {
    "attempt": 1,
    "model": "deepseek-flash",
-   "inr": 1.9,
+   "inr": 0.65,
    "ok": true,
    "error": ""
   }
  ],
  "ambiguities": [
-  "Months: used every calendar month with at least one session from Jan-1995 through Sep-2026 (ordering assumed contiguous); Oct-2026 dropped.",
-  "'In the red' and 'lost money' use strict '<' (value below money put in).",
-  "FD tax at the final valuation date is applied even when that date is not 31 March, as the specification states.",
-  "Path D keeps a single 'paused' flag that, once cleared, is never re-armed; the resumed SIP buys units for every later month.",
-  "AMFI industry/trend SIPs value all units at the level of the very last row of tri_500.parquet."
+  "Tax on 31 March is applied to interest accrued up to the start of 31 March (growth through 30 March); growth on 31 March belongs to the next segment. Same for final date, tax applies to growth up to final date (exclusive of final day).",
+  "For SIPs in the red at age 12 with no instalments bought while red (money_share = 0), the ratio is undefined and such SIPs are excluded from the median of units-to-money ratio.",
+  "For AMFI trend SIP, the same months as industry XIRR (April 2016 to latest month in amfi_sip) are used, with n=0 for April 2016.",
+  "For FD, if a deposit is made on 31 March, no tax event is applied on that date for that deposit (interest zero), and the first tax event is the next 31 March.",
+  "For running XIRR at age a, the final value is at the last session of month k+a-1, using the first a instalments."
  ],
  "rows": [
   {
@@ -118,14 +118,14 @@
   {
    "key": "q17_n500_m12_gap_C_p50",
    "ours": 1482046.15292757,
-   "theirs": 1482046.1529275388,
+   "theirs": 1482046.1529275384,
    "tolerance": 2000.0,
    "match": true
   },
   {
    "key": "q18_n500_10y_corr_12m",
    "ours": -0.3465821,
-   "theirs": -0.3465821003526043,
+   "theirs": -0.34658210035260434,
    "tolerance": 0.01,
    "match": true
   },
@@ -139,7 +139,7 @@
   {
    "key": "q18_n500_10y_corr_60m",
    "ours": -0.0203112,
-   "theirs": -0.02031119522814856,
+   "theirs": -0.020311195228148563,
    "tolerance": 0.01,
    "match": true
   },

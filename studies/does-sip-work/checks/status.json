@@ -1,5 +1,5 @@
 {
- "at": "2026-10-15T08:49:29+00:00",
+ "at": "2026-10-15T09:00:08+00:00",
  "items": [
   {
    "check": "plan_shape",
@@ -49,12 +49,12 @@
   {
    "check": "numbers_traced",
    "status": "ok",
-   "detail": "702 figures checked, 0 untraced",
+   "detail": "773 figures checked, 0 untraced",
    "failures": [],
    "warnings": [
     {
      "text": "1.2",
-     "sentence": "In April 2025, someone who started a ₹10,000-a-month SIP in the Nifty 500 had put in ₹1.2 lakh by March 2026.",
+     "sentence": "In April 2025, someone who started a ₹10,000-a-month SIP (a systematic investment plan: the same amount into a fund every month) in the Nifty 500, an index of India's largest listed companies, had put in ₹1.2 lakh by March 2026.",
      "why": "matches 5 facts; the claims critic must confirm the sentence uses the right one"
     },
     {
@@ -204,7 +204,7 @@
     {
      "rule": "long_sentence",
      "severity": "warn",
-     "line": 316,
+     "line": 342,
      "text": "What not to conclude: that SIPs always win (small caps lost money over ten years in one start month, and the next 30 yea…",
      "message": "49 words; split it."
     }
@@ -227,13 +227,13 @@
   },
   {
    "check": "recompute",
-   "status": "fail",
-   "detail": "recompute ran on older results; run it again"
+   "status": "ok",
+   "detail": "23 headline numbers matched"
   },
   {
    "check": "review_answered",
    "status": "ok",
-   "detail": "13 issues handled"
+   "detail": "9 issues handled"
   },
   {
    "check": "audit",
@@ -248,7 +248,7 @@
   {
    "check": "budget",
    "status": "ok",
-   "detail": "₹51 of ₹250"
+   "detail": "₹61 of ₹250"
   },
   {
    "check": "human_read",

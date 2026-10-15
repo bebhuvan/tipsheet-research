@@ -12,3 +12,6 @@
 {"at": "2026-10-15T08:34:51+00:00", "role": "recompute", "purpose": "audit batch 3, attempt 1", "model": "deepseek-flash", "tokens_in": 14362, "tokens_out": 30972, "usd": 0.04147, "inr": 3.65}
 {"at": "2026-10-15T08:37:27+00:00", "role": "recompute", "purpose": "audit batch 4, attempt 0", "model": "deepseek-flash", "tokens_in": 11049, "tokens_out": 31999, "usd": 0.04171, "inr": 3.67}
 {"at": "2026-10-15T08:40:01+00:00", "role": "recompute", "purpose": "audit batch 4, attempt 1", "model": "deepseek-flash", "tokens_in": 11049, "tokens_out": 32000, "usd": 0.04171, "inr": 3.67}
+{"at": "2026-10-15T08:53:43+00:00", "role": "recompute", "purpose": "attempt 0", "model": "deepseek-flash", "tokens_in": 2738, "tokens_out": 39360, "usd": 0.04805, "inr": 4.23}
+{"at": "2026-10-15T08:54:02+00:00", "role": "recompute", "purpose": "attempt 1", "model": "deepseek-flash", "tokens_in": 7288, "tokens_out": 4363, "usd": 0.00742, "inr": 0.65}
+{"at": "2026-10-15T08:58:55+00:00", "role": "review", "purpose": "review attempt 0", "model": "gemini-3.8-flash", "tokens_in": 61855, "tokens_out": 3673, "usd": 0.06017, "inr": 5.29}

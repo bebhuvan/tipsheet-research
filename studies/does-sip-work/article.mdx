@@ -17,9 +17,9 @@ signed_off: { by: null, on: null }
 
 import F from "./figures.json";
 
-In April 2025, someone who started a ₹10,000-a-month SIP in the Nifty 500 had put in ₹1.2 lakh by March 2026. Their statement said it was worth about ₹1.08 lakh: 10% down, and an XIRR (the annualised return across dated instalments that the app shows) of −18% a year. Only 12% of first years since 1995 had been worse. Two stories went around at once. One said SIPs never lose over the long run, so ignore it. The other said SIP is broken: the success stories came from cheap markets and 12% deposits, and they won't repeat.
+In April 2025, someone who started a ₹10,000-a-month SIP (a systematic investment plan: the same amount into a fund every month) in the Nifty 500, an index of India's largest listed companies, had put in ₹1.2 lakh by March 2026. Their statement said it was worth about ₹1.08 lakh: 10% down, and an XIRR (the annualised return across dated instalments that the app shows) of −18% a year. Only 12% of first years since 1995 had been worse. Two stories went around at once. One said SIPs never lose over the long run, so ignore it. The other said SIP is broken: the success stories came from cheap markets and 12% deposits, and they won't repeat.
 
-AMFI counted about 10.9 crore SIP accounts open in September 2026, so the question is not a small one. Both stories are about a method, and a SIP is barely a method. It is a way of paying into an investment a little at a time. What it pays into, for how long, and what the market does along the way decide almost everything. I wanted to know how much each of those things matters, which popular beliefs about SIPs hold up, and what the data says to someone whose SIP is in the red today.
+The Association of Mutual Funds in India (AMFI), the industry body, counted about 10.9 crore SIP accounts open in September 2026, so the question is not a small one. Both stories are about a method, and a SIP is barely a method. It is a way of paying into an investment a little at a time. What it pays into, for how long, and what the market does along the way decide almost everything. I wanted to know how much each of those things matters, which popular beliefs about SIPs hold up, and what the data says to someone whose SIP is in the red today.
 
 So I took every month since January 1995 as a possible start, ran a ₹10,000-a-month SIP from each, and followed it. That is more than 30 years of the Nifty 500 total-return index, which includes dividends, plus mid caps, small caps, gold, government bonds and mixes of them from 2005. I answered 22 questions in six chapters. Before computing any of it, I wrote down what I expected for each new question and froze those predictions in a public repository. Of the eleven predictions, four held. The ones that failed are some of the most useful findings here.
 
@@ -44,11 +44,11 @@ So I took every month since January 1995 as a possible start, ran a ₹10,000-a-
 
 Over ten years, never; over one year, often. A Nifty 500 SIP started in any month since January 1995 lost money in 29% of one-year windows, 16% of three-year windows, 7% of five-year windows and none of the ten-year ones. From eight years on, no start month lost money.
 
-That is the reassuring half. The catch is that "didn't lose money" is a low bar. The real alternative for most savers is a fixed deposit, and an FD is a much tougher bar than zero. Against the same ₹10,000 a month in FDs at banks' one-to-three-year rate, with the interest taxed every year at 30% plus cess, the SIP ended behind in 38% of one-year windows, 25% of three-year windows and 16% of five-year windows. At ten years, it was 0.4%.
+That is the reassuring half. The catch is that "didn't lose money" is a low bar. The real alternative for most savers is a fixed deposit, and an FD is a much tougher bar than zero. Against the same ₹10,000 a month in FDs at banks' one-to-three-year rate, with the interest taxed every year at 30% plus cess, the SIP ended behind in 38% of one-year windows, 25% of three-year windows and 16% of five-year windows. At ten years, it was 0.4%. Inflation was a similar bar: the SIP trailed it in 35% of one-year windows, 27% of three-year, 21% of five-year and 16% of seven-year windows, and 0.8% of ten-year ones.
 
 <Figure {...F.q1} />
 
-**How to read it.** Each row is a horizon; each dot is the share of start months that ended badly in one of three ways. Follow any colour downwards and it falls towards zero. The FD line falls last, because beating a deposit is harder than not losing money.
+**How to read it.** Each group of bars is a horizon, and the three bars are the shares of start months that lost money, ended behind an FD, or ended behind inflation. All three shrink as the SIP runs longer. The FD bar shrinks last, because beating a deposit is harder than not losing money.
 
 Why does time fix it? A SIP's result depends on the price at which it ends, compared with the average price at which it bought. Over a year, that comparison is a coin toss weighted slightly towards gains. Over ten years, the market's long rise swamps the timing, and the dips in between become cheap purchases (Chapter 5 shows how much they help).
 
@@ -122,7 +122,7 @@ So the answer depends on the horizon and on you. Over the ten years in this reco
 
 <h3 id="q6">Does rebalancing a diversified SIP each year help?</h3>
 
-Yes, by more than I expected. Rebalancing a 60/20/20 SIP back to its target each April added a median 0.8 points a year over ten years, against splitting each instalment 60/20/20 and never rebalancing. It helped in at least nine in ten start months. I predicted the effect would be within half a point; it wasn't.
+Yes, by more than I expected. Rebalancing a 60/20/20 SIP back to its target each April added a median 0.8 points a year over ten years, against splitting each instalment 60/20/20 and never rebalancing. It helped in at least nine in ten start months. I predicted the effect would be within half a point; it wasn't. I also predicted rebalancing would make the falls shallower. It didn't: the median deepest fall below the money put in was 4.9% with rebalancing and 4.7% without.
 
 <Figure {...F.q6} />
 
@@ -188,7 +188,7 @@ Barely, set against the things that do. Over ten years, for SIPs started from Ap
 
 <Figure {...F.q12} />
 
-**How to read it.** Each row is one change to a plain monthly SIP: the dot is the median effect on the ten-year return, the line the 10th to 90th percentile across start months. The two grey bars at the bottom are the spread between assets (9.8 points) and between start years (17.2 points). Every trick is a sliver beside them.
+**How to read it.** Each row is one change to a plain monthly SIP: the dot is the median effect on the ten-year return, the line the 10th to 90th percentile across start months. The two rows at the bottom, which have no range, are the spread between assets (9.8 points) and between start years (17.2 points). Every trick is a sliver beside them.
 
 Two changes were large, and both hurt. Pausing the SIP during a 20% fall and keeping the paused money in an FD cost 3.8 points a year if the pause lasted until the market regained its old high, and 2.0 points if it lasted only until the market was back within 10% of it. A 1% higher yearly cost, roughly what a regular plan's commission adds, cost 1.1 points a year. Waiting in an FD for 20% falls and investing then added a median 1.2 points, but it rests on two crashes (2008 and 2020) and lost in at least one start month in ten.
 
@@ -260,7 +260,7 @@ The costs were large. Stopping and holding cost a median ₹13.1 lakh by year te
 
 Why so one-sided? Being in the red means the market has fallen, so the paused or switched money goes to a deposit exactly when equities are cheapest. Chapter 1 showed the market's ten-year odds; this is those odds working against the person who leaves.
 
-The result held for the Nifty 50 and the Midcap 150, at 24 months as well as 12, and with untaxed FDs (keeping going still won 99% of the time). Small caps were the one place stopping sometimes paid: keeping going beat stopping and holding in 89% of red start months.
+The 100% held for the Nifty 50 and the Midcap 150 at 12 months. With untaxed FDs, keeping going still won 99% of the time. For SIPs in the red at 24 months it won 98% of the time: in one start month, stopping and holding came out ahead, by ₹1.1 lakh. Small caps were the one place stopping sometimes paid: keeping going beat stopping and holding in 89% of red start months.
 
 I also predicted that stopping would cost most for the SIPs deepest in the red. It was the reverse: switching to FDs cost a median ₹13.8 lakh for SIPs less than 10% in the red, and ₹10.3 lakh for those more than 20% in the red. The deepest-red group is small and comes from one episode, and the money switched out was smaller because the SIP had fallen further.
 
@@ -319,6 +319,32 @@ This needs care. An account is not an investor: one person can hold several SIPs
 | SIP flows killed the deep falls | Falls were shallower since 2016, but the cause can't be separated | Can't tell yet |
 | Investors quit early | The average account lasts about 1.8 years | Agrees |
 
+<h2 id="myths">SIP myths, checked</h2>
+
+| What people say | What the record shows | Verdict |
+|---|---|---|
+| "SIPs never lose money in the long run" | No ten-year Nifty 500 SIP since 1995 lost money; 7% of five-year ones did (Q1) | True at ten years, false at five |
+| "SIPs beat FDs" | 0.4% of ten-year SIPs trailed an FD, but 16% of five-year ones (Q1) | True, given time |
+| "SIP returns beat inflation comfortably" | The typical ten-year SIP returned 8.3% a year after inflation; one in twenty, under 2.0% (Q3) | True, by less than the pitch |
+| "Small-cap SIPs are best for the long run" | A median of 15.3% a year over ten years, but the worst start month lost money and the deepest fall was 54% (Q4) | Not proven |
+| "Debt and gold are for the timid" | 60/20/20 never lost money over five years from 2005 and roughly halved the worst fall, for about a point a year less (Q1, Q4, Q5) | False |
+| "The longer you stay, the less risk" | The yearly spread shrank from 41 points to 3.5, but at 20 years the final value still ran from 4.2 to 6.4 times the money put in (Q2, Q7) | Half true |
+| "Wait for a fall before starting" | 13.6% a year for starts near a high, 14.9% for starts more than 10% below it (Q8) | Barely matters |
+| "Move to safety in the last few years" | Switching to FDs over the last three years ended ahead in 19% of 15-year SIPs (Q9) | Costly in this record |
+| "₹10,000 a month for 20 years makes you a crorepati" | ₹1.30 crore in the typical case, ₹1.00 crore for a bad start, in rupees of the day (Q2) | True in this record, less at current prices |
+| "Lump sum always beats SIP" | With the money in hand, investing at once beat a 12-month STP in 57% of start months; for a salary earner, the monthly SIP beat saving in an FD for a yearly lump in 73% (Q11) | Depends on whether you have the lump sum |
+| "The 25th is a better SIP date", "weekly is better", "step-ups give higher returns" | Each moved the ten-year return by 0.2 points or less (Q12) | Barely matters |
+| "After a year my SIP is long-term" | After two years, 50% of the units were still short-term (Q13) | False |
+| "Volatility is good for SIPs" | A rank correlation of 0.23 with the SIP's edge, and none after 2005 (Q14) | Weak at best |
+| "Rupee cost averaging means you never lose" | 97% of SIPs were below the money put in at some month-end (Q15) | False |
+| "My SIP is negative, so SIPs don't work" | Nifty 500 SIPs in the red at a year went on to 17.9% a year, against 14.1% for the rest (Q16) | False for the broad market |
+| "Stop the SIP when the market falls" | For Nifty 500 SIPs in the red at a year, keeping going won 100% of the time; switching to FDs cost a median ₹14.8 lakh (Q17) | False |
+| "My SIP's first-year return tells me if it's working" | A correlation of −0.35 with the ten-year result (Q18) | False |
+| "The old SIP success stories won't repeat" | The bad-start bonus did not depend on cheap prices in this record, which is too short to say more (Q19) | Can't tell yet |
+| "SIP investors pour in at the top" | Against a fair yardstick, investors' timing cost 0.1 points a year (Q20) | False |
+| "SIP flows have killed deep falls" | Falls were shallower after 2016, but one decade cannot show why (Q21) | Can't tell yet |
+| "Investors are fleeing SIPs" | The April 2025 spike was a clean-up of dormant accounts; but the average account lasts about 1.8 years (Q22) | Misread, but early quitting is real |
+
 <h2 id="meaning">What this means for you</h2>
 
 The SIP itself is not the thing to worry about. Its date, its frequency and the clever rules around it barely matter. Three things do.
@@ -364,4 +390,4 @@ A SIP is just a way of putting money into the market a bit every month. Whether 
 
 The months when your SIP shows a loss are the months it buys cheaply, and those cheap purchases are why SIPs that started badly often ended better. For broad-market SIPs in the red after a year, stopping at that point left people worse off in every case in this record, often by lakhs of rupees.
 
-In this record, the date of a SIP and clever timing rules barely mattered. What mattered was what it bought, how cheaply, and whether it kept going when it hurt. That last part is where most SIPs seem to fall short: going by how fast accounts close, the typical one lasts under two years.
+In this record, the date of a SIP and clever timing rules barely mattered. What mattered was what it bought, how long it ran, and whether it kept going when it hurt. That last part is where most SIPs seem to fall short: going by how fast accounts close, the typical one lasts under two years.
