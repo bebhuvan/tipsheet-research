@@ -1,6 +1,6 @@
 # Does a SIP work? Study plan (canonical)
 
-Status: **draft for approval** (2026-10-15). Frozen at the commit recorded in `freeze.json`. Changes after the freeze go under Amendments.
+Status: **approved by the owner on 2026-10-15**. Frozen at the commit recorded in `freeze.json`. Changes after the freeze go under Amendments.
 
 ## The big question
 
@@ -61,6 +61,7 @@ This redoes the October 2026 study "Is SIP bad?" (portal repository, `research/s
 - **FD:** money accrues daily at the deposit rate (top of range) known on that day. End-March rates are joined by straight lines, since they are point-in-time rates. Interest is taxed yearly at 30% plus 4% cess.
 - **Real returns:** every instalment and the final value deflated by CPI to the start month.
 - **Data end:** the last session in the input when compute runs, recorded in the results.
+- **Figures:** the figures listed under each question are the minimum. Wherever a question needs more views (each index, each horizon, rupees as well as percentages, the spread as well as the median), it gets them, each with its own job (`guides/charts.md`). No two figures show the same fact the same way.
 
 ## Chapter 1. Does it work?
 
