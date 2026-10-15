@@ -1,0 +1,140 @@
+[
+{
+"portfolio": "Nifty 500",
+"horizon": 1,
+"lost": 0.25101214574898784,
+"below_fd": 0.3481781376518219,
+"below_inflation": 0.32388663967611336
+},
+{
+"portfolio": "60/20/20",
+"horizon": 1,
+"lost": 0.145748987854251,
+"below_fd": 0.2550607287449393,
+"below_inflation": 0.242914979757085
+},
+{
+"portfolio": "Equal thirds",
+"horizon": 1,
+"lost": 0.06072874493927125,
+"below_fd": 0.18218623481781376,
+"below_inflation": 0.19838056680161945
+},
+{
+"portfolio": "Nifty 500",
+"horizon": 3,
+"lost": 0.08071748878923767,
+"below_fd": 0.19730941704035873,
+"below_inflation": 0.23766816143497757
+},
+{
+"portfolio": "60/20/20",
+"horizon": 3,
+"lost": 0.03139013452914798,
+"below_fd": 0.09865470852017937,
+"below_inflation": 0.14798206278026907
+},
+{
+"portfolio": "Equal thirds",
+"horizon": 3,
+"lost": 0.0,
+"below_fd": 0.04484304932735426,
+"below_inflation": 0.07623318385650224
+},
+{
+"portfolio": "Nifty 500",
+"horizon": 5,
+"lost": 0.01507537688442211,
+"below_fd": 0.07537688442211055,
+"below_inflation": 0.1658291457286432,
+"deepest": -0.44292124481489326,
+"longest": 23
+},
+{
+"portfolio": "60/20/20",
+"horizon": 5,
+"lost": 0.0,
+"below_fd": 0.005025125628140704,
+"below_inflation": 0.05527638190954774,
+"deepest": -0.2532615925218924,
+"longest": 16
+},
+{
+"portfolio": "Equal thirds",
+"horizon": 5,
+"lost": 0.0,
+"below_fd": 0.0,
+"below_inflation": 0.035175879396984924,
+"deepest": -0.12721319785054497,
+"longest": 11
+},
+{
+"portfolio": "Nifty 500",
+"horizon": 7,
+"lost": 0.0,
+"below_fd": 0.04,
+"below_inflation": 0.14857142857142858
+},
+{
+"portfolio": "60/20/20",
+"horizon": 7,
+"lost": 0.0,
+"below_fd": 0.0,
+"below_inflation": 0.02857142857142857
+},
+{
+"portfolio": "Equal thirds",
+"horizon": 7,
+"lost": 0.0,
+"below_fd": 0.0,
+"below_inflation": 0.0
+},
+{
+"portfolio": "Nifty 500",
+"horizon": 10,
+"lost": 0.0,
+"below_fd": 0.007194244604316547,
+"below_inflation": 0.007194244604316547,
+"deepest": -0.44292124481489326,
+"longest": 23
+},
+{
+"portfolio": "60/20/20",
+"horizon": 10,
+"lost": 0.0,
+"below_fd": 0.0,
+"below_inflation": 0.0,
+"deepest": -0.2532615925218924,
+"longest": 16
+},
+{
+"portfolio": "Equal thirds",
+"horizon": 10,
+"lost": 0.0,
+"below_fd": 0.0,
+"below_inflation": 0.0,
+"deepest": -0.12721319785054497,
+"longest": 11
+},
+{
+"portfolio": "Nifty 500",
+"horizon": 15,
+"lost": 0.0,
+"below_fd": 0.0,
+"below_inflation": 0.0
+},
+{
+"portfolio": "60/20/20",
+"horizon": 15,
+"lost": 0.0,
+"below_fd": 0.0,
+"below_inflation": 0.0
+},
+{
+"portfolio": "Equal thirds",
+"horizon": 15,
+"lost": 0.0,
+"below_fd": 0.0,
+"below_inflation": 0.0
+}
+]

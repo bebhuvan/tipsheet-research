@@ -76,6 +76,13 @@ def run(slug: str) -> list[dict]:
         meta = S.checks_dir / "figures_meta.json"
         fresh = meta.is_file() and read_json(meta).get("results_sha256") == S.results_sha()
         add("figures_fresh", "ok" if fresh else "fail", "" if fresh else "figures.json was not built from the current results")
+        art_now = S.article()
+        if art_now is not None:
+            used = set(re.findall(r"\bF\.([A-Za-z0-9_]+)", art_now[1]))
+            missing, unused = sorted(used - set(figs)), sorted(set(figs) - used)
+            add("figures_used", "fail" if missing else "ok",
+                (f"article uses figures not in figures.json: {', '.join(missing)}" if missing else
+                 f"{len(used)} figures used" + (f"; unused: {', '.join(unused)}" if unused else "")))
         bad = [k for k, x in figs.items() if not all(x.get(f) for f in ("title", "read", "spec", "data"))]
         add("figures_complete", "fail" if bad else "ok",
             ("missing title/read/spec/data: " + ", ".join(bad)) if bad else f"{len(figs)} figures")
@@ -133,6 +140,20 @@ def run(slug: str) -> list[dict]:
         add("review_answered", "fail" if open_ else "ok",
             ("no response in checks/responses.json for " + ", ".join(open_)) if open_ else f"{len(issues)} issues handled")
 
+    au = S.checks_dir / "audit.json"
+    if not au.is_file():
+        add("audit", "pending", "run `desk audit` once the article is final")
+    else:
+        a = read_json(au)
+        resp_path = S.checks_dir / "responses.json"
+        resp = read_json(resp_path) if resp_path.is_file() else {}
+        if a.get("article_sha256") != sha256_file(S.article_path):
+            add("audit", "fail", "the article changed after the audit; run `desk audit` again")
+        else:
+            open_ = [i["id"] for i in a["issues"] if not resp.get(i["id"])]
+            add("audit", "fail" if open_ else "ok", ("no response for " + ", ".join(open_)) if open_ else
+                f"{a['sentences']} sentences audited, {len(a['issues'])} issues handled")
+
     from .report import narrative_missing
     miss = narrative_missing(S)
     add("report", "pending" if miss else "ok", ("run `desk report`, then write: " + "; ".join(miss)) if miss else "REPORT.md written")
@@ -143,7 +164,7 @@ def run(slug: str) -> list[dict]:
     if art is not None:
         so = (art[0].get("signed_off") or {}).get("by")
         add("human_read", "ok" if so else "pending", f"signed off by {so}" if so else
-            "a person reads the article, recomputes three numbers by hand, and sets signed_off")
+            "a person reads the article and sets signed_off (numbers are audited by `desk audit`)")
 
     write_json(S.checks_dir / "status.json", {"at": datetime.now(timezone.utc).isoformat(timespec="seconds"), "items": items})
     return items

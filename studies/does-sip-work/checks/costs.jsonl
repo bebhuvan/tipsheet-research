@@ -4,3 +4,11 @@
 {"at": "2026-10-15T07:58:10+00:00", "role": "review", "purpose": "review attempt 0", "model": "gemini-3.8-flash", "tokens_in": 55313, "tokens_out": 4188, "usd": 0.05719, "inr": 5.03}
 {"at": "2026-10-15T08:05:55+00:00", "role": "recompute", "purpose": "attempt 0", "model": "deepseek-flash", "tokens_in": 2738, "tokens_out": 32000, "usd": 0.03922, "inr": 3.45}
 {"at": "2026-10-15T08:07:22+00:00", "role": "recompute", "purpose": "attempt 1", "model": "deepseek-flash", "tokens_in": 2754, "tokens_out": 17349, "usd": 0.02164, "inr": 1.9}
+{"at": "2026-10-15T08:22:18+00:00", "role": "recompute", "purpose": "audit batch 1, attempt 0", "model": "deepseek-flash", "tokens_in": 13459, "tokens_out": 32000, "usd": 0.04244, "inr": 3.73}
+{"at": "2026-10-15T08:24:43+00:00", "role": "recompute", "purpose": "audit batch 1, attempt 1", "model": "deepseek-flash", "tokens_in": 13459, "tokens_out": 28999, "usd": 0.03884, "inr": 3.42}
+{"at": "2026-10-15T08:27:20+00:00", "role": "recompute", "purpose": "audit batch 2, attempt 0", "model": "deepseek-flash", "tokens_in": 15322, "tokens_out": 32000, "usd": 0.043, "inr": 3.78}
+{"at": "2026-10-15T08:29:55+00:00", "role": "recompute", "purpose": "audit batch 2, attempt 1", "model": "deepseek-flash", "tokens_in": 15322, "tokens_out": 30050, "usd": 0.04066, "inr": 3.58}
+{"at": "2026-10-15T08:32:25+00:00", "role": "recompute", "purpose": "audit batch 3, attempt 0", "model": "deepseek-flash", "tokens_in": 14362, "tokens_out": 32000, "usd": 0.04271, "inr": 3.76}
+{"at": "2026-10-15T08:34:51+00:00", "role": "recompute", "purpose": "audit batch 3, attempt 1", "model": "deepseek-flash", "tokens_in": 14362, "tokens_out": 30972, "usd": 0.04147, "inr": 3.65}
+{"at": "2026-10-15T08:37:27+00:00", "role": "recompute", "purpose": "audit batch 4, attempt 0", "model": "deepseek-flash", "tokens_in": 11049, "tokens_out": 31999, "usd": 0.04171, "inr": 3.67}
+{"at": "2026-10-15T08:40:01+00:00", "role": "recompute", "purpose": "audit batch 4, attempt 1", "model": "deepseek-flash", "tokens_in": 11049, "tokens_out": 32000, "usd": 0.04171, "inr": 3.67}

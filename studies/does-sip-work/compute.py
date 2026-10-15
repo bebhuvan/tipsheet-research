@@ -187,6 +187,71 @@ def q2():
     R.check("robustness", True, "Nifty 50 from 1999 recorded", "q2")
 
 
+def q2_mixes():
+    """Owner's request after results (amendment 2026-10-15): Q1 and Q2 for diversified SIPs. The Nifty 500, 60/20/20 and
+    equal thirds over the same start months from April 2005, rebalanced each April. Exploratory: no prediction."""
+    rows, risk = [], []
+    names = {"Nifty 500": "n500", "60/20/20": "m602020", "Equal thirds": "mthirds"}
+    for y in (1, 3, 5, 7, 10, 15):
+        for name, key in names.items():
+            w = single_menu_windows("Nifty 500", y) if name == "Nifty 500" else (MIXW.get((name, y)) or mix_windows(name, y))
+            h = 12 * y
+            ks = w["k"]
+            dates = [GRID["buy_date"][k:k + h] for k in ks]
+            ends = [GRID["end_date"][k + h - 1] for k in ks]
+            fdv = np.array([FDT.value(d, [AMT] * h, pd.Timestamp(e)) for d, e in zip(dates, ends)])
+            c0 = np.array([SD.deflator(I.cpi, [d[0]])[0] for d in dates])
+            real = E.xirr_flows(dates, [AMT * c / SD.deflator(I.cpi, d) for c, d in zip(c0, dates)], ends,
+                                w["final"] * c0 / SD.deflator(I.cpi, ends))
+            x, inv = w["xirr"], AMT * h
+            tag = f"q2_mix_{key}_{y}y"
+            for p_ in (0.05, 0.5, 0.95):
+                R.fact(f"{tag}_p{int(p_ * 100)}", q(x, p_), "fraction", exploratory=True)
+            R.fact(f"{tag}_worst", float(np.nanmin(x)), "fraction", exploratory=True)
+            R.fact(f"{tag}_lost", float((w["final"] < inv).mean()), "fraction", exploratory=True)
+            R.fact(f"{tag}_below_fd", float((w["final"] < fdv).mean()), "fraction", exploratory=True)
+            R.fact(f"{tag}_below_inflation", float((real < 0).mean()), "fraction", exploratory=True)
+            R.fact(f"{tag}_starts", len(ks), "count", exploratory=True)
+            rows.append({"portfolio": name, "horizon": y, "p5": q(x, .05), "p25": q(x, .25), "p50": med(x), "p75": q(x, .75),
+                         "p95": q(x, .95), "worst": float(np.nanmin(x)), "n": len(ks)})
+            risk.append({"portfolio": name, "horizon": y, "lost": float((w["final"] < inv).mean()),
+                         "below_fd": float((w["final"] < fdv).mean()), "below_inflation": float((real < 0).mean())})
+            if y in (5, 10):
+                R.fact(f"{tag}_deepest_worst", float(w["deep"].min()), "fraction", exploratory=True)
+                R.fact(f"{tag}_longest_red_max", int(w["longest"].max()), "months", exploratory=True)
+                risk[-1].update({"deepest": float(w["deep"].min()), "longest": int(w["longest"].max())})
+            R.tried_variant(f"Q1/Q2 for {name} at {y} years, starts from April 2005, rebalanced each April")
+    R.chart("q2_mix_fan", rows)
+    R.chart("q2_mix_risk", risk)
+
+    # Q15 and Q16 for the mixes: time under water to date, and SIPs in the red at 12 months
+    n = len(GRID["months"])
+    under, red_rows = [], []
+    for name, key in (("60/20/20", "m602020"), ("Equal thirds", "mthirds")):
+        weights = SD.MIXES[name]
+        stats = []
+        for k in range(0, n - 12):
+            pth = E.mix_path(GRID, weights, k, n - k)
+            stats.append(E.red_stats(pth, AMT * np.arange(1, n - k + 1)))
+        R.fact(f"q15_mix_{key}_ever_red", float(np.mean([st[2] for st in stats])), "fraction", exploratory=True)
+        R.fact(f"q15_mix_{key}_deepest", float(min(st[0] for st in stats)), "fraction", exploratory=True)
+        R.fact(f"q15_mix_{key}_longest", int(max(st[1] for st in stats)), "months", exploratory=True)
+        under.append({"asset": name, "ever_red": float(np.mean([st[2] for st in stats])), "deepest": float(min(st[0] for st in stats)),
+                      "longest": int(max(st[1] for st in stats))})
+        m = MIXW.get((name, 10)) or mix_windows(name, 10)
+        rel = np.array([pth[11] / (12 * AMT) - 1 for pth in m["paths"]])
+        red = rel < 0
+        x = m["xirr"]
+        R.fact(f"q16_mix_{key}_red12", float(red.mean()), "fraction", exploratory=True)
+        R.fact(f"q16_mix_{key}_red_p50", med(x[red]) if red.any() else float("nan"), "fraction", exploratory=True)
+        R.fact(f"q16_mix_{key}_rest_p50", med(x[~red]), "fraction", exploratory=True)
+        R.fact(f"q16_mix_{key}_red_n", int(red.sum()), "count", exploratory=True)
+        red_rows.append({"asset": name, "red": med(x[red]) if red.any() else None, "rest": med(x[~red]), "n_red": int(red.sum())})
+        R.tried_variant(f"Q15 to-date paths and Q16 red-at-12-months for {name}, starts from April 2005")
+    R.chart("q15_mix", under)
+    R.chart("q16_mix", red_rows)
+
+
 def q3():
     n500 = I.panels["Nifty 500"]
     rows = []
@@ -361,7 +426,8 @@ def q7():
         R.fact(f"q7_n500_{y}y_multiple_range", mrng, "ratio")
         R.fact(f"q7_n500_{y}y_multiple_p5", q(mult, .05), "ratio")
         R.fact(f"q7_n500_{y}y_multiple_p95", q(mult, .95), "ratio")
-        rows.append({"horizon": y, "xirr_p5": q(w["xirr"], .05), "xirr_p95": q(w["xirr"], .95), "mult_p5": q(mult, .05),
+        R.fact(f"q7_n500_{y}y_multiple_p50", med(mult), "ratio")
+        rows.append({"horizon": y, "xirr_p5": q(w["xirr"], .05), "xirr_p95": q(w["xirr"], .95), "mult_p5": q(mult, .05), "mult_p50": med(mult),
                      "mult_p95": q(mult, .95), "independent": indep(w["p"], w["h"])})
         if y == 10:
             e, l = era_mask(w["start"])
@@ -1315,7 +1381,7 @@ def main() -> None:
     R.allow("Nifty 500", "Nifty 50", "Midcap 150", "Smallcap 250", "60/40", "60/20/20", "G-sec 5-year", "₹1 crore")
     import time
     only = sys.argv[1:]          # for debugging: run named questions only, and don't write results
-    for fn in (q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, q21, q22, naive):
+    for fn in (q1, q2, q3, q4, q5, q6, q2_mixes, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, q21, q22, naive):
         if only and fn.__name__ not in only:
             continue
         t = time.time()

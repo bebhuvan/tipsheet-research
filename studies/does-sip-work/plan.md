@@ -344,3 +344,6 @@ Q1: shares lost money and below FD at 3, 5 and 10 years (Nifty 500). Q5: median 
 - *Q5 and Q15, the deepest fall below the money put in:* the lab used daily statement values; this plan specifies month-end values, so its falls are shallower. No change.
 - *Q5, the mixes' medians (about 1.3 points higher):* the lab taxed debt and gold at slab rates and used NSE's 10-year G-sec index; this plan is before tax and uses the 5-year index. No change.
 - *Q16, the share in the red at 12 and 24 months:* the October figure counted every start month to the data end; this plan counts start months with a full 10 years. Both are now recorded (`…_all_starts`).
+
+**2026-10-15, after results, at the owner's request: Q1 and Q2 for diversified SIPs (exploratory).** The owner noted that leading with an all-equity SIP can mislead, since many savers hold a mix. Added: the distribution of returns (5th, 50th, 95th percentile, worst) and the shares that lost money, trailed an FD and trailed inflation, at 1, 3, 5, 7, 10 and 15 years, for the Nifty 500, 60/20/20 and equal thirds, all over the same start months from April 2005 and rebalanced each April. No prediction; the facts are tagged exploratory and kept out of the title, dek and finding.
+

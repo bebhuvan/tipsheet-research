@@ -15,7 +15,7 @@ Everything here is public: the plans, the code, the results, every model prompt 
 2. **Freeze.** After a person approves the plan, commit `plan.md` on its own, then run `uv run desk freeze <slug>`. It records the commit in `freeze.json` and creates the tag `<slug>/plan-frozen`. Commit `freeze.json` and **push the branch and the tag straight away**: GitHub's record of when the tag arrived is the public evidence that the plan existed before the results. Commit dates alone can be set to anything.
 3. Compute, write, check: commit as you go. Results are committed with the code that made them.
 4. `desk recompute` and `desk review` save their prompts, replies and scripts under `checks/`. Commit them as they are, including the bad ones.
-5. `desk report <slug>`, then the lead researcher writes the report's narrative sections.
+5. `desk audit <slug>` once the article is final, then `desk report <slug>`, and the lead researcher writes the report's narrative sections.
 6. `desk publish <slug>` copies the article to the site and tags `<slug>/published-<date>`. Open the pull request, push the tag, merge.
 
 ## Rules

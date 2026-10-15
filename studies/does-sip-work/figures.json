@@ -1,13 +1,13 @@
 {
  "q1": {
   "title": "A Nifty 500 SIP lost money in 29% of one-year windows, 7% of five-year ones and none of the ten-year ones",
-  "sub": "Share of SIPs started each month since January 1995 that ended below the money put in, below the same money in fixed deposits, or below inflation. ₹10,000 on the first trading day of each month, after a 0.2% a year index-fund cost, before tax.",
-  "read": "Each dot is a share of start months. Read across a row: the longer the SIP ran, the rarer each kind of failure. The beat-the-FD line falls slowest, because a deposit is a tougher bar than zero.",
+  "sub": "Share of SIPs started each month since January 1995 that ended below the money put in, behind the same money in fixed deposits, or behind inflation. ₹10,000 on the first trading day of each month, after a 0.2% a year index-fund cost, before tax.",
+  "read": "Each group of bars is a horizon. All three bars shrink as the SIP runs longer; the terracotta one, behind an FD, shrinks last because a deposit is a tougher bar than zero.",
   "source": "NSE total-return indices (Nifty 500 from 1995); RBI deposit rates; tipsheet calculations",
   "job": "answer",
   "evidence": "measured",
   "spec": {
-   "kind": "dots",
+   "kind": "hbars",
    "room": "tall",
    "fmt": "pct",
    "digits": 0,
@@ -15,17 +15,17 @@
     {
      "col": "lost",
      "label": "Lost money",
-     "slot": 2
+     "tone": "ink"
     },
     {
      "col": "below_fd",
      "label": "Behind an FD (after tax)",
-     "slot": 4
+     "slot": 2
     },
     {
      "col": "below_inflation",
      "label": "Behind inflation",
-     "slot": 6
+     "tone": "hist"
     }
    ]
   },
@@ -72,141 +72,104 @@
   "legend": [
    {
     "label": "Lost money",
-    "slot": 2
+    "color": "var(--ink)",
+    "shape": "box"
    },
    {
     "label": "Behind an FD",
-    "slot": 4
+    "slot": 2,
+    "shape": "box"
    },
    {
     "label": "Behind inflation",
-    "slot": 6
+    "color": "var(--hist)",
+    "shape": "box"
    }
   ],
+  "few": false,
   "id": "fig-q1",
   "big": true,
   "note": "Evidence: measured. A count or distribution over the full sample."
  },
- "q1_tax": {
-  "title": "After today's tax on redemption, 16% of five-year SIPs ended behind an FD, against 16% before tax",
-  "sub": "The same windows, with long-term gains above ₹1.25 lakh taxed at 12.5% and short-term gains at 20% when the SIP is cashed in. The FD is taxed every year at 30% plus cess.",
-  "read": "The grey bar is before tax, the coloured bar after. Tax matters most at short horizons, where more of the SIP is short-term.",
-  "source": "NSE total-return indices (Nifty 500 from 1995); RBI deposit rates; tipsheet calculations",
-  "job": "robustness",
-  "evidence": "measured",
+ "q1_mix": {
+  "title": "Over five years, a 60/20/20 SIP ended behind an FD in 0.5% of start months; the all-equity SIP in 8%",
+  "sub": "Five-year SIPs started each month from April 2005, by portfolio: share that lost money, ended behind the same money in FDs, or behind inflation. 60/20/20 is 60% Nifty 500, 20% government bonds, 20% gold; equal thirds is a third each; both rebalanced each April.",
+  "read": "One group per portfolio. Mixing in bonds and gold all but removed the five-year risk of losing money or trailing a deposit.",
+  "source": "NSE total-return indices, NSE 5-year G-sec index, domestic gold price; RBI deposit rates; tipsheet calculations",
+  "job": "comparison",
+  "evidence": "exploratory",
   "spec": {
    "kind": "hbars",
    "room": "standard",
    "fmt": "pct",
-   "digits": 0,
+   "digits": 1,
    "series": [
     {
-     "col": "before",
-     "label": "Before tax",
-     "tone": "hist"
+     "col": "lost",
+     "label": "Lost money",
+     "tone": "ink"
     },
     {
-     "col": "after",
-     "label": "After tax",
-     "slot": 4
+     "col": "below_fd",
+     "label": "Behind an FD",
+     "slot": 2
+    },
+    {
+     "col": "below_inflation",
+     "label": "Behind inflation",
+     "tone": "hist"
     }
    ]
   },
   "data": {
    "categories": [
-    "1 year",
-    "3 years",
-    "5 years",
-    "7 years",
-    "10 years",
-    "15 years",
-    "20 years"
+    "Nifty 500",
+    "60/20/20",
+    "Equal thirds"
    ],
    "series": {
-    "before": [
-     38.1,
-     25.4,
-     15.5,
-     8.7,
-     0.4,
+    "lost": [
+     1.5,
      0.0,
      0.0
     ],
-    "after": [
-     39.7,
-     26.0,
-     15.5,
-     8.7,
-     0.4,
-     0.0,
+    "below_fd": [
+     7.5,
+     0.5,
      0.0
+    ],
+    "below_inflation": [
+     16.6,
+     5.5,
+     3.5
     ]
    }
   },
   "legend": [
    {
-    "label": "Before tax",
-    "color": "var(--hist)",
+    "label": "Lost money",
+    "color": "var(--ink)",
     "shape": "box"
    },
    {
-    "label": "After tax",
-    "slot": 4,
+    "label": "Behind an FD",
+    "slot": 2,
+    "shape": "box"
+   },
+   {
+    "label": "Behind inflation",
+    "color": "var(--hist)",
     "shape": "box"
    }
   ],
-  "id": "fig-q1_tax",
+  "few": false,
+  "id": "fig-q1_mix",
   "big": true,
-  "note": "Evidence: measured. A count or distribution over the full sample."
- },
- "q1_menu": {
-  "title": "Over five years, the risk of ending behind an FD depended on what the SIP bought",
-  "sub": "Share of five-year SIPs started each month from April 2005 that ended behind the same money in FDs, by what they bought.",
-  "read": "One bar per asset. Longer bars mean more five-year windows in which the SIP did worse than a fixed deposit.",
-  "source": "NSE total-return indices, NSE 5-year G-sec index, domestic gold price; RBI deposit rates; tipsheet calculations",
-  "job": "comparison",
-  "evidence": "measured",
-  "spec": {
-   "kind": "hbars",
-   "room": "standard",
-   "fmt": "pct",
-   "digits": 0,
-   "sort": "desc",
-   "series": [
-    {
-     "col": "below_fd",
-     "label": "Behind an FD at five years",
-     "slot": 4
-    }
-   ]
-  },
-  "data": {
-   "categories": [
-    "500",
-    "50",
-    "Midcap 150",
-    "Smallcap 250",
-    "Gold",
-    "G-sec 5-year"
-   ],
-   "series": {
-    "below_fd": [
-     7.5,
-     7.5,
-     7.5,
-     23.6,
-     28.6,
-     1.0
-    ]
-   }
-  },
-  "id": "fig-q1_menu",
-  "big": true,
-  "note": "Evidence: measured. A count or distribution over the full sample."
+  "note": "Evidence: exploratory. Found after the results; not tested in advance."
  },
  "q2": {
   "title": "The typical ten-year Nifty 500 SIP returned 14.6% a year, but one in twenty returned under 9.8%",
-  "sub": "Spread of SIP returns (XIRR) across start months since 1995, by how long the SIP ran. The dashed line is the 12% most SIP calculators assume. ₹10,000 on the first trading day of each month, after a 0.2% a year index-fund cost, before tax.",
+  "sub": "Spread of SIP returns (XIRR) across start months since 1995, by how long the SIP ran. ₹10,000 on the first trading day of each month, after a 0.2% a year index-fund cost, before tax. One-year results are left off: annualising a few months' money stretches them across hundreds of points.",
   "read": "For each horizon, the dot is the middle result, the thick bar the middle half and the thin line the 5th to 95th percentile. The spread narrows sharply with time, but never closes.",
   "source": "NSE total-return indices (Nifty 500 from 1995); RBI deposit rates; tipsheet calculations",
   "job": "spread",
@@ -219,24 +182,18 @@
    "series": [
     {
      "col": "p50",
-     "label": "Median"
+     "label": "Median",
+     "slot": 1
     }
    ],
    "outcome": {
     "mid": "p50",
     "lo": "p5",
     "hi": "p95"
-   },
-   "refs": [
-    {
-     "y": 12,
-     "label": "Calculator's 12%"
-    }
-   ]
+   }
   },
   "data": {
    "categories": [
-    "1 year",
     "3 years",
     "5 years",
     "7 years",
@@ -246,7 +203,6 @@
    ],
    "series": {
     "p5": [
-     -30.6,
      -9.5,
      -0.5,
      2.7,
@@ -255,7 +211,6 @@
      12.7
     ],
     "p25": [
-     -3.4,
      6.0,
      9.3,
      11.0,
@@ -264,7 +219,6 @@
      13.7
     ],
     "p50": [
-     12.1,
      14.9,
      15.0,
      14.6,
@@ -273,7 +227,6 @@
      14.8
     ],
     "p75": [
-     36.2,
      24.7,
      18.6,
      19.2,
@@ -282,7 +235,6 @@
      15.7
     ],
     "p95": [
-     88.4,
      47.5,
      40.7,
      33.4,
@@ -292,19 +244,113 @@
     ]
    }
   },
+  "few": false,
   "id": "fig-q2",
   "big": true,
   "note": "Evidence: measured. A count or distribution over the full sample."
  },
+ "q2_mix": {
+  "title": "Over ten years, 60/20/20 returned a median 12.4% against 13.5% for the Nifty 500, with a firmer floor: 6.6% at worst against 4.3%",
+  "sub": "SIP returns (XIRR) for each portfolio over the same start months from April 2005, at five and ten years. 60/20/20 is 60% Nifty 500, 20% government bonds, 20% gold; equal thirds is a third each; both rebalanced each April.",
+  "read": "Each row: dot is the median, thick bar the middle half, thin line the 5th to 95th percentile. The mixes' rows are shorter: less upside, much less downside.",
+  "source": "NSE total-return indices, NSE 5-year G-sec index, domestic gold price; RBI deposit rates; tipsheet calculations",
+  "job": "comparison",
+  "evidence": "exploratory",
+  "spec": {
+   "kind": "outcomes",
+   "room": "tall",
+   "fmt": "pct",
+   "digits": 1,
+   "series": [
+    {
+     "col": "p50",
+     "label": "Median",
+     "tone": "ink"
+    }
+   ],
+   "outcome": {
+    "mid": "p50",
+    "lo": "p5",
+    "hi": "p95",
+    "n": "n",
+    "nLabel": "start months",
+    "minN": 0
+   }
+  },
+  "data": {
+   "categories": [
+    "Nifty 500, 5 years",
+    "60/20/20, 5 years",
+    "Equal thirds, 5 years",
+    "Nifty 500, 10 years",
+    "60/20/20, 10 years",
+    "Equal thirds, 10 years"
+   ],
+   "series": {
+    "p5": [
+     4.6,
+     8.3,
+     7.5,
+     9.3,
+     9.6,
+     8.5
+    ],
+    "p25": [
+     9.5,
+     10.3,
+     9.2,
+     11.6,
+     10.8,
+     9.9
+    ],
+    "p50": [
+     14.2,
+     12.5,
+     12.4,
+     13.5,
+     12.4,
+     11.0
+    ],
+    "p75": [
+     16.5,
+     15.4,
+     14.6,
+     14.8,
+     14.1,
+     12.1
+    ],
+    "p95": [
+     21.4,
+     18.2,
+     17.6,
+     16.4,
+     15.7,
+     15.2
+    ],
+    "n": [
+     199,
+     199,
+     199,
+     139,
+     139,
+     139
+    ]
+   }
+  },
+  "few": false,
+  "id": "fig-q2_mix",
+  "big": true,
+  "note": "Evidence: exploratory. Found after the results; not tested in advance."
+ },
  "q2_rupees": {
   "title": "₹10,000 a month for 20 years (₹24 lakh in all) became ₹1.30 crore in the typical Nifty 500 SIP",
-  "sub": "What the SIP was worth at the end, for a bad start (5th percentile), the typical start and a lucky start, beside the money put in. Rupees of the day.",
-  "read": "Grey is what you put in. The three coloured dots show how much the ending depended on when you happened to start.",
+  "sub": "What the SIP was worth at the end, for a bad start (5th percentile) and the typical start, beside the money put in. Rupees of the day.",
+  "read": "Grey is what went in. The gap between the two coloured bars is how much the ending depended on when you happened to start.",
   "source": "NSE total-return indices (Nifty 500 from 1995); RBI deposit rates; tipsheet calculations",
   "job": "case",
   "evidence": "measured",
   "spec": {
-   "kind": "dots",
+   "kind": "hbars",
    "room": "standard",
    "fmt": "num",
    "digits": 1,
@@ -319,17 +365,12 @@
     {
      "col": "p5",
      "label": "Bad start",
-     "slot": 3
+     "slot": 2
     },
     {
      "col": "p50",
      "label": "Typical",
-     "slot": 2
-    },
-    {
-     "col": "p95",
-     "label": "Lucky start",
-     "slot": 5
+     "slot": 1
     }
    ]
   },
@@ -354,32 +395,27 @@
      2569842,
      6077345,
      12986261
-    ],
-    "p95": [
-     4768547,
-     8382199,
-     15429286
     ]
    }
   },
   "legend": [
    {
     "label": "Money put in",
-    "color": "var(--hist)"
+    "color": "var(--hist)",
+    "shape": "box"
    },
    {
     "label": "Bad start",
-    "slot": 3
+    "slot": 2,
+    "shape": "box"
    },
    {
     "label": "Typical",
-    "slot": 2
-   },
-   {
-    "label": "Lucky start",
-    "slot": 5
+    "slot": 1,
+    "shape": "box"
    }
   ],
+  "few": false,
   "id": "fig-q2_rupees",
   "big": true,
   "note": "Evidence: measured. A count or distribution over the full sample."
@@ -387,12 +423,12 @@
  "q3": {
   "title": "After inflation, the typical ten-year Nifty 500 SIP returned 8.3% a year, not 14.6%",
   "sub": "Median SIP return by horizon, before and after inflation (each instalment and the final value deflated by all-India CPI to the start month).",
-  "read": "Grey is the return you see on a statement; colour is what it bought. The gap is roughly the inflation rate.",
+  "read": "Grey is the return on a statement; blue is what it bought. The gap, about six points a year, is roughly the inflation rate.",
   "source": "NSE total-return indices (Nifty 500 from 1995); RBI deposit rates; tipsheet calculations; CPI (MoSPI)",
   "job": "comparison",
   "evidence": "measured",
   "spec": {
-   "kind": "dots",
+   "kind": "hbars",
    "room": "standard",
    "fmt": "pct",
    "digits": 1,
@@ -405,7 +441,7 @@
     {
      "col": "real_p50",
      "label": "After inflation",
-     "slot": 2
+     "slot": 1
     }
    ]
   },
@@ -434,21 +470,24 @@
   "legend": [
    {
     "label": "Before inflation",
-    "color": "var(--hist)"
+    "color": "var(--hist)",
+    "shape": "box"
    },
    {
     "label": "After inflation",
-    "slot": 2
+    "slot": 1,
+    "shape": "box"
    }
   ],
+  "few": false,
   "id": "fig-q3",
   "big": true,
   "note": "Evidence: measured. A count or distribution over the full sample."
  },
  "q3_fd": {
-  "title": "Since January 1995, an FD after tax lost 0.7 points a year to inflation; the Nifty 500 beat it by 5.2% a year",
-  "sub": "Annual return over the whole period, before and after inflation: the Nifty 500 total-return index and a fixed deposit rolled at banks' 1-3 year rate, interest taxed at 30% plus cess.",
-  "read": "Each pair of bars is one investment. The coloured bar is what it earned after inflation; the FD's is below zero.",
+  "title": "Since January 1995, an FD after tax lost 0.7 points a year to inflation; the Nifty 500 gained 5.2% a year after it",
+  "sub": "Annual return over the whole period, before and after inflation: the Nifty 500 total-return index, and a fixed deposit rolled at banks' 1-3 year rate with interest taxed at 30% plus cess.",
+  "read": "Each pair is one investment. The FD's after-inflation bar is below zero.",
   "source": "NSE total-return indices (Nifty 500 from 1995); RBI deposit rates; tipsheet calculations; CPI (MoSPI)",
   "job": "comparison",
   "evidence": "measured",
@@ -466,7 +505,7 @@
     {
      "col": "real",
      "label": "After inflation",
-     "slot": 2
+     "slot": 1
     }
    ]
   },
@@ -494,18 +533,19 @@
    },
    {
     "label": "After inflation",
-    "slot": 2,
+    "slot": 1,
     "shape": "box"
    }
   ],
+  "few": false,
   "id": "fig-q3_fd",
   "big": true,
   "note": "Evidence: measured. A count or distribution over the full sample."
  },
  "q4": {
-  "title": "What a SIP bought set both its typical return and its bad case",
-  "sub": "Ten-year SIPs started each month from April 2005: the median return (up) against the 5th-percentile return (across), one point per asset. Mid- and small-cap history before 2016 is back-calculated by NSE.",
-  "read": "Up is better on average; right is better in a bad decade. No asset is top-right on its own, which is the case for mixing them.",
+  "title": "What a SIP bought set both its typical return and its bad case; the mixes sat in between",
+  "sub": "Ten-year SIPs started each month from April 2005: median return (up) against 5th-percentile return (across). Mid- and small-cap history before 2016 is back-calculated by NSE.",
+  "read": "Up is better on average; right is better in a bad decade. The two mixes sit between equities and the safe assets, nearer the equities on return and well to the right of small caps.",
   "source": "NSE total-return indices, NSE 5-year G-sec index, domestic gold price; RBI deposit rates; tipsheet calculations",
   "job": "comparison",
   "evidence": "measured",
@@ -527,7 +567,7 @@
     {
      "col": "median",
      "label": "Median",
-     "slot": 2
+     "tone": "ink"
     }
    ],
    "pin": [
@@ -536,7 +576,9 @@
     "Midcap 150",
     "Smallcap 250",
     "Gold",
-    "Government bonds"
+    "Government bonds",
+    "60/20/20",
+    "Equal thirds"
    ]
   },
   "data": {
@@ -546,7 +588,9 @@
     "Midcap 150",
     "Smallcap 250",
     "Gold",
-    "Government bonds"
+    "Government bonds",
+    "60/20/20",
+    "Equal thirds"
    ],
    "series": {
     "median": [
@@ -555,7 +599,9 @@
      17.9,
      15.3,
      8.9,
-     8.0
+     8.0,
+     12.4,
+     11.0
     ],
     "p5": [
      9.3,
@@ -563,18 +609,21 @@
      12.0,
      7.4,
      4.4,
-     6.9
+     6.9,
+     9.6,
+     8.5
     ]
    }
   },
+  "few": false,
   "id": "fig-q4",
   "big": true,
   "note": "Evidence: measured. A count or distribution over the full sample."
  },
  "q4_pain": {
-  "title": "Small caps fell deepest below the money put in; government bonds barely dipped",
-  "sub": "Ten-year SIPs from April 2005: the deepest the month-end value fell below the money put in, in the worst start month, by asset.",
-  "read": "Each bar is the worst moment a SIP in that asset went through, as a share of the money put in so far.",
+  "title": "Small caps fell deepest below the money put in (−54%); a 60/20/20 mix fell −25%, equal thirds −13%",
+  "sub": "Ten-year SIPs from April 2005: the deepest the month-end value fell below the money put in, in the worst start month, by what the SIP bought.",
+  "read": "Each bar is the worst moment a SIP holder had to sit through, as a share of the money put in so far. The mixes cut it to between a half and a quarter of the all-equity fall.",
   "source": "NSE total-return indices, NSE 5-year G-sec index, domestic gold price; RBI deposit rates; tipsheet calculations",
   "job": "spread",
   "evidence": "measured",
@@ -583,44 +632,97 @@
    "room": "standard",
    "fmt": "pct",
    "digits": 0,
-   "sign": true,
-   "sort": "asc",
    "series": [
     {
      "col": "deep",
      "label": "Deepest fall below money put in",
-     "slot": 3
+     "slot": 2
     }
    ]
   },
   "data": {
    "categories": [
+    "Smallcap 250",
+    "Midcap 150",
     "Nifty 500",
     "Nifty 50",
-    "Midcap 150",
-    "Smallcap 250",
+    "60/20/20",
     "Gold",
+    "Equal thirds",
     "Government bonds"
    ],
    "series": {
     "deep": [
+     -54.2,
+     -51.6,
      -44.3,
      -40.7,
-     -51.6,
-     -54.2,
+     -25.3,
      -15.4,
+     -12.7,
      -4.3
     ]
    }
   },
+  "few": false,
   "id": "fig-q4_pain",
+  "big": true,
+  "note": "Evidence: measured. A count or distribution over the full sample."
+ },
+ "q4_long": {
+  "title": "The mixes also recovered sooner: the longest stretch below the money put in was 23 months for the Nifty 500 and 11 for equal thirds",
+  "sub": "Ten-year SIPs from April 2005: the longest unbroken run of month-ends below the money put in, in the worst start month.",
+  "read": "Each bar is the longest wait, in months, before a SIP in that asset was back above what had gone in.",
+  "source": "NSE total-return indices, NSE 5-year G-sec index, domestic gold price; RBI deposit rates; tipsheet calculations",
+  "job": "spread",
+  "evidence": "measured",
+  "spec": {
+   "kind": "hbars",
+   "room": "standard",
+   "fmt": "int",
+   "digits": 0,
+   "unit": "months",
+   "series": [
+    {
+     "col": "long",
+     "label": "Longest stretch below money put in",
+     "tone": "ink"
+    }
+   ]
+  },
+  "data": {
+   "categories": [
+    "Smallcap 250",
+    "Nifty 500",
+    "Gold",
+    "Midcap 150",
+    "Nifty 50",
+    "60/20/20",
+    "Equal thirds",
+    "Government bonds"
+   ],
+   "series": {
+    "long": [
+     26,
+     23,
+     23,
+     22,
+     20,
+     16,
+     11,
+     6
+    ]
+   }
+  },
+  "few": false,
+  "id": "fig-q4_long",
   "big": true,
   "note": "Evidence: measured. A count or distribution over the full sample."
  },
  "q5": {
   "title": "Over ten years, a 60/20/20 SIP gave up ₹1.4 lakh in the typical case to gain ₹0.2 lakh in a bad one",
-  "sub": "60% Nifty 500, 20% government bonds, 20% gold, rebalanced each April, against an all-Nifty 500 SIP over the same months (starts from April 2005): the typical final value given up, and the bad-case (5th percentile) final value gained.",
-  "read": "For each horizon, compare the two bars. Where 'gained in a bad case' is longer, diversifying paid for itself; where 'given up' is longer, it cost more than it protected.",
+  "sub": "60/20/20 against an all-Nifty 500 SIP over the same months (starts from April 2005): the typical final value given up, and the bad-case (5th percentile) final value gained.",
+  "read": "For each horizon, compare the bars. Where the green bar (gained in a bad case) is longer, diversifying paid for itself; where the grey bar is longer, it cost more than it protected.",
   "source": "NSE total-return indices, NSE 5-year G-sec index, domestic gold price; RBI deposit rates; tipsheet calculations",
   "job": "answer",
   "evidence": "tested",
@@ -640,7 +742,7 @@
     {
      "col": "gained",
      "label": "Gained in a bad case",
-     "slot": 2
+     "slot": 3
     }
    ]
   },
@@ -671,120 +773,19 @@
    },
    {
     "label": "Gained, bad case",
-    "slot": 2,
+    "slot": 3,
     "shape": "box"
    }
   ],
+  "few": false,
   "id": "fig-q5",
   "big": true,
   "note": "Evidence: tested. The question and method were written down before the results."
  },
- "q5_deep": {
-  "title": "The deepest fall below the money put in was −44% for the Nifty 500, and −25% for 60/20/20",
-  "sub": "Ten-year SIPs from April 2005: the deepest month-end fall below the money put in, in the worst start month.",
-  "read": "One bar per portfolio. Mixing in bonds and gold roughly halved the worst fall a SIP holder had to sit through.",
-  "source": "NSE total-return indices, NSE 5-year G-sec index, domestic gold price; RBI deposit rates; tipsheet calculations",
-  "job": "spread",
-  "evidence": "measured",
-  "spec": {
-   "kind": "hbars",
-   "room": "compact",
-   "fmt": "pct",
-   "digits": 0,
-   "sign": true,
-   "series": [
-    {
-     "col": "deep",
-     "label": "Deepest fall below money put in",
-     "slot": 3
-    }
-   ]
-  },
-  "data": {
-   "categories": [
-    "Nifty 500",
-    "60/40",
-    "60/20/20",
-    "Equal thirds"
-   ],
-   "series": {
-    "deep": [
-     -44.3,
-     -24.1,
-     -25.3,
-     -12.7
-    ]
-   }
-  },
-  "id": "fig-q5_deep",
-  "big": true,
-  "note": "Evidence: measured. A count or distribution over the full sample."
- },
- "q5_menu": {
-  "title": "The Nifty 500's median was 13.5% against 12.4% for 60/20/20, but its bad case was lower: 9.3% against 9.6%",
-  "sub": "Ten-year SIPs from April 2005: median and 5th-percentile return of each portfolio.",
-  "read": "Grey dot is the bad case, coloured the typical case. Moving down the list, the two dots draw closer: less upside, less downside.",
-  "source": "NSE total-return indices, NSE 5-year G-sec index, domestic gold price; RBI deposit rates; tipsheet calculations",
-  "job": "comparison",
-  "evidence": "measured",
-  "spec": {
-   "kind": "dots",
-   "room": "standard",
-   "fmt": "pct",
-   "digits": 1,
-   "series": [
-    {
-     "col": "p5",
-     "label": "Bad case (5th percentile)",
-     "tone": "hist"
-    },
-    {
-     "col": "p50",
-     "label": "Median",
-     "slot": 2
-    }
-   ]
-  },
-  "data": {
-   "categories": [
-    "Nifty 500",
-    "60/40",
-    "60/20/20",
-    "Equal thirds"
-   ],
-   "series": {
-    "p5": [
-     9.3,
-     9.7,
-     9.6,
-     8.5
-    ],
-    "p50": [
-     13.5,
-     11.8,
-     12.4,
-     11.0
-    ]
-   }
-  },
-  "legend": [
-   {
-    "label": "Bad case",
-    "color": "var(--hist)"
-   },
-   {
-    "label": "Median",
-    "slot": 2
-   }
-  ],
-  "id": "fig-q5_menu",
-  "big": true,
-  "note": "Evidence: measured. A count or distribution over the full sample."
- },
  "q6": {
   "title": "Rebalancing a 60/20/20 SIP each April added a median 0.8 points a year, in at least nine in ten start months",
   "sub": "Ten-year SIPs from April 2005: return rebalanced to 60/20/20 each April minus return with instalments split 60/20/20 but never rebalanced, by start month.",
-  "read": "Each bar is one start month. Above zero, rebalancing helped. At least nine in ten bars are above zero.",
+  "read": "Each bar is one start month. Above zero, rebalancing helped.",
   "source": "NSE total-return indices, NSE 5-year G-sec index, domestic gold price; RBI deposit rates; tipsheet calculations",
   "job": "answer",
   "evidence": "tested",
@@ -795,12 +796,11 @@
    "digits": 1,
    "period": "month",
    "range": false,
-   "sign": true,
    "series": [
     {
      "col": "diff",
      "label": "Rebalanced minus never",
-     "slot": 2
+     "slot": 3
     }
    ]
   },
@@ -1090,95 +1090,35 @@
     ]
    }
   },
+  "few": false,
   "id": "fig-q6",
   "big": true,
   "note": "Evidence: tested. The question and method were written down before the results."
  },
  "q7": {
-  "title": "From 5 to 20 years, the spread of yearly returns shrank from 41 points to 3.5 points",
-  "sub": "Nifty 500 SIPs since 1995: the 5th and 95th percentile return a year, by horizon.",
-  "read": "The two dots for each horizon bracket nine in ten outcomes. They squeeze together as the SIP runs longer.",
+  "title": "In rupees, longer SIPs did not converge: at 20 years the final value ran from 4.2 to 6.4 times the money put in",
+  "sub": "Nifty 500 SIPs since 1995: final value as a multiple of the money put in, by horizon (median, and the 5th to 95th percentile).",
+  "read": "The yearly return steadies with time, but compounding turns a small difference in yearly return into a large one in rupees, so the lines stay long.",
   "source": "NSE total-return indices (Nifty 500 from 1995); RBI deposit rates; tipsheet calculations",
   "job": "mechanism",
   "evidence": "measured",
   "spec": {
-   "kind": "dots",
-   "room": "standard",
-   "fmt": "pct",
-   "digits": 1,
-   "series": [
-    {
-     "col": "xirr_p5",
-     "label": "5th percentile",
-     "slot": 3
-    },
-    {
-     "col": "xirr_p95",
-     "label": "95th percentile",
-     "slot": 5
-    }
-   ]
-  },
-  "data": {
-   "categories": [
-    "5 years",
-    "10 years",
-    "15 years",
-    "20 years"
-   ],
-   "series": {
-    "xirr_p5": [
-     -0.5,
-     9.8,
-     11.0,
-     12.7
-    ],
-    "xirr_p95": [
-     40.7,
-     26.0,
-     18.5,
-     16.2
-    ]
-   }
-  },
-  "legend": [
-   {
-    "label": "5th percentile",
-    "slot": 3
-   },
-   {
-    "label": "95th percentile",
-    "slot": 5
-   }
-  ],
-  "id": "fig-q7",
-  "big": true,
-  "note": "Evidence: measured. A count or distribution over the full sample."
- },
- "q7_mult": {
-  "title": "But in rupees the gap did not shrink: at 20 years the final value ran from 4.2 to 6.4 times the money put in",
-  "sub": "Nifty 500 SIPs since 1995: the 5th and 95th percentile final value, as a multiple of the money put in, by horizon.",
-  "read": "A small difference in yearly return, compounded over 20 years, is a large difference in rupees.",
-  "source": "NSE total-return indices (Nifty 500 from 1995); RBI deposit rates; tipsheet calculations",
-  "job": "mechanism",
-  "evidence": "measured",
-  "spec": {
-   "kind": "dots",
+   "kind": "outcomes",
    "room": "standard",
    "fmt": "x",
    "digits": 1,
    "series": [
     {
-     "col": "mult_p5",
-     "label": "5th percentile",
-     "slot": 3
-    },
-    {
-     "col": "mult_p95",
-     "label": "95th percentile",
-     "slot": 5
+     "col": "m",
+     "label": "Median multiple",
+     "slot": 1
     }
-   ]
+   ],
+   "outcome": {
+    "mid": "m",
+    "lo": "l",
+    "hi": "h"
+   }
   },
   "data": {
    "categories": [
@@ -1188,13 +1128,19 @@
     "20 years"
    ],
    "series": {
-    "mult_p5": [
+    "m": [
+     1.45,
+     2.14,
+     3.38,
+     5.41
+    ],
+    "l": [
      0.99,
      1.66,
      2.44,
      4.18
     ],
-    "mult_p95": [
+    "h": [
      2.68,
      3.97,
      4.66,
@@ -1202,17 +1148,8 @@
     ]
    }
   },
-  "legend": [
-   {
-    "label": "5th percentile",
-    "slot": 3
-   },
-   {
-    "label": "95th percentile",
-    "slot": 5
-   }
-  ],
-  "id": "fig-q7_mult",
+  "few": false,
+  "id": "fig-q7",
   "big": true,
   "note": "Evidence: measured. A count or distribution over the full sample."
  },
@@ -1232,7 +1169,7 @@
     {
      "col": "median",
      "label": "Median ten-year return",
-     "slot": 2
+     "slot": 1
     }
    ]
   },
@@ -1288,6 +1225,7 @@
     ]
    }
   },
+  "few": false,
   "id": "fig-q8",
   "big": true,
   "note": "Evidence: measured. A count or distribution over the full sample."
@@ -1295,7 +1233,7 @@
  "q8_bands": {
   "title": "Starting near a market high made little difference: 13.6% against 14.9% for starts more than 10% below it",
   "sub": "Ten-year Nifty 500 SIP returns by how far the market was below its previous high in the start month.",
-  "read": "Each row shows the median (dot) and the 5th to 95th percentile range. The rows overlap almost completely.",
+  "read": "Each row: median (dot), 5th to 95th percentile (line). The rows overlap almost completely.",
   "source": "NSE total-return indices (Nifty 500 from 1995); RBI deposit rates; tipsheet calculations",
   "job": "conditioning",
   "evidence": "measured",
@@ -1307,7 +1245,8 @@
    "series": [
     {
      "col": "median",
-     "label": "Median"
+     "label": "Median",
+     "slot": 1
     }
    ],
    "outcome": {
@@ -1348,6 +1287,7 @@
     ]
    }
   },
+  "few": false,
   "id": "fig-q8_bands",
   "big": true,
   "note": "Evidence: measured. A count or distribution over the full sample."
@@ -1355,7 +1295,7 @@
  "q9_years": {
   "title": "In a 15-year SIP, the first five years' instalments made up 55% of the final value; the last five, 14%",
   "sub": "Share of a 15-year Nifty 500 SIP's final value that came from each year's instalments (median across start months since 1995).",
-  "read": "Each bar is one year of instalments. Early money had the longest to compound, so it ended up doing most of the work.",
+  "read": "Each bar is one year of instalments. Early money had the longest to compound, so it did most of the work.",
   "source": "NSE total-return indices (Nifty 500 from 1995); RBI deposit rates; tipsheet calculations",
   "job": "mechanism",
   "evidence": "measured",
@@ -1368,7 +1308,7 @@
     {
      "col": "share",
      "label": "Share of final value",
-     "slot": 2
+     "slot": 1
     }
    ]
   },
@@ -1410,6 +1350,7 @@
     ]
    }
   },
+  "few": false,
   "id": "fig-q9_years",
   "big": true,
   "note": "Evidence: measured. A count or distribution over the full sample."
@@ -1417,12 +1358,12 @@
  "q9_glide": {
   "title": "Moving to FDs over the last three years ended ahead in only 19% of 15-year SIPs, and lowered even the bad case",
   "sub": "15-year Nifty 500 SIPs since 1995: final value if the SIP stayed invested, against switching the corpus to FDs in 36 (or 12) equal monthly steps and paying the last instalments into FDs. Equity before tax; FD interest taxed.",
-  "read": "For each choice: the dot is the typical final value, the line runs from the bad case (5th percentile) to the median. Staying put was better in both.",
+  "read": "For each choice, the terracotta bar is the bad case (5th percentile) and the blue bar the typical one. Staying put was higher on both.",
   "source": "NSE total-return indices (Nifty 500 from 1995); RBI deposit rates; tipsheet calculations",
   "job": "answer",
   "evidence": "tested",
   "spec": {
-   "kind": "dots",
+   "kind": "hbars",
    "room": "standard",
    "fmt": "num",
    "digits": 1,
@@ -1432,12 +1373,12 @@
     {
      "col": "p5",
      "label": "Bad case (5th percentile)",
-     "tone": "hist"
+     "slot": 2
     },
     {
      "col": "p50",
-     "label": "Median",
-     "slot": 2
+     "label": "Typical",
+     "slot": 1
     }
    ]
   },
@@ -1463,13 +1404,16 @@
   "legend": [
    {
     "label": "Bad case",
-    "color": "var(--hist)"
+    "slot": 2,
+    "shape": "box"
    },
    {
-    "label": "Median",
-    "slot": 2
+    "label": "Typical",
+    "slot": 1,
+    "shape": "box"
    }
   ],
+  "few": false,
   "id": "fig-q9_glide",
   "big": true,
   "note": "Evidence: tested. The question and method were written down before the results."
@@ -1477,12 +1421,12 @@
  "q10": {
   "title": "To reach ₹1 crore in 15 years nineteen times in twenty, the Nifty 500 record says ₹22,810 a month; a 12% calculator says ₹21,011",
   "sub": "Monthly amount that would have reached ₹1 crore (rupees of the day) in half, four in five and nineteen in twenty of the start months since 1995, by horizon.",
-  "read": "Each group is a horizon. The higher the certainty you want, the more you must put in; the gaps between the dots are the price of certainty.",
+  "read": "Each group is a horizon. The more certain you want to be, the longer the bar; the gaps between the bars are the price of certainty.",
   "source": "NSE total-return indices (Nifty 500 from 1995); RBI deposit rates; tipsheet calculations",
   "job": "answer",
   "evidence": "tested",
   "spec": {
-   "kind": "dots",
+   "kind": "hbars",
    "room": "standard",
    "fmt": "num",
    "digits": 0,
@@ -1490,18 +1434,18 @@
    "series": [
     {
      "col": "c50",
-     "label": "50% sure",
-     "slot": 5
+     "label": "Half the time",
+     "tone": "hist"
     },
     {
      "col": "c80",
-     "label": "80% sure",
-     "slot": 4
+     "label": "Four times in five",
+     "slot": 2
     },
     {
      "col": "c95",
-     "label": "95% sure",
-     "slot": 2
+     "label": "Nineteen in twenty",
+     "slot": 1
     }
    ]
   },
@@ -1531,63 +1475,30 @@
   },
   "legend": [
    {
-    "label": "50% sure",
-    "slot": 5
+    "label": "Half the time",
+    "color": "var(--hist)",
+    "shape": "box"
    },
    {
-    "label": "80% sure",
-    "slot": 4
+    "label": "Four times in five",
+    "slot": 2,
+    "shape": "box"
    },
    {
-    "label": "95% sure",
-    "slot": 2
+    "label": "Nineteen in twenty",
+    "slot": 1,
+    "shape": "box"
    }
   ],
+  "few": false,
   "id": "fig-q10",
   "big": true,
   "note": "Evidence: tested. The question and method were written down before the results."
  },
- "q10_late": {
-  "title": "Starting five years late meant ₹21,612 a month instead of ₹10,000 to end up in the same place",
-  "sub": "The amount a 15-year Nifty 500 SIP needed to match, four times in five, what ₹10,000 a month for 20 years produced four times in five.",
-  "read": "The grey bar is the 20-year saver; the coloured bar is what the late starter had to put in each month.",
-  "source": "NSE total-return indices (Nifty 500 from 1995); RBI deposit rates; tipsheet calculations",
-  "job": "case",
-  "evidence": "measured",
-  "spec": {
-   "kind": "hbars",
-   "room": "compact",
-   "fmt": "num",
-   "digits": 0,
-   "unit": "₹ a month",
-   "series": [
-    {
-     "col": "amt",
-     "label": "Monthly amount",
-     "slot": 2
-    }
-   ]
-  },
-  "data": {
-   "categories": [
-    "20 years from the start",
-    "15 years, starting 5 years late"
-   ],
-   "series": {
-    "amt": [
-     10000,
-     21612
-    ]
-   }
-  },
-  "id": "fig-q10_late",
-  "big": true,
-  "note": "Evidence: measured. A count or distribution over the full sample."
- },
  "q11": {
   "title": "With a lump sum in hand, investing it at once beat a 12-month STP in 57% of start months",
   "sub": "₹12 lakh into the Nifty 500 at once, against moving it in from an FD over 12 or 36 months, valued after 10 years; and, for someone earning monthly, a monthly SIP against saving in an FD and investing the pot each April.",
-  "read": "Each bar is the share of start months since 1995 in which the first choice ended ahead. Half would mean a coin toss.",
+  "read": "Each bar is the share of start months since 1995 in which the first choice ended ahead. Half would be a coin toss.",
   "source": "NSE total-return indices (Nifty 500 from 1995); RBI deposit rates; tipsheet calculations",
   "job": "comparison",
   "evidence": "measured",
@@ -1596,17 +1507,15 @@
    "room": "standard",
    "fmt": "pct",
    "digits": 0,
-   "refs": [
-    {
-     "y": 50,
-     "label": "Coin toss"
-    }
+   "domain": [
+    0,
+    100
    ],
    "series": [
     {
      "col": "won",
      "label": "First choice ended ahead",
-     "slot": 2
+     "slot": 1
     }
    ]
   },
@@ -1624,6 +1533,7 @@
     ]
    }
   },
+  "few": false,
   "id": "fig-q11",
   "big": true,
   "note": "Evidence: measured. A count or distribution over the full sample."
@@ -1631,7 +1541,7 @@
  "q12": {
   "title": "Every SIP trick moved the ten-year return by less than the choice of asset (9.8 points) or start year",
   "sub": "Median change in ten-year Nifty 500 SIP return from each change to a plain monthly SIP, with the 10th to 90th percentile across start months (April 2005 on). Paused or waiting money sits in a taxed FD.",
-  "read": "Each row is one change; right of zero helped, left hurt. Compare the size of every row with the two grey bars at the bottom: the spread between assets and between start years.",
+  "read": "Each row is one change; right of zero helped, left hurt. The two rows at the bottom are the spread between assets and between start years: every trick is a sliver beside them.",
   "source": "NSE total-return indices (Nifty 500 from 1995); RBI deposit rates; tipsheet calculations",
   "job": "answer",
   "evidence": "measured",
@@ -1643,7 +1553,8 @@
    "series": [
     {
      "col": "m",
-     "label": "Median effect"
+     "label": "Median effect",
+     "slot": 1
     }
    ],
    "ci": {
@@ -1659,11 +1570,11 @@
     "Best SIP date instead of the 1st",
     "Weekly instead of monthly",
     "10% yearly step-up",
-    "Save in FD, invest after 20% falls",
     "Double up when P/E is cheap",
+    "Save in FD, invest after 20% falls",
+    "1% a year more in costs",
     "Pause in a 20% fall (resume near the top)",
     "Pause in a 20% fall (resume at the top)",
-    "1% a year more in costs",
     "Spread between assets (medians)",
     "Spread between start years (medians)"
    ],
@@ -1672,11 +1583,11 @@
      0.14,
      0.05,
      0.17,
-     1.18,
      0.0,
+     1.18,
+     -1.13,
      -2.03,
      -3.85,
-     -1.13,
      9.8,
      17.2
     ],
@@ -1684,11 +1595,11 @@
      0.1,
      0.03,
      -0.2,
-     -2.52,
      0.0,
+     -2.52,
+     -1.14,
      -4.24,
      -6.21,
-     -1.14,
      null,
      null
     ],
@@ -1696,118 +1607,30 @@
      0.22,
      0.08,
      0.45,
-     2.17,
      0.52,
+     2.17,
+     -1.09,
      -0.42,
      -0.62,
-     -1.09,
      null,
      null
     ]
    }
   },
+  "few": false,
   "id": "fig-q12",
-  "big": true,
-  "note": "Evidence: measured. A count or distribution over the full sample."
- },
- "q12_days": {
-  "title": "The SIP date barely mattered: the best day of the month added 0.14 points a year over ten years",
-  "sub": "Median change in ten-year Nifty 500 SIP return from buying on each day of the month (the first trading day on or after it) instead of the 1st.",
-  "read": "Each bar is one day of the month. The whole chart spans a fraction of a point.",
-  "source": "NSE total-return indices (Nifty 500 from 1995); RBI deposit rates; tipsheet calculations",
-  "job": "spread",
-  "evidence": "measured",
-  "spec": {
-   "kind": "hbars",
-   "room": "standard",
-   "fmt": "pct",
-   "digits": 2,
-   "sign": true,
-   "series": [
-    {
-     "col": "e",
-     "label": "Change against the 1st",
-     "slot": 2
-    }
-   ]
-  },
-  "data": {
-   "categories": [
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "11",
-    "12",
-    "13",
-    "14",
-    "15",
-    "16",
-    "17",
-    "18",
-    "19",
-    "20",
-    "21",
-    "22",
-    "23",
-    "24",
-    "25",
-    "26",
-    "27",
-    "28"
-   ],
-   "series": {
-    "e": [
-     0.0,
-     -0.006,
-     -0.004,
-     -0.004,
-     -0.004,
-     0.015,
-     0.012,
-     0.018,
-     0.022,
-     0.03,
-     0.05,
-     0.058,
-     0.044,
-     0.034,
-     0.046,
-     0.053,
-     0.054,
-     0.047,
-     0.062,
-     0.074,
-     0.096,
-     0.122,
-     0.118,
-     0.143,
-     0.136,
-     0.131,
-     0.108,
-     0.106
-    ]
-   }
-  },
-  "id": "fig-q12_days",
   "big": true,
   "note": "Evidence: measured. A count or distribution over the full sample."
  },
  "q13": {
   "title": "Cash in a SIP after two years and 50% of its units are still short-term, though they hold only 27% of the gains",
   "sub": "Nifty 500 SIPs cashed in fully at each age: share of units held under a year (taxed as short-term) and their share of the gain (median, SIPs with a gain).",
-  "read": "Each instalment has its own clock. The grey dot is the share of units still under a year old; the coloured dot is their share of the gain, smaller because new units have had little time to gain.",
+  "read": "Each instalment has its own one-year clock. Grey is the share of units still under a year old; blue is their share of the gain, smaller because new units have had little time to grow.",
   "source": "NSE total-return indices (Nifty 500 from 1995); RBI deposit rates; tipsheet calculations",
   "job": "mechanism",
   "evidence": "tested",
   "spec": {
-   "kind": "dots",
+   "kind": "hbars",
    "room": "standard",
    "fmt": "pct",
    "digits": 0,
@@ -1820,7 +1643,7 @@
     {
      "col": "gains",
      "label": "Short-term share of gains",
-     "slot": 2
+     "slot": 1
     }
    ]
   },
@@ -1852,13 +1675,16 @@
   "legend": [
    {
     "label": "Short-term units",
-    "color": "var(--hist)"
+    "color": "var(--hist)",
+    "shape": "box"
    },
    {
     "label": "Short-term share of gains",
-    "slot": 2
+    "slot": 1,
+    "shape": "box"
    }
   ],
+  "few": false,
   "id": "fig-q13",
   "big": true,
   "note": "Evidence: tested. The question and method were written down before the results."
@@ -1866,12 +1692,12 @@
  "q13_cost": {
   "title": "Tax and a 1% exit load took 2.0% of a one-year SIP's value, and 0.7% at three years",
   "sub": "Median tax plus exit load on cashing in a ₹10,000-a-month Nifty 500 SIP, as a share of its value, against the tax on the same money invested as a lump sum at the start and held as long.",
-  "read": "Grey is the lump sum, colour the SIP. The SIP's cost falls as more units cross the one-year mark, then rises again as long-term gains outgrow the ₹1.25 lakh exemption.",
+  "read": "Grey is the lump sum, blue the SIP. The SIP's cost falls as more units pass the one-year mark, then rises again as long-term gains outgrow the ₹1.25 lakh exemption.",
   "source": "NSE total-return indices (Nifty 500 from 1995); RBI deposit rates; tipsheet calculations",
   "job": "comparison",
   "evidence": "measured",
   "spec": {
-   "kind": "dots",
+   "kind": "hbars",
    "room": "standard",
    "fmt": "pct",
    "digits": 1,
@@ -1884,7 +1710,7 @@
     {
      "col": "sip",
      "label": "SIP (tax + 1% load)",
-     "slot": 2
+     "slot": 1
     }
    ]
   },
@@ -1916,20 +1742,23 @@
   "legend": [
    {
     "label": "Lump sum",
-    "color": "var(--hist)"
+    "color": "var(--hist)",
+    "shape": "box"
    },
    {
     "label": "SIP",
-    "slot": 2
+    "slot": 1,
+    "shape": "box"
    }
   ],
+  "few": false,
   "id": "fig-q13_cost",
   "big": true,
   "note": "Evidence: measured. A count or distribution over the full sample."
  },
  "q14": {
   "title": "Volatility did not reliably help: the SIP's edge over the index tracked volatility only weakly (rank correlation 0.23)",
-  "sub": "Every ten-year Nifty 500 window since 1995: the SIP's return minus the index's own return over the same dates, against how volatile the window was.",
+  "sub": "Every ten-year Nifty 500 window since 1995: the SIP's return minus the index's own return over the same dates, against how volatile the window was. Neighbouring windows overlap; the two non-overlapping ones (January 1995 and January 2005 starts) are named.",
   "read": "Each dot is a start month. If choppy markets helped SIPs, the dots would climb steeply to the right. They drift up only slightly, and even that vanished for SIPs started after 2005.",
   "source": "NSE total-return indices (Nifty 500 from 1995); RBI deposit rates; tipsheet calculations",
   "job": "mechanism",
@@ -1939,7 +1768,6 @@
    "room": "tall",
    "fmt": "pct",
    "digits": 1,
-   "labels": "none",
    "x": {
     "col": "vol",
     "label": "Volatility of the window, % a year",
@@ -1953,8 +1781,12 @@
     {
      "col": "edge",
      "label": "SIP edge",
-     "slot": 2
+     "slot": 1
     }
+   ],
+   "pin": [
+    "1995-01",
+    "2005-01"
    ]
   },
   "data": {
@@ -2753,6 +2585,7 @@
     ]
    }
   },
+  "few": false,
   "id": "fig-q14",
   "big": true,
   "note": "Evidence: tested. The question and method were written down before the results."
@@ -2760,7 +2593,7 @@
  "q14_illus": {
   "title": "Two made-up markets from 100 to 200 in ten years: the choppy one gave a SIP 7.29% a year, the smooth one 7.18%",
   "sub": "An illustration, not data: the same start and end, one path smooth and one swinging 30% either way.",
-  "read": "The SIP bought more units in the choppy path's dips, but also more at its peaks. Net, the difference is tiny.",
+  "read": "The SIP bought more units in the choppy path's dips, but more expensive ones at its peaks. Net, the difference is tiny.",
   "source": "tipsheet illustration",
   "job": "case",
   "evidence": "illustration",
@@ -2780,7 +2613,7 @@
     {
      "col": "choppy",
      "label": "Choppy",
-     "slot": 2
+     "slot": 1
     }
    ]
   },
@@ -3154,6 +2987,19 @@
     ]
    }
   },
+  "legend": [
+   {
+    "label": "Smooth",
+    "color": "var(--hist)",
+    "shape": "line"
+   },
+   {
+    "label": "Choppy",
+    "slot": 1,
+    "shape": "line"
+   }
+  ],
+  "few": false,
   "id": "fig-q14_illus",
   "big": true,
   "note": "Evidence: illustration. Hand-picked cases; they show what happened, not what usually happens."
@@ -3172,12 +3018,11 @@
    "digits": 0,
    "period": "month",
    "range": false,
-   "sign": true,
    "series": [
     {
      "col": "deep",
      "label": "Deepest fall below money put in",
-     "slot": 3
+     "slot": 2
     }
    ]
   },
@@ -3927,14 +3772,15 @@
     ]
    }
   },
+  "few": false,
   "id": "fig-q15",
   "big": true,
   "note": "Evidence: measured. A count or distribution over the full sample."
  },
  "q15_long": {
   "title": "The longest stretch below the money put in was 38 months, for a SIP started in January 2000",
-  "sub": "For SIPs started each month and followed to today: the longest unbroken run of month-ends below the money put in.",
-  "read": "Each bar is one start month. Most runs were short; the late-1990s starts waited longest.",
+  "sub": "For Nifty 500 SIPs started each month and followed to today: the longest unbroken run of month-ends below the money put in.",
+  "read": "Each bar is one start month. Most runs were short; the starts around 2000 waited longest.",
   "source": "NSE total-return indices (Nifty 500 from 1995); RBI deposit rates; tipsheet calculations",
   "job": "spread",
   "evidence": "measured",
@@ -3950,7 +3796,7 @@
     {
      "col": "longest",
      "label": "Longest run below money put in",
-     "slot": 3
+     "tone": "ink"
     }
    ]
   },
@@ -4700,14 +4546,68 @@
     ]
    }
   },
+  "few": false,
   "id": "fig-q15_long",
+  "big": true,
+  "note": "Evidence: measured. A count or distribution over the full sample."
+ },
+ "q15_menu": {
+  "title": "Nine in ten 60/20/20 SIPs also went under water at some point (89%), but never by more than −25%",
+  "sub": "SIPs started each month from April 2005 and followed to today: share that were below the money put in at some month-end, by portfolio.",
+  "read": "Each bar is a portfolio. Going under water was near-universal for anything holding equity; the difference was how far and for how long (Chapter 2).",
+  "source": "NSE total-return indices, NSE 5-year G-sec index, domestic gold price; RBI deposit rates; tipsheet calculations",
+  "job": "comparison",
+  "evidence": "measured",
+  "spec": {
+   "kind": "hbars",
+   "room": "standard",
+   "fmt": "pct",
+   "digits": 0,
+   "domain": [
+    0,
+    100
+   ],
+   "series": [
+    {
+     "col": "ever",
+     "label": "Ever below the money put in",
+     "slot": 2
+    }
+   ]
+  },
+  "data": {
+   "categories": [
+    "Nifty 50",
+    "Smallcap 250",
+    "Nifty 500",
+    "Midcap 150",
+    "60/20/20",
+    "Gold",
+    "Equal thirds",
+    "Government bonds"
+   ],
+   "series": {
+    "ever": [
+     96.7,
+     96.7,
+     96.3,
+     95.1,
+     89.0,
+     87.4,
+     70.7,
+     54.5
+    ]
+   }
+  },
+  "few": false,
+  "id": "fig-q15_menu",
   "big": true,
   "note": "Evidence: measured. A count or distribution over the full sample."
  },
  "q16": {
   "title": "Nifty 500 SIPs in the red after a year went on to a median 17.9% a year over ten years, against 14.1% for the rest",
   "sub": "Ten-year Nifty 500 SIP returns since 1995, by how far the SIP was below the money put in at 12 months.",
-  "read": "Each row: dot is the median, thick bar the middle half, thin line the 5th to 95th percentile. The counts are start months; the episodes behind them are far fewer.",
+  "read": "Each row: dot is the median, thick bar the middle half, thin line the 5th to 95th percentile. The counts are start months; the separate episodes behind them are far fewer.",
   "source": "NSE total-return indices (Nifty 500 from 1995); RBI deposit rates; tipsheet calculations",
   "job": "answer",
   "evidence": "tested",
@@ -4719,7 +4619,8 @@
    "series": [
     {
      "col": "p50",
-     "label": "Median"
+     "label": "Median",
+     "slot": 1
     }
    ],
    "outcome": {
@@ -4777,19 +4678,20 @@
     ]
    }
   },
+  "few": false,
   "id": "fig-q16",
   "big": true,
   "note": "Evidence: tested. The question and method were written down before the results."
  },
  "q16_indices": {
-  "title": "For mid and small caps the bonus for a bad start was small or absent",
-  "sub": "Median ten-year SIP return for SIPs in the red at 12 months against the rest, by index (Nifty 500 from 1995, Nifty 50 from 1999, mid and small caps from 2005).",
-  "read": "Coloured is the red-at-a-year group, grey the rest. Where colour is right of grey, a bad start was followed by a better ending.",
-  "source": "NSE total-return indices (Nifty 500 from 1995); RBI deposit rates; tipsheet calculations",
+  "title": "The bonus for a bad start was an equity effect: absent for mid caps, and reversed for the mixes",
+  "sub": "Median ten-year SIP return for SIPs in the red at 12 months against the rest (Nifty 500 from 1995, Nifty 50 from 1999, mid and small caps and the mixes from 2005). The two mixes were added after the results, at the editor's request; the four indices were planned.",
+  "read": "For each portfolio, blue is the red-at-a-year group and grey the rest. Where blue is longer, a bad start was followed by a better ending.",
+  "source": "NSE total-return indices, NSE 5-year G-sec index, domestic gold price; RBI deposit rates; tipsheet calculations",
   "job": "conditioning",
   "evidence": "tested",
   "spec": {
-   "kind": "dots",
+   "kind": "hbars",
    "room": "standard",
    "fmt": "pct",
    "digits": 1,
@@ -4802,7 +4704,7 @@
     {
      "col": "red",
      "label": "In the red at a year",
-     "slot": 2
+     "slot": 1
     }
    ]
   },
@@ -4811,77 +4713,50 @@
     "Nifty 500",
     "Nifty 50",
     "Midcap 150",
-    "Smallcap 250"
+    "Smallcap 250",
+    "60/20/20",
+    "Equal thirds"
    ],
    "series": {
     "rest": [
      14.1,
      13.2,
      18.1,
-     15.1
+     15.1,
+     12.5,
+     11.1
     ],
     "red": [
      17.9,
      14.3,
      17.9,
-     15.7
+     15.7,
+     12.0,
+     10.2
     ]
    }
   },
   "legend": [
    {
     "label": "Not in the red",
-    "color": "var(--hist)"
+    "color": "var(--hist)",
+    "shape": "box"
    },
    {
     "label": "In the red at a year",
-    "slot": 2
+    "slot": 1,
+    "shape": "box"
    }
   ],
+  "few": false,
   "id": "fig-q16_indices",
-  "big": true,
-  "note": "Evidence: tested. The question and method were written down before the results."
- },
- "q16_mechanism": {
-  "title": "Why a bad start helped: 18% of the money went in while the SIP was red, but it bought 30% of the units",
-  "sub": "Nifty 500 SIPs in the red at 12 months: median share of all instalments made while the SIP was below the money put in, and median share of the units those instalments bought.",
-  "read": "Money put in during the bad months bought units cheaply. Those units are worth the same as any other at the end, so they punch above their weight.",
-  "source": "NSE total-return indices (Nifty 500 from 1995); RBI deposit rates; tipsheet calculations",
-  "job": "mechanism",
-  "evidence": "tested",
-  "spec": {
-   "kind": "hbars",
-   "room": "compact",
-   "fmt": "pct",
-   "digits": 0,
-   "series": [
-    {
-     "col": "s",
-     "label": "Share",
-     "slot": 2
-    }
-   ]
-  },
-  "data": {
-   "categories": [
-    "Share of money put in while red",
-    "Share of units bought while red"
-   ],
-   "series": {
-    "s": [
-     17.5,
-     29.8
-    ]
-   }
-  },
-  "id": "fig-q16_mechanism",
   "big": true,
   "note": "Evidence: tested. The question and method were written down before the results."
  },
  "q16_case": {
   "title": "A Nifty 500 SIP started in January 2008 fell −42% below the money put in, then returned 14.5% a year over ten years",
   "sub": "₹10,000 a month from January 2008, month by month to today: money put in and what it was worth.",
-  "read": "Grey is the money put in, colour the statement value. The colour line spent its first year and more below grey, then never looked back.",
+  "read": "Grey is the money put in, blue the statement value. Blue spent more than a year below grey, then never looked back.",
   "source": "NSE total-return indices (Nifty 500 from 1995); RBI deposit rates; tipsheet calculations",
   "job": "case",
   "evidence": "illustration",
@@ -4899,7 +4774,7 @@
     {
      "col": "value",
      "label": "What it was worth",
-     "slot": 2
+     "slot": 1
     },
     {
      "col": "invested",
@@ -5593,14 +5468,27 @@
     ]
    }
   },
+  "legend": [
+   {
+    "label": "What it was worth",
+    "slot": 1,
+    "shape": "line"
+   },
+   {
+    "label": "Money put in",
+    "color": "var(--hist)",
+    "shape": "line"
+   }
+  ],
+  "few": false,
   "id": "fig-q16_case",
   "big": true,
   "note": "Evidence: illustration. Hand-picked cases; they show what happened, not what usually happens."
  },
  "q17": {
-  "title": "Keeping a red SIP going beat stopping in 100% of cases; switching to FDs cost a median ₹14.8 lakh",
-  "sub": "Nifty 500 SIPs in the red at 12 months, over the same ten years and the same ₹12 lakh of savings: keeping going, against stopping and holding (new money to FDs), selling and switching to FDs, or pausing until back in the black. Paired gap in final value.",
-  "read": "Each row is one alternative: how many rupees keeping going ended ahead by (median, with the 5th to 95th percentile). Everything is right of zero.",
+  "title": "For Nifty 500 SIPs in the red at a year, keeping going beat stopping in 100% of cases; switching to FDs cost a median ₹14.8 lakh",
+  "sub": "Over the same ten years and the same ₹12 lakh of savings: keeping going, against stopping and holding (new money to FDs), selling and switching to FDs, or pausing until back in the black. Paired gap in final value.",
+  "read": "Each row is one alternative: how many rupees keeping going ended ahead by (dot: median; line: 5th to 95th percentile). Every row is right of zero.",
   "source": "NSE total-return indices (Nifty 500 from 1995); RBI deposit rates; tipsheet calculations",
   "job": "answer",
   "evidence": "tested",
@@ -5610,11 +5498,11 @@
    "fmt": "num",
    "digits": 1,
    "unit": "₹ lakh",
-   "div": 100000,
    "series": [
     {
      "col": "m",
-     "label": "Median gap"
+     "label": "Median gap",
+     "slot": 1
     }
    ],
    "outcome": {
@@ -5634,19 +5522,19 @@
    ],
    "series": {
     "m": [
-     1312761,
-     1482046,
-     136485
+     13.13,
+     14.82,
+     1.36
     ],
     "l": [
-     322396,
-     418484,
-     17105
+     3.22,
+     4.18,
+     0.17
     ],
     "h": [
-     2939822,
-     3544269,
-     1537453
+     29.4,
+     35.44,
+     15.37
     ],
     "n": [
      83,
@@ -5655,6 +5543,7 @@
     ]
    }
   },
+  "few": false,
   "id": "fig-q17",
   "big": true,
   "note": "Evidence: tested. The question and method were written down before the results."
@@ -5679,17 +5568,17 @@
     {
      "col": "B",
      "label": "vs stop and hold",
-     "slot": 2
+     "tone": "ink"
     },
     {
      "col": "C",
      "label": "vs sell to FDs",
-     "slot": 4
+     "slot": 2
     },
     {
      "col": "D",
      "label": "vs pause",
-     "slot": 6
+     "tone": "hist"
     }
    ]
   },
@@ -5724,34 +5613,35 @@
   "legend": [
    {
     "label": "vs stop and hold",
-    "slot": 2,
+    "color": "var(--ink)",
     "shape": "box"
    },
    {
     "label": "vs sell to FDs",
-    "slot": 4,
+    "slot": 2,
     "shape": "box"
    },
    {
     "label": "vs pause",
-    "slot": 6,
+    "color": "var(--hist)",
     "shape": "box"
    }
   ],
+  "few": false,
   "id": "fig-q17_indices",
   "big": true,
   "note": "Evidence: tested. The question and method were written down before the results."
  },
  "q18": {
   "title": "A SIP's return in its first year said little about its ending, and if anything pointed the wrong way (correlation -0.35)",
-  "sub": "Nifty 500 SIPs since 1995: rank correlation between the return shown at each age and the final ten-year return.",
-  "read": "Above zero, a good early number meant a good ending; below zero, the opposite. The line hovers around zero for years and only climbs late in the SIP's life.",
+  "sub": "Nifty 500 SIPs since 1995: rank correlation between the return shown at each age and the final ten-year return, every six months.",
+  "read": "Above zero, a good early number meant a good ending; below zero, the opposite. It stays near zero for years and first passes 0.5 eight years in.",
   "source": "NSE total-return indices (Nifty 500 from 1995); RBI deposit rates; tipsheet calculations",
   "job": "answer",
   "evidence": "tested",
   "spec": {
    "kind": "hbars",
-   "room": "standard",
+   "room": "tall",
    "fmt": "num",
    "digits": 2,
    "sign": true,
@@ -5759,103 +5649,64 @@
     {
      "col": "c",
      "label": "Correlation with the ending",
-     "slot": 2
+     "slot": 1
     }
    ]
   },
   "data": {
    "categories": [
-    "3m",
-    "6m",
-    "9m",
-    "12m",
-    "15m",
-    "18m",
-    "21m",
-    "24m",
-    "27m",
-    "30m",
-    "33m",
-    "36m",
-    "39m",
-    "42m",
-    "45m",
-    "48m",
-    "51m",
-    "54m",
-    "57m",
-    "60m",
-    "63m",
-    "66m",
-    "69m",
-    "72m",
-    "75m",
-    "78m",
-    "81m",
-    "84m",
-    "87m",
-    "90m",
-    "93m",
-    "96m",
-    "99m",
-    "102m",
-    "105m",
-    "108m",
-    "111m",
-    "114m",
-    "117m"
+    "6 months",
+    "12 months",
+    "18 months",
+    "24 months",
+    "30 months",
+    "36 months",
+    "42 months",
+    "48 months",
+    "54 months",
+    "60 months",
+    "66 months",
+    "72 months",
+    "78 months",
+    "84 months",
+    "90 months",
+    "96 months",
+    "102 months",
+    "108 months",
+    "114 months"
    ],
    "series": {
     "c": [
-     -0.23,
      -0.29,
-     -0.32,
      -0.35,
-     -0.3,
      -0.24,
-     -0.18,
      -0.12,
-     -0.05,
      0.02,
-     0.07,
-     0.1,
      0.1,
      0.07,
-     0.04,
      0.0,
-     -0.03,
      -0.05,
-     -0.06,
      -0.02,
-     0.02,
      0.06,
-     0.1,
      0.13,
-     0.18,
      0.25,
-     0.3,
      0.35,
-     0.39,
      0.41,
-     0.45,
      0.49,
-     0.51,
      0.55,
-     0.6,
      0.64,
-     0.71,
-     0.8,
-     0.9
+     0.8
     ]
    }
   },
+  "few": false,
   "id": "fig-q18",
   "big": true,
   "note": "Evidence: tested. The question and method were written down before the results."
  },
  "q19": {
   "title": "Among Nifty 50 SIPs in the red at a year, cheap and dear markets ended about the same: 14.8% against 14.3%",
-  "sub": "Nifty 50 SIPs since 1999: the index's trailing P/E at the SIP's 12-month mark against its ten-year return. SIPs in the red at 12 months are in colour.",
+  "sub": "Nifty 50 SIPs since 1999: the index's trailing P/E at the SIP's 12-month mark against its ten-year return. SIPs in the red at 12 months are coloured. Neighbouring start months overlap heavily; this is about two decades of history.",
   "read": "Each dot is a start month. If the bad-start bonus came only from cheap prices, the coloured dots on the left would sit well above those on the right.",
   "source": "NSE total-return indices (Nifty 500 from 1995); RBI deposit rates; tipsheet calculations; NSE P/E",
   "job": "mechanism",
@@ -5879,7 +5730,7 @@
     {
      "col": "xirr",
      "label": "Ten-year return",
-     "slot": 2
+     "slot": 11
     }
    ],
    "pin": [
@@ -6583,54 +6434,15 @@
     ]
    }
   },
+  "few": false,
   "id": "fig-q19",
   "big": true,
   "note": "Evidence: tested. The question and method were written down before the results."
  },
- "q19_now": {
-  "title": "Today's Nifty 50 P/E of 19.3 sits at the 35% mark of its history; the FD rate at the 25% mark",
-  "sub": "Where today's valuation and deposit rate sit against their own history (P/E since 1999, deposit rate since 1995). Context, not a forecast. NSE's earnings basis changed in 2021.",
-  "read": "A bar at 50% would be an ordinary reading. Neither is extreme.",
-  "source": "NSE; RBI; tipsheet calculations",
-  "job": "caveat",
-  "evidence": "measured",
-  "spec": {
-   "kind": "hbars",
-   "room": "compact",
-   "fmt": "pct",
-   "digits": 0,
-   "domain": [
-    0,
-    100
-   ],
-   "series": [
-    {
-     "col": "pc",
-     "label": "Percentile",
-     "slot": 2
-    }
-   ]
-  },
-  "data": {
-   "categories": [
-    "Nifty 50 P/E",
-    "FD rate"
-   ],
-   "series": {
-    "pc": [
-     35.2,
-     25.3
-    ]
-   }
-  },
-  "id": "fig-q19_now",
-  "big": true,
-  "note": "Evidence: measured. A count or distribution over the full sample."
- },
  "q20": {
   "title": "Investors' SIP money earned 11.2% a year, against 11.3% for money growing at the same trend: no sign of bad timing",
   "sub": "AMFI's monthly SIP inflows, April 2016 to September 2026, as if invested in the Nifty 500 total-return index, against a steady SIP, a SIP growing at the inflows' own trend (23% a year), and the index itself. Before tax and costs.",
-  "read": "A steady SIP is the wrong yardstick: inflows grew every year, so more money naturally went in later, at higher prices. Against the fair yardstick the gap all but disappears.",
+  "read": "A steady SIP is the wrong yardstick: inflows grew every year, so more money naturally went in later, at higher prices. Against the fair yardstick (the second bar) the gap all but disappears.",
   "source": "AMFI monthly SIP data (via India Data Hub); NSE; tipsheet calculations",
   "job": "comparison",
   "evidence": "measured",
@@ -6643,7 +6455,7 @@
     {
      "col": "x",
      "label": "Return a year",
-     "slot": 2
+     "slot": 1
     }
    ]
   },
@@ -6663,6 +6475,7 @@
     ]
    }
   },
+  "few": false,
   "id": "fig-q20",
   "big": true,
   "note": "Evidence: measured. A count or distribution over the full sample."
@@ -6670,7 +6483,7 @@
  "q20_inflows": {
   "title": "Monthly SIP inflows grew at about 23% a year",
   "sub": "AMFI's gross monthly SIP inflows and their log-linear trend.",
-  "read": "The line is the trend; the bars are each month's inflow.",
+  "read": "Blue is each month's inflow; grey the trend it is compared with.",
   "source": "AMFI monthly SIP data (via India Data Hub); NSE; tipsheet calculations",
   "job": "caveat",
   "evidence": "measured",
@@ -6687,7 +6500,7 @@
     {
      "col": "inflow",
      "label": "Monthly inflow",
-     "slot": 2
+     "slot": 1
     },
     {
      "col": "trend",
@@ -7084,6 +6897,19 @@
     ]
    }
   },
+  "legend": [
+   {
+    "label": "Monthly inflow",
+    "slot": 1,
+    "shape": "line"
+   },
+   {
+    "label": "Trend",
+    "color": "var(--hist)",
+    "shape": "line"
+   }
+  ],
+  "few": false,
   "id": "fig-q20_inflows",
   "big": true,
   "note": "Evidence: measured. A count or distribution over the full sample."
@@ -7106,7 +6932,7 @@
     {
      "col": "dd",
      "label": "Below the previous peak",
-     "slot": 3
+     "slot": 2
     }
    ],
    "events": [
@@ -7888,13 +7714,14 @@
     ]
    }
   },
+  "few": false,
   "id": "fig-q21",
   "big": true,
   "note": "Evidence: measured. A count or distribution over the full sample."
  },
  "q22": {
-  "title": "At today's rate of closures, the average SIP account lasts about 1.8 years",
-  "sub": "Outstanding SIP accounts divided by accounts closed over the previous 12 months: a rough average life. Shaded windows include AMFI's January–April 2025 clean-up of dormant accounts.",
+  "title": "At the current rate of closures, the average SIP account lasts about 1.8 years",
+  "sub": "Open SIP accounts divided by accounts closed over the previous 12 months: a rough average life. The shaded months are AMFI's January–April 2025 clean-up of dormant accounts.",
   "read": "Each point is a rough measure of how long a SIP account lasts, given how fast accounts were closing that year. It has never been above five years.",
   "source": "AMFI monthly SIP data (via India Data Hub); NSE; tipsheet calculations",
   "job": "answer",
@@ -7911,7 +7738,7 @@
     {
      "col": "life",
      "label": "Implied average life",
-     "slot": 2
+     "slot": 1
     }
    ],
    "events": [
@@ -8110,6 +7937,7 @@
     ]
    }
   },
+  "few": false,
   "id": "fig-q22",
   "big": true,
   "note": "Evidence: tested. The question and method were written down before the results."
@@ -8117,7 +7945,7 @@
  "q22_accounts": {
   "title": "Closures spiked to 3.5 times new registrations in April 2025, during AMFI's clean-up",
   "sub": "New and closed SIP accounts each month (AMFI). Closures include SIPs that reached their end date, failed bank mandates and the 2025 clean-up.",
-  "read": "When the coloured line is above the grey, more accounts closed than opened that month.",
+  "read": "When the terracotta line is above the grey, more accounts closed than opened that month.",
   "source": "AMFI monthly SIP data (via India Data Hub); NSE; tipsheet calculations",
   "job": "caveat",
   "evidence": "measured",
@@ -8134,7 +7962,7 @@
     {
      "col": "closed",
      "label": "Closed",
-     "slot": 3
+     "slot": 2
     },
     {
      "col": "new",
@@ -8423,42 +8251,20 @@
     ]
    }
   },
-  "id": "fig-q22_accounts",
-  "big": true,
-  "note": "Evidence: measured. A count or distribution over the full sample."
- },
- "x0": {
-  "title": "The SIP started in April 2025 ended its first year −10% down; 12% of first years since 1995 were worse",
-  "sub": "Nifty 500 SIP of ₹10,000 a month from April 2025, valued at the end of March 2026, against every 12-month SIP since 1995.",
-  "read": "A bad year, but not an unusual one.",
-  "source": "NSE total-return indices (Nifty 500 from 1995); RBI deposit rates; tipsheet calculations",
-  "job": "case",
-  "evidence": "measured",
-  "spec": {
-   "kind": "hbars",
-   "room": "compact",
-   "fmt": "pct",
-   "digits": 0,
-   "sign": true,
-   "series": [
-    {
-     "col": "x",
-     "label": "Value against money put in",
-     "slot": 3
-    }
-   ]
-  },
-  "data": {
-   "categories": [
-    "FY2025-26 SIP after 12 months"
-   ],
-   "series": {
-    "x": [
-     -10.0
-    ]
+  "legend": [
+   {
+    "label": "Closed",
+    "slot": 2,
+    "shape": "line"
+   },
+   {
+    "label": "New",
+    "color": "var(--hist)",
+    "shape": "line"
    }
-  },
-  "id": "fig-x0",
+  ],
+  "few": false,
+  "id": "fig-q22_accounts",
   "big": true,
   "note": "Evidence: measured. A count or distribution over the full sample."
  }

@@ -1,8 +1,8 @@
 {
  "study": "does-sip-work",
- "computed_at": "2026-10-15T08:02:53+00:00",
+ "computed_at": "2026-10-15T08:46:45+00:00",
  "plan_commit": "b974bf7d91d8d30a2a9bdb25817c51fcfb235a0b",
- "compute_sha256": "f89f078e9d2262ed4e7342610a42597f00b636d6ca036bd5d0a0c4181af62a2c",
+ "compute_sha256": "c1a90e604c73626ee30723926d185f7befc28458b20e630c095e3997038074a8",
  "inputs": {
   "portal:asset_tri_daily": {
    "file": "asset_tri_daily.parquet",
@@ -1444,6 +1444,856 @@
    "unit": "fraction",
    "note": "rebalanced April and October minus never"
   },
+  "q2_mix_n500_1y_p5": {
+   "value": -0.25052347,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_1y_p50": {
+   "value": 0.1231014,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_1y_p95": {
+   "value": 0.70416061,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_1y_worst": {
+   "value": -0.68445218,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_1y_lost": {
+   "value": 0.25101215,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_1y_below_fd": {
+   "value": 0.34817814,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_1y_below_inflation": {
+   "value": 0.32388664,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_1y_starts": {
+   "value": 247,
+   "unit": "count",
+   "exploratory": true
+  },
+  "q2_mix_m602020_1y_p5": {
+   "value": -0.09088063,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_1y_p50": {
+   "value": 0.13386629,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_1y_p95": {
+   "value": 0.47571167,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_1y_worst": {
+   "value": -0.43162729,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_1y_lost": {
+   "value": 0.14574899,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_1y_below_fd": {
+   "value": 0.25506073,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_1y_below_inflation": {
+   "value": 0.24291498,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_1y_starts": {
+   "value": 247,
+   "unit": "count",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_1y_p5": {
+   "value": -0.01265199,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_1y_p50": {
+   "value": 0.12288912,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_1y_p95": {
+   "value": 0.355745,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_1y_worst": {
+   "value": -0.22533207,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_1y_lost": {
+   "value": 0.06072874,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_1y_below_fd": {
+   "value": 0.18218623,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_1y_below_inflation": {
+   "value": 0.19838057,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_1y_starts": {
+   "value": 247,
+   "unit": "count",
+   "exploratory": true
+  },
+  "q2_mix_n500_3y_p5": {
+   "value": -0.03423145,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_3y_p50": {
+   "value": 0.13910566,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_3y_p95": {
+   "value": 0.26972049,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_3y_worst": {
+   "value": -0.25639084,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_3y_lost": {
+   "value": 0.08071749,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_3y_below_fd": {
+   "value": 0.19730942,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_3y_below_inflation": {
+   "value": 0.23766816,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_3y_starts": {
+   "value": 223,
+   "unit": "count",
+   "exploratory": true
+  },
+  "q2_mix_m602020_3y_p5": {
+   "value": 0.0342784,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_3y_p50": {
+   "value": 0.12745156,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_3y_p95": {
+   "value": 0.21769449,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_3y_worst": {
+   "value": -0.07360033,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_3y_lost": {
+   "value": 0.03139013,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_3y_below_fd": {
+   "value": 0.09865471,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_3y_below_inflation": {
+   "value": 0.14798206,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_3y_starts": {
+   "value": 223,
+   "unit": "count",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_3y_p5": {
+   "value": 0.06113219,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_3y_p50": {
+   "value": 0.11022073,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_3y_p95": {
+   "value": 0.19859913,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_3y_worst": {
+   "value": 0.01452699,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_3y_lost": {
+   "value": 0.0,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_3y_below_fd": {
+   "value": 0.04484305,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_3y_below_inflation": {
+   "value": 0.07623318,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_3y_starts": {
+   "value": 223,
+   "unit": "count",
+   "exploratory": true
+  },
+  "q2_mix_n500_5y_p5": {
+   "value": 0.04592188,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_5y_p50": {
+   "value": 0.1421776,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_5y_p95": {
+   "value": 0.21426332,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_5y_worst": {
+   "value": -0.04684406,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_5y_lost": {
+   "value": 0.01507538,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_5y_below_fd": {
+   "value": 0.07537688,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_5y_below_inflation": {
+   "value": 0.16582915,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_5y_starts": {
+   "value": 199,
+   "unit": "count",
+   "exploratory": true
+  },
+  "q2_mix_n500_5y_deepest_worst": {
+   "value": -0.44292124,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_5y_longest_red_max": {
+   "value": 23,
+   "unit": "months",
+   "exploratory": true
+  },
+  "q2_mix_m602020_5y_p5": {
+   "value": 0.08313639,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_5y_p50": {
+   "value": 0.12497929,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_5y_p95": {
+   "value": 0.18155918,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_5y_worst": {
+   "value": 0.02476113,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_5y_lost": {
+   "value": 0.0,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_5y_below_fd": {
+   "value": 0.00502513,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_5y_below_inflation": {
+   "value": 0.05527638,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_5y_starts": {
+   "value": 199,
+   "unit": "count",
+   "exploratory": true
+  },
+  "q2_mix_m602020_5y_deepest_worst": {
+   "value": -0.25326159,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_5y_longest_red_max": {
+   "value": 16,
+   "unit": "months",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_5y_p5": {
+   "value": 0.07523683,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_5y_p50": {
+   "value": 0.1244227,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_5y_p95": {
+   "value": 0.17553553,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_5y_worst": {
+   "value": 0.06344086,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_5y_lost": {
+   "value": 0.0,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_5y_below_fd": {
+   "value": 0.0,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_5y_below_inflation": {
+   "value": 0.03517588,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_5y_starts": {
+   "value": 199,
+   "unit": "count",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_5y_deepest_worst": {
+   "value": -0.1272132,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_5y_longest_red_max": {
+   "value": 11,
+   "unit": "months",
+   "exploratory": true
+  },
+  "q2_mix_n500_7y_p5": {
+   "value": 0.06334955,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_7y_p50": {
+   "value": 0.13602602,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_7y_p95": {
+   "value": 0.18187825,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_7y_worst": {
+   "value": 0.0090727,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_7y_lost": {
+   "value": 0.0,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_7y_below_fd": {
+   "value": 0.04,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_7y_below_inflation": {
+   "value": 0.14857143,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_7y_starts": {
+   "value": 175,
+   "unit": "count",
+   "exploratory": true
+  },
+  "q2_mix_m602020_7y_p5": {
+   "value": 0.09087754,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_7y_p50": {
+   "value": 0.12361233,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_7y_p95": {
+   "value": 0.17161878,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_7y_worst": {
+   "value": 0.05037589,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_7y_lost": {
+   "value": 0.0,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_7y_below_fd": {
+   "value": 0.0,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_7y_below_inflation": {
+   "value": 0.02857143,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_7y_starts": {
+   "value": 175,
+   "unit": "count",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_7y_p5": {
+   "value": 0.07976269,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_7y_p50": {
+   "value": 0.11513248,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_7y_p95": {
+   "value": 0.16232037,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_7y_worst": {
+   "value": 0.07042369,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_7y_lost": {
+   "value": 0.0,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_7y_below_fd": {
+   "value": 0.0,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_7y_below_inflation": {
+   "value": 0.0,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_7y_starts": {
+   "value": 175,
+   "unit": "count",
+   "exploratory": true
+  },
+  "q2_mix_n500_10y_p5": {
+   "value": 0.09349785,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_10y_p50": {
+   "value": 0.13480902,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_10y_p95": {
+   "value": 0.16404323,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_10y_worst": {
+   "value": 0.04291346,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_10y_lost": {
+   "value": 0.0,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_10y_below_fd": {
+   "value": 0.00719424,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_10y_below_inflation": {
+   "value": 0.00719424,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_10y_starts": {
+   "value": 139,
+   "unit": "count",
+   "exploratory": true
+  },
+  "q2_mix_n500_10y_deepest_worst": {
+   "value": -0.44292124,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_10y_longest_red_max": {
+   "value": 23,
+   "unit": "months",
+   "exploratory": true
+  },
+  "q2_mix_m602020_10y_p5": {
+   "value": 0.09571083,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_10y_p50": {
+   "value": 0.12382824,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_10y_p95": {
+   "value": 0.15663199,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_10y_worst": {
+   "value": 0.0658949,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_10y_lost": {
+   "value": 0.0,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_10y_below_fd": {
+   "value": 0.0,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_10y_below_inflation": {
+   "value": 0.0,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_10y_starts": {
+   "value": 139,
+   "unit": "count",
+   "exploratory": true
+  },
+  "q2_mix_m602020_10y_deepest_worst": {
+   "value": -0.25326159,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_10y_longest_red_max": {
+   "value": 16,
+   "unit": "months",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_10y_p5": {
+   "value": 0.08546346,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_10y_p50": {
+   "value": 0.11031372,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_10y_p95": {
+   "value": 0.15220841,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_10y_worst": {
+   "value": 0.07511159,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_10y_lost": {
+   "value": 0.0,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_10y_below_fd": {
+   "value": 0.0,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_10y_below_inflation": {
+   "value": 0.0,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_10y_starts": {
+   "value": 139,
+   "unit": "count",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_10y_deepest_worst": {
+   "value": -0.1272132,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_10y_longest_red_max": {
+   "value": 11,
+   "unit": "months",
+   "exploratory": true
+  },
+  "q2_mix_n500_15y_p5": {
+   "value": 0.09399148,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_15y_p50": {
+   "value": 0.13537435,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_15y_p95": {
+   "value": 0.15218269,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_15y_worst": {
+   "value": 0.06929121,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_15y_lost": {
+   "value": 0.0,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_15y_below_fd": {
+   "value": 0.0,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_15y_below_inflation": {
+   "value": 0.0,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_n500_15y_starts": {
+   "value": 79,
+   "unit": "count",
+   "exploratory": true
+  },
+  "q2_mix_m602020_15y_p5": {
+   "value": 0.10870239,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_15y_p50": {
+   "value": 0.12748312,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_15y_p95": {
+   "value": 0.14167065,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_15y_worst": {
+   "value": 0.08960714,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_15y_lost": {
+   "value": 0.0,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_15y_below_fd": {
+   "value": 0.0,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_15y_below_inflation": {
+   "value": 0.0,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_m602020_15y_starts": {
+   "value": 79,
+   "unit": "count",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_15y_p5": {
+   "value": 0.1055028,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_15y_p50": {
+   "value": 0.11474869,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_15y_p95": {
+   "value": 0.1359145,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_15y_worst": {
+   "value": 0.09493185,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_15y_lost": {
+   "value": 0.0,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_15y_below_fd": {
+   "value": 0.0,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_15y_below_inflation": {
+   "value": 0.0,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q2_mix_mthirds_15y_starts": {
+   "value": 79,
+   "unit": "count",
+   "exploratory": true
+  },
+  "q15_mix_m602020_ever_red": {
+   "value": 0.8902439,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q15_mix_m602020_deepest": {
+   "value": -0.25326159,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q15_mix_m602020_longest": {
+   "value": 16,
+   "unit": "months",
+   "exploratory": true
+  },
+  "q16_mix_m602020_red12": {
+   "value": 0.18705036,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q16_mix_m602020_red_p50": {
+   "value": 0.11999328,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q16_mix_m602020_rest_p50": {
+   "value": 0.12509341,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q16_mix_m602020_red_n": {
+   "value": 26,
+   "unit": "count",
+   "exploratory": true
+  },
+  "q15_mix_mthirds_ever_red": {
+   "value": 0.70731707,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q15_mix_mthirds_deepest": {
+   "value": -0.1272132,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q15_mix_mthirds_longest": {
+   "value": 11,
+   "unit": "months",
+   "exploratory": true
+  },
+  "q16_mix_mthirds_red12": {
+   "value": 0.09352518,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q16_mix_mthirds_red_p50": {
+   "value": 0.10176394,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q16_mix_mthirds_rest_p50": {
+   "value": 0.11110171,
+   "unit": "fraction",
+   "exploratory": true
+  },
+  "q16_mix_mthirds_red_n": {
+   "value": 13,
+   "unit": "count",
+   "exploratory": true
+  },
   "q7_n500_5y_xirr_range": {
    "value": 0.41238801,
    "unit": "fraction",
@@ -1461,6 +2311,10 @@
    "value": 2.68242411,
    "unit": "ratio"
   },
+  "q7_n500_5y_multiple_p50": {
+   "value": 1.45470209,
+   "unit": "ratio"
+  },
   "q7_n500_10y_xirr_range": {
    "value": 0.16199955,
    "unit": "fraction",
@@ -1476,6 +2330,10 @@
   },
   "q7_n500_10y_multiple_p95": {
    "value": 3.97378914,
+   "unit": "ratio"
+  },
+  "q7_n500_10y_multiple_p50": {
+   "value": 2.1415353,
    "unit": "ratio"
   },
   "q7_n500_10y_xirr_range_1995_2004": {
@@ -1503,6 +2361,10 @@
    "value": 4.6567775,
    "unit": "ratio"
   },
+  "q7_n500_15y_multiple_p50": {
+   "value": 3.3763029,
+   "unit": "ratio"
+  },
   "q7_n500_20y_xirr_range": {
    "value": 0.03502873,
    "unit": "fraction",
@@ -1518,6 +2380,10 @@
   },
   "q7_n500_20y_multiple_p95": {
    "value": 6.42886926,
+   "unit": "ratio"
+  },
+  "q7_n500_20y_multiple_p50": {
+   "value": 5.41094211,
    "unit": "ratio"
   },
   "q8_n500_10y_best_year_median": {
@@ -3951,5 +4817,26 @@
    "detail": "with the clean-up months and with new accounts as the flow recorded"
   }
  },
- "exploratory_tried": []
+ "exploratory_tried": [
+  "Q1/Q2 for Nifty 500 at 1 years, starts from April 2005, rebalanced each April",
+  "Q1/Q2 for 60/20/20 at 1 years, starts from April 2005, rebalanced each April",
+  "Q1/Q2 for Equal thirds at 1 years, starts from April 2005, rebalanced each April",
+  "Q1/Q2 for Nifty 500 at 3 years, starts from April 2005, rebalanced each April",
+  "Q1/Q2 for 60/20/20 at 3 years, starts from April 2005, rebalanced each April",
+  "Q1/Q2 for Equal thirds at 3 years, starts from April 2005, rebalanced each April",
+  "Q1/Q2 for Nifty 500 at 5 years, starts from April 2005, rebalanced each April",
+  "Q1/Q2 for 60/20/20 at 5 years, starts from April 2005, rebalanced each April",
+  "Q1/Q2 for Equal thirds at 5 years, starts from April 2005, rebalanced each April",
+  "Q1/Q2 for Nifty 500 at 7 years, starts from April 2005, rebalanced each April",
+  "Q1/Q2 for 60/20/20 at 7 years, starts from April 2005, rebalanced each April",
+  "Q1/Q2 for Equal thirds at 7 years, starts from April 2005, rebalanced each April",
+  "Q1/Q2 for Nifty 500 at 10 years, starts from April 2005, rebalanced each April",
+  "Q1/Q2 for 60/20/20 at 10 years, starts from April 2005, rebalanced each April",
+  "Q1/Q2 for Equal thirds at 10 years, starts from April 2005, rebalanced each April",
+  "Q1/Q2 for Nifty 500 at 15 years, starts from April 2005, rebalanced each April",
+  "Q1/Q2 for 60/20/20 at 15 years, starts from April 2005, rebalanced each April",
+  "Q1/Q2 for Equal thirds at 15 years, starts from April 2005, rebalanced each April",
+  "Q15 to-date paths and Q16 red-at-12-months for 60/20/20, starts from April 2005",
+  "Q15 to-date paths and Q16 red-at-12-months for Equal thirds, starts from April 2005"
+ ]
 }

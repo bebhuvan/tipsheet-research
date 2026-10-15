@@ -39,7 +39,8 @@ Hard cap: ₹250 of API spend per study, enforced in `desk/models.py` from a led
 | Text matches numbers | invented or mis-rounded figures, wrong units or signs | free | numeric gate (ported from the bench) |
 | Style | AI patterns, American spelling, millions instead of lakh/crore | free | style gate (ported) |
 | Review + cold read | overclaiming, method drift, unclear writing, sections a novice can't answer from | ~₹5–15 | `desk review`: Gemini Flash |
-| Human | everything else | 30–45 min | approve the plan; read the draft; recompute three numbers by hand |
+| Sentence audit | a number that exists in the results but isn't the one the sentence means | ~₹5–10 | `desk audit`: every sentence with a number, its matched facts, checked by DeepSeek. Replaced the hand spot-check (owner, 2026-10-15) |
+| Human | everything else | 20–30 min | approve the plan; read the draft |
 
 ## Adversarial review of the first proposal (2026-10-15)
 

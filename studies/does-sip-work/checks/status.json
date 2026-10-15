@@ -1,5 +1,5 @@
 {
- "at": "2026-10-15T08:09:22+00:00",
+ "at": "2026-10-15T08:49:29+00:00",
  "items": [
   {
    "check": "plan_shape",
@@ -14,7 +14,7 @@
   {
    "check": "results_fresh",
    "status": "ok",
-   "detail": "computed 2026-10-15T08:02:53+00:00"
+   "detail": "computed 2026-10-15T08:46:45+00:00"
   },
   {
    "check": "checks_passed",
@@ -37,14 +37,19 @@
    "detail": ""
   },
   {
+   "check": "figures_used",
+   "status": "ok",
+   "detail": "39 figures used"
+  },
+  {
    "check": "figures_complete",
    "status": "ok",
-   "detail": "45 figures"
+   "detail": "39 figures"
   },
   {
    "check": "numbers_traced",
    "status": "ok",
-   "detail": "694 figures checked, 0 untraced",
+   "detail": "702 figures checked, 0 untraced",
    "failures": [],
    "warnings": [
     {
@@ -60,22 +65,22 @@
     {
      "text": "10",
      "sentence": "Their statement said it was worth about ₹1.08 lakh: 10% down, and an XIRR (the annualised return across dated instalments that the app shows) of −18% a year.",
-     "why": "matches 10 facts; the claims critic must confirm the sentence uses the right one"
+     "why": "matches 13 facts; the claims critic must confirm the sentence uses the right one"
     },
     {
      "text": "12",
      "sentence": "Only 12% of first years since 1995 had been worse.",
-     "why": "matches 20 facts; the claims critic must confirm the sentence uses the right one"
+     "why": "matches 28 facts; the claims critic must confirm the sentence uses the right one"
     },
     {
      "text": "Two",
      "sentence": "Two stories went around at once.",
-     "why": "matches 17 facts; the claims critic must confirm the sentence uses the right one"
+     "why": "matches 18 facts; the claims critic must confirm the sentence uses the right one"
     },
     {
      "text": "12",
      "sentence": "The other said SIP is broken: the success stories came from cheap markets and 12% deposits, and they won't repeat.",
-     "why": "matches 20 facts; the claims critic must confirm the sentence uses the right one"
+     "why": "matches 28 facts; the claims critic must confirm the sentence uses the right one"
     },
     {
      "text": "30",
@@ -90,7 +95,7 @@
     {
      "text": "eleven",
      "sentence": "Of the eleven predictions, four held.",
-     "why": "matches 5 facts; the claims critic must confirm the sentence uses the right one"
+     "why": "matches 8 facts; the claims critic must confirm the sentence uses the right one"
     },
     {
      "text": "four",
@@ -100,12 +105,12 @@
     {
      "text": "three",
      "sentence": "It isn't: a ten-year SIP started every month since 1995 overlaps heavily with its neighbours, and there are only about three separate decades in the record.",
-     "why": "matches 5 facts; the claims critic must confirm the sentence uses the right one"
+     "why": "matches 6 facts; the claims critic must confirm the sentence uses the right one"
     },
     {
      "text": "two",
      "sentence": "Where a result rests on one or two market episodes, I say so.",
-     "why": "matches 17 facts; the claims critic must confirm the sentence uses the right one"
+     "why": "matches 18 facts; the claims critic must confirm the sentence uses the right one"
     },
     {
      "text": "0.2",
@@ -120,7 +125,7 @@
     {
      "text": "five",
      "sentence": "Over one to five years, often not: 29% of one-year SIPs lost money.",
-     "why": "matches 5 facts; the claims critic must confirm the sentence uses the right one"
+     "why": "matches 6 facts; the claims critic must confirm the sentence uses the right one"
     },
     {
      "text": "29",
@@ -129,23 +134,23 @@
     },
     {
      "text": "five",
+     "sentence": "A 60/20/20 mix of equities, bonds and gold gave up about a point a year in the typical case, roughly halved the worst fall, and never lost money over five years from 2005.",
+     "why": "matches 6 facts; the claims critic must confirm the sentence uses the right one"
+    },
+    {
+     "text": "five",
      "sentence": "The first five years' instalments did most of the work.",
-     "why": "matches 5 facts; the claims critic must confirm the sentence uses the right one"
+     "why": "matches 6 facts; the claims critic must confirm the sentence uses the right one"
     },
     {
      "text": "100",
-     "sentence": "- **What if my SIP is in the red?** Keeping going beat stopping in 100% of the cases since 1995.",
+     "sentence": "- **What if my SIP is in the red?** For Nifty 500 SIPs in the red after a year, keeping going beat stopping in 100% of cases since 1995; selling and moving to an FD cost a median ₹14.8 lakh.",
      "why": "matches 23 facts; the claims critic must confirm the sentence uses the right one"
     },
     {
      "text": "1",
      "sentence": "Chapter 1.",
-     "why": "matches 72 facts; the claims critic must confirm the sentence uses the right one"
-    },
-    {
-     "text": "29",
-     "sentence": "A Nifty 500 SIP started in any month since January 1995 lost money in 29% of one-year windows, 16% of three-year windows, 7% of five-year windows and none of the ten-year ones.",
-     "why": "matches 6 facts; the claims critic must confirm the sentence uses the right one"
+     "why": "matches 77 facts; the claims critic must confirm the sentence uses the right one"
     }
    ]
   },
@@ -164,7 +169,7 @@
     {
      "rule": "intensifier",
      "severity": "warn",
-     "line": 262,
+     "line": 263,
      "text": "really",
      "message": "Intensifier. Use the number instead."
     },
@@ -178,28 +183,28 @@
     {
      "rule": "long_sentence",
      "severity": "warn",
-     "line": 174,
+     "line": 171,
      "text": "Doubling the instalment when the Nifty 50's P/E (price-to-earnings ratio: the index's price divided by its companies' ye…",
      "message": "53 words; split it."
     },
     {
      "rule": "long_sentence",
      "severity": "warn",
-     "line": 180,
+     "line": 177,
      "text": "Pausing the SIP during a 20% fall and keeping the paused money in an FD cost 3.8 points a year if the pause lasted until…",
      "message": "47 words; split it."
     },
     {
      "rule": "long_sentence",
      "severity": "warn",
-     "line": 236,
+     "line": 237,
      "text": "For each of the 83 Nifty 500 start months since 1995 that were in the red at 12 months, I compared four paths over the s…",
      "message": "74 words; split it."
     },
     {
      "rule": "long_sentence",
      "severity": "warn",
-     "line": 317,
+     "line": 316,
      "text": "What not to conclude: that SIPs always win (small caps lost money over ten years in one start month, and the next 30 yea…",
      "message": "49 words; split it."
     }
@@ -222,13 +227,18 @@
   },
   {
    "check": "recompute",
-   "status": "ok",
-   "detail": "23 headline numbers matched"
+   "status": "fail",
+   "detail": "recompute ran on older results; run it again"
   },
   {
    "check": "review_answered",
    "status": "ok",
    "detail": "13 issues handled"
+  },
+  {
+   "check": "audit",
+   "status": "pending",
+   "detail": "run `desk audit` once the article is final"
   },
   {
    "check": "report",
@@ -238,12 +248,12 @@
   {
    "check": "budget",
    "status": "ok",
-   "detail": "₹21 of ₹250"
+   "detail": "₹51 of ₹250"
   },
   {
    "check": "human_read",
    "status": "pending",
-   "detail": "a person reads the article, recomputes three numbers by hand, and sets signed_off"
+   "detail": "a person reads the article and sets signed_off (numbers are audited by `desk audit`)"
   }
  ]
 }

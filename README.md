@@ -7,7 +7,7 @@ Finance research with the rigour of an academic paper, written for people who ma
 1. **Questions.** One big question a real investor has, broken into three to five sub-questions, each with the plausible answers either way. A person approves the plan, and it is frozen in git before any result is computed.
 2. **Compute.** Code answers each frozen question, using tested calculations and recording checks for look-ahead bias, survivorship and robustness. Null results are reported like any others.
 3. **Write.** An article for general readers. Every number in it is traced by code to the results.
-4. **Check.** Free automated checks, an independent recalculation of the headline numbers by a second AI model working from the plan alone, a review and cold read by a third, and a human read before publication.
+4. **Check.** Free automated checks, an independent recalculation of the headline numbers by a second AI model working from the plan alone, a review and cold read by a third, an audit of every number in the text by a model, and a human read before publication.
 
 The studies are planned, coded and drafted with AI models, and people at tipsheet read and sign off every one. Which model did what is recorded in each study.
 

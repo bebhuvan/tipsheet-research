@@ -7,6 +7,7 @@ import re
 import shutil
 import sys
 from datetime import date
+from pathlib import Path
 
 from .config import PORTAL_ROOT, ROOT, STUDIES, sha256_file, write_json
 from .study import Study, git
@@ -47,19 +48,19 @@ def cmd_freeze(slug: str) -> int:
     return 0
 
 
-def cmd_publish(slug: str, force_pending: bool = False) -> int:
+def cmd_publish(slug: str, force_pending: bool = False, to: str | None = None, preview: bool = False) -> int:
     from . import check
     S = Study(slug)
-    if check.main(slug, strict=not force_pending) != 0:
-        raise SystemExit("desk check must pass first")
-    posts = PORTAL_ROOT / "content" / "posts"
+    if not preview and check.main(slug, strict=not force_pending) != 0:
+        raise SystemExit("desk check must pass first (use --preview to copy a draft into a preview checkout)")
+    posts = (Path(to).expanduser() if to else PORTAL_ROOT) / "content" / "posts"   # --to: a portal worktree for previews
     if not posts.is_dir():
         raise SystemExit(f"portal posts folder not found: {posts}")
     text = S.article_path.read_text()
     text = re.sub(r'^import F from ".*?";$', f'import F from "./{slug}.figures.json";', text, flags=re.M)
     (posts / f"{slug}.mdx").write_text(text)
     shutil.copy(S.figures_path, posts / f"{slug}.figures.json")
-    if not force_pending:
+    if not force_pending and not preview:
         tag = f"{slug}/published-{date.today().isoformat()}"
         git("tag", "-a", tag, "-m", f"{slug}: the version copied to the site")
         print(f"tagged {tag}; push it with the branch.")
@@ -71,7 +72,7 @@ def cmd_publish(slug: str, force_pending: bool = False) -> int:
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(prog="desk")
     sub = p.add_subparsers(dest="cmd", required=True)
-    for name in ("new", "freeze", "check", "recompute", "review", "report", "publish"):
+    for name in ("new", "freeze", "check", "recompute", "review", "audit", "report", "publish"):
         s = sub.add_parser(name)
         s.add_argument("slug")
         if name == "check":
@@ -79,6 +80,8 @@ def main(argv: list[str] | None = None) -> int:
             s.add_argument("-v", "--verbose", action="store_true")
         if name == "publish":
             s.add_argument("--allow-pending", action="store_true", help="copy for a preview before sign-off")
+            s.add_argument("--to", help="portal checkout to copy into (default PORTAL_ROOT), e.g. a preview worktree")
+            s.add_argument("--preview", action="store_true", help="copy a draft without running desk check; never tags")
     a = p.parse_args(argv)
     if a.cmd == "new":
         return cmd_new(a.slug)
@@ -93,11 +96,16 @@ def main(argv: list[str] | None = None) -> int:
     if a.cmd == "review":
         from . import review
         return review.main(a.slug)
+    if a.cmd == "audit":
+        from . import audit
+        return audit.main(a.slug)
     if a.cmd == "report":
         from . import report
         return report.main(a.slug)
     if a.cmd == "publish":
-        return cmd_publish(a.slug, a.allow_pending)
+        if a.preview and not a.to:
+            raise SystemExit("--preview needs --to <a preview checkout>; never preview into the live portal")
+        return cmd_publish(a.slug, a.allow_pending, a.to, a.preview)
     return 1
 
 

@@ -10,7 +10,7 @@ Every study lives in `studies/<slug>/`, worked on the branch `study/<slug>`. Sta
 2. **Compute.** Read `guides/stats.md`. Write `compute.py`, which loads inputs only through `desk.data`, uses `desk.calc` for standard calculations, records every citable number with `R.fact(...)`, every declared check with `R.check(...)`, and writes `results/`. Add a function to `desk/calc.py` only with a known-answer test in `tests/`.
 3. **Write.** Read `guides/writing.md` and `guides/charts.md`. Write `figures.py` (builds `figures.json` from results) and `article.mdx`.
 4. **Check.** `uv run desk check <slug>` until it passes, then `uv run desk recompute <slug>` and `uv run desk review <slug>`. Fix or answer every review issue in `checks/responses.json` and run `desk check` again.
-5. **Report.** `uv run desk report <slug>` writes the record half of `REPORT.md`. As the lead researcher, write its narrative sections honestly: what changed, what went wrong and how it was caught, dead ends, the weakest link. Then a human reads the article, recomputes three numbers by hand and signs off. `uv run desk publish <slug>` copies the article into the portal and tags the version. It never commits in the portal.
+5. **Report.** `uv run desk report <slug>` writes the record half of `REPORT.md`. As the lead researcher, write its narrative sections honestly: what changed, what went wrong and how it was caught, dead ends, the weakest link. Then `uv run desk audit <slug>` checks every number in the article against the fact it should be (a model from another family; this replaced the hand spot-check on 2026-10-15), and a human reads the article and signs off. `uv run desk publish <slug>` copies the article into the portal and tags the version. It never commits in the portal.
 
 ## Rules that are never broken
 
@@ -38,6 +38,7 @@ uv run python studies/<slug>/figures.py
 uv run desk check <slug>        all free checks; writes checks/status.json
 uv run desk recompute <slug>    independent recompute (DeepSeek, sandboxed)
 uv run desk review <slug>       method review and cold read (Gemini)
+uv run desk audit <slug>        every number against the fact it should be (DeepSeek)
 uv run desk report <slug>       regenerate the record half of REPORT.md
 uv run desk publish <slug>      copy into the portal's content/posts/
 uv run pytest

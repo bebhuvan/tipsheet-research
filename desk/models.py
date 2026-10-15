@@ -27,9 +27,12 @@ PROVIDERS = {
 }
 
 ROLES = {
-    "recompute": {"provider": "deepseek", "model": "deepseek-flash", "max_tokens": 32000,
+    "recompute": {"provider": "deepseek", "model": "deepseek-flash", "max_tokens": 64000,   # reasoning counts against it
                   "price": {"input": 0.30, "output": 1.20},
                   "extra": {"thinking": {"type": "enabled"}, "reasoning_effort": "high"}},
+    "audit": {"provider": "deepseek", "model": "deepseek-flash", "max_tokens": 64000,
+              "price": {"input": 0.30, "output": 1.20},
+              "extra": {"thinking": {"type": "enabled"}, "reasoning_effort": "high"}},
     "review": {"provider": "gemini", "model": "gemini-3.8-flash", "max_tokens": 65000,   # hidden reasoning counts against it
                "price": {"input": 0.75, "output": 3.75},
                "extra": {"reasoning_effort": "high"}},
