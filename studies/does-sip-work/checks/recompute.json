@@ -1,0 +1,189 @@
+{
+ "results_sha256": "c73fea75c2355fc5a6530c67423062b2b5b3639cc8bf324090aa7dad068aa9a2",
+ "attempts": [
+  {
+   "attempt": 0,
+   "model": "deepseek-flash",
+   "inr": 3.45,
+   "ok": false,
+   "error": " "
+  },
+  {
+   "attempt": 1,
+   "model": "deepseek-flash",
+   "inr": 1.9,
+   "ok": true,
+   "error": ""
+  }
+ ],
+ "ambiguities": [
+  "Months: used every calendar month with at least one session from Jan-1995 through Sep-2026 (ordering assumed contiguous); Oct-2026 dropped.",
+  "'In the red' and 'lost money' use strict '<' (value below money put in).",
+  "FD tax at the final valuation date is applied even when that date is not 31 March, as the specification states.",
+  "Path D keeps a single 'paused' flag that, once cleared, is never re-armed; the resumed SIP buys units for every later month.",
+  "AMFI industry/trend SIPs value all units at the level of the very last row of tri_500.parquet."
+ ],
+ "rows": [
+  {
+   "key": "q1_n500_3y_lost",
+   "ours": 0.15606936,
+   "theirs": 0.15606936416184972,
+   "tolerance": 0.005,
+   "match": true
+  },
+  {
+   "key": "q1_n500_5y_lost",
+   "ours": 0.06521739,
+   "theirs": 0.06521739130434782,
+   "tolerance": 0.005,
+   "match": true
+  },
+  {
+   "key": "q1_n500_10y_lost",
+   "ours": 0.0,
+   "theirs": 0.0,
+   "tolerance": 0.005,
+   "match": true
+  },
+  {
+   "key": "q1_n500_5y_below_fd",
+   "ours": 0.1552795,
+   "theirs": 0.15527950310559005,
+   "tolerance": 0.01,
+   "match": true
+  },
+  {
+   "key": "q1_n500_10y_below_fd",
+   "ours": 0.00381679,
+   "theirs": 0.003816793893129771,
+   "tolerance": 0.01,
+   "match": true
+  },
+  {
+   "key": "q16_n500_red12",
+   "ours": 0.31679389,
+   "theirs": 0.31679389312977096,
+   "tolerance": 0.005,
+   "match": true
+  },
+  {
+   "key": "q16_n500_red_p50",
+   "ours": 0.17869818,
+   "theirs": 0.1786981799901547,
+   "tolerance": 0.0005,
+   "match": true
+  },
+  {
+   "key": "q16_n500_rest_p50",
+   "ours": 0.1407578,
+   "theirs": 0.14075779987678205,
+   "tolerance": 0.0005,
+   "match": true
+  },
+  {
+   "key": "q16_n500_b20_p50",
+   "ours": 0.14500358,
+   "theirs": 0.14500357590267232,
+   "tolerance": 0.0005,
+   "match": true
+  },
+  {
+   "key": "q16_n500_units_to_money_ratio_p50",
+   "ours": 1.61773577,
+   "theirs": 1.6177357678658295,
+   "tolerance": 0.02,
+   "match": true
+  },
+  {
+   "key": "q17_n500_m12_A_beat_B",
+   "ours": 1.0,
+   "theirs": 1.0,
+   "tolerance": 0.01,
+   "match": true
+  },
+  {
+   "key": "q17_n500_m12_A_beat_C",
+   "ours": 1.0,
+   "theirs": 1.0,
+   "tolerance": 0.01,
+   "match": true
+  },
+  {
+   "key": "q17_n500_m12_A_beat_D",
+   "ours": 1.0,
+   "theirs": 1.0,
+   "tolerance": 0.01,
+   "match": true
+  },
+  {
+   "key": "q17_n500_m12_gap_C_p50",
+   "ours": 1482046.15292757,
+   "theirs": 1482046.1529275388,
+   "tolerance": 2000.0,
+   "match": true
+  },
+  {
+   "key": "q18_n500_10y_corr_12m",
+   "ours": -0.3465821,
+   "theirs": -0.3465821003526043,
+   "tolerance": 0.01,
+   "match": true
+  },
+  {
+   "key": "q18_n500_10y_corr_36m",
+   "ours": 0.09599318,
+   "theirs": 0.09599317544374128,
+   "tolerance": 0.01,
+   "match": true
+  },
+  {
+   "key": "q18_n500_10y_corr_60m",
+   "ours": -0.0203112,
+   "theirs": -0.02031119522814856,
+   "tolerance": 0.01,
+   "match": true
+  },
+  {
+   "key": "q10_n500_15y_need_50",
+   "ours": 16454.55316227,
+   "theirs": 16454.553162268974,
+   "tolerance": 50.0,
+   "match": true
+  },
+  {
+   "key": "q10_n500_15y_need_80",
+   "ours": 19458.95771258,
+   "theirs": 19458.95771258352,
+   "tolerance": 50.0,
+   "match": true
+  },
+  {
+   "key": "q10_n500_15y_need_95",
+   "ours": 22809.92280693,
+   "theirs": 22809.922806930543,
+   "tolerance": 50.0,
+   "match": true
+  },
+  {
+   "key": "q20_n500_industry",
+   "ours": 0.11171912,
+   "theirs": 0.11171911613684193,
+   "tolerance": 0.0005,
+   "match": true
+  },
+  {
+   "key": "q20_n500_trend",
+   "ours": 0.1130728,
+   "theirs": 0.11307280098552186,
+   "tolerance": 0.0005,
+   "match": true
+  },
+  {
+   "key": "q22_life_latest",
+   "ours": 1.79739857,
+   "theirs": 1.7973985672311907,
+   "tolerance": 0.05,
+   "match": true
+  }
+ ]
+}

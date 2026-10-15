@@ -30,7 +30,7 @@ ROLES = {
     "recompute": {"provider": "deepseek", "model": "deepseek-flash", "max_tokens": 32000,
                   "price": {"input": 0.30, "output": 1.20},
                   "extra": {"thinking": {"type": "enabled"}, "reasoning_effort": "high"}},
-    "review": {"provider": "gemini", "model": "gemini-3.8-flash", "max_tokens": 32000,
+    "review": {"provider": "gemini", "model": "gemini-3.8-flash", "max_tokens": 65000,   # hidden reasoning counts against it
                "price": {"input": 0.75, "output": 3.75},
                "extra": {"reasoning_effort": "high"}},
 }
@@ -44,6 +44,7 @@ class BudgetExceeded(RuntimeError):
 class Reply:
     text: str
     model: str
+    finish: str
     usd: float
     inr: float
     tokens_in: int
@@ -95,7 +96,8 @@ def complete(study: Path, role_name: str, messages: list[dict], json_mode: bool 
     usage = data.get("usage", {})
     tin, tout = int(usage.get("prompt_tokens", 0)), int(usage.get("completion_tokens", 0))
     usd = tin / 1e6 * role["price"]["input"] + tout / 1e6 * role["price"]["output"]
-    reply = Reply(data["choices"][0]["message"].get("content") or "", data.get("model", role["model"]), usd,
+    reply = Reply(data["choices"][0]["message"].get("content") or "", data.get("model", role["model"]),
+                  str(data["choices"][0].get("finish_reason")), usd,
                   usd * INR_PER_USD, tin, tout)
     ledger = study / "checks" / "costs.jsonl"
     ledger.parent.mkdir(parents=True, exist_ok=True)
@@ -107,5 +109,5 @@ def complete(study: Path, role_name: str, messages: list[dict], json_mode: bool 
     write_json(study / "checks" / "transcripts" / f"{stamp}-{role_name}.json",
                {"role": role_name, "purpose": purpose, "model": reply.model, "request": json.loads(scrub(json.dumps(
                    {k: v for k, v in body.items() if k != "messages"} | {"messages": messages}))),
-                "reply": scrub(reply.text), "tokens_in": tin, "tokens_out": tout, "inr": round(reply.inr, 2)})
+                "reply": scrub(reply.text), "finish_reason": reply.finish, "tokens_in": tin, "tokens_out": tout, "inr": round(reply.inr, 2)})
     return reply

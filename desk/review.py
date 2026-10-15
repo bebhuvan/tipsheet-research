@@ -58,10 +58,20 @@ def main(slug: str) -> int:
     checks = "\n".join(f"{k}: {'passed' if v['passed'] else 'FAILED'} {v['detail']}" for k, v in R["checks"].items())
     user = (f"## Frozen plan\n{S.plan}\n\n## Results: facts\n{facts}\n\n## Results: checks\n{checks}\n\n"
             f"## Figures (title, subtitle, how to read)\n{figure_text(figs)}\n\n## Draft\n{draft}")
-    reply = complete(S.dir, "review", [{"role": "system", "content": PROMPT}, {"role": "user", "content": user}],
-                     json_mode=True, purpose="review")
-    m = re.search(r"\{.*\}", reply.text, re.S)
-    out = json.loads(m.group(0)) if m else {"issues": [], "answers": {}, "overall": "unparseable reply"}
+    out = None
+    for attempt in range(2):                    # one retry if the reply is cut off or isn't valid JSON
+        reply = complete(S.dir, "review", [{"role": "system", "content": PROMPT}, {"role": "user", "content": user}],
+                         json_mode=True, purpose=f"review attempt {attempt}")
+        m = re.search(r"\{.*\}", reply.text, re.S)
+        try:
+            out = json.loads(m.group(0)) if m else None
+        except json.JSONDecodeError:
+            out = None
+        if out is not None:
+            break
+        print(f"reply not valid JSON (finish reason {reply.finish}); {'retrying' if attempt == 0 else 'giving up'}")
+    if out is None:
+        raise SystemExit("review reply could not be parsed twice; the raw replies are in checks/transcripts/")
     norm = lambda t: re.sub(r"\s+", " ", re.sub(r"[*_`]", "", t)).strip()
     hay = norm(draft + " " + prose_of(body) + " " + figure_text(figs))
     kept, dropped = [], []

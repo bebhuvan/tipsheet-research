@@ -1,8 +1,8 @@
 {
  "study": "does-sip-work",
- "computed_at": "2026-10-15T07:42:56+00:00",
+ "computed_at": "2026-10-15T08:02:53+00:00",
  "plan_commit": "b974bf7d91d8d30a2a9bdb25817c51fcfb235a0b",
- "compute_sha256": "a696098b13780faf9a75e42eb33728e3db394358362bef6b742b2432147ce4d0",
+ "compute_sha256": "f89f078e9d2262ed4e7342610a42597f00b636d6ca036bd5d0a0c4181af62a2c",
  "inputs": {
   "portal:asset_tri_daily": {
    "file": "asset_tri_daily.parquet",
@@ -3530,6 +3530,16 @@
    "value": 1.79739857,
    "unit": "years",
    "note": "outstanding accounts / closures in the last 12 months"
+  },
+  "q22_outstanding_latest": {
+   "value": 108890000.0,
+   "unit": "count",
+   "note": "SIP accounts open"
+  },
+  "q22_outstanding_latest_crore": {
+   "value": 10.889,
+   "unit": "crore",
+   "note": "SIP accounts open, in crore (a count, not rupees)"
   },
   "q22_life_max_outside_cleanup": {
    "value": 4.91724276,

@@ -457,7 +457,6 @@
    "room": "compact",
    "fmt": "pct",
    "digits": 1,
-   "sign": true,
    "series": [
     {
      "col": "nominal",

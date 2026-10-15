@@ -132,7 +132,7 @@ FIGS["q3_fd"] = {
     "sub": "Annual return over the whole period, before and after inflation: the Nifty 500 total-return index and a fixed deposit rolled at banks' 1-3 year rate, interest taxed at 30% plus cess.",
     "read": "Each pair of bars is one investment. The coloured bar is what it earned after inflation; the FD's is below zero.",
     "source": SRC + "; CPI (MoSPI)", "job": "comparison", "evidence": "measured",
-    "spec": {"kind": "hbars", "room": "compact", "fmt": "pct", "digits": 1, "sign": True,
+    "spec": {"kind": "hbars", "room": "compact", "fmt": "pct", "digits": 1,
              "series": [{"col": "nominal", "label": "Before inflation", "tone": "hist"}, {"col": "real", "label": "After inflation", "slot": 2}]},
     "data": {"categories": ["Nifty 500 (with dividends)", "Fixed deposit (after tax)"],
              "series": {"nominal": [r100(v("q3_n500_index_nominal")), r100(v("q3_n500_fd_nominal"))], "real": [r100(v("q3_n500_index_real")), r100(v("q3_n500_fd_real"))]}},

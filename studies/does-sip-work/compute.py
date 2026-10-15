@@ -1216,6 +1216,8 @@ def q22():
     touches = pd.Series(clean, index=a.index).rolling(12).max().astype(bool)
     life_ok = life[~touches].dropna()
     R.fact("q22_life_latest", float(life.iloc[-1]), "years", "outstanding accounts / closures in the last 12 months")
+    R.fact("q22_outstanding_latest", float(a["outstanding"].iloc[-1]), "count", "SIP accounts open")
+    R.fact("q22_outstanding_latest_crore", float(a["outstanding"].iloc[-1]) / 1e7, "crore", "SIP accounts open, in crore (a count, not rupees)")
     R.label("q22_latest_month", a.index[-1].strftime("%B %Y"))
     R.fact("q22_life_max_outside_cleanup", float(life_ok.max()), "years")
     R.fact("q22_life_min_outside_cleanup", float(life_ok.min()), "years")

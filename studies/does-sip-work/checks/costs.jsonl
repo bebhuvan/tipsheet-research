@@ -1,0 +1,6 @@
+{"at": "2026-10-15T07:46:25+00:00", "role": "recompute", "purpose": "attempt 0", "model": "deepseek-flash", "tokens_in": 2738, "tokens_out": 32000, "usd": 0.03922, "inr": 3.45}
+{"at": "2026-10-15T07:49:01+00:00", "role": "recompute", "purpose": "attempt 1", "model": "deepseek-flash", "tokens_in": 2754, "tokens_out": 31459, "usd": 0.03858, "inr": 3.39}
+{"at": "2026-10-15T07:52:32+00:00", "role": "review", "purpose": "review", "model": "gemini-3.8-flash", "tokens_in": 55313, "tokens_out": 1274, "usd": 0.04626, "inr": 4.07}
+{"at": "2026-10-15T07:58:10+00:00", "role": "review", "purpose": "review attempt 0", "model": "gemini-3.8-flash", "tokens_in": 55313, "tokens_out": 4188, "usd": 0.05719, "inr": 5.03}
+{"at": "2026-10-15T08:05:55+00:00", "role": "recompute", "purpose": "attempt 0", "model": "deepseek-flash", "tokens_in": 2738, "tokens_out": 32000, "usd": 0.03922, "inr": 3.45}
+{"at": "2026-10-15T08:07:22+00:00", "role": "recompute", "purpose": "attempt 1", "model": "deepseek-flash", "tokens_in": 2754, "tokens_out": 17349, "usd": 0.02164, "inr": 1.9}

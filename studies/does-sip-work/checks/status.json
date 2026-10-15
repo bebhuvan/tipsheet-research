@@ -1,5 +1,5 @@
 {
- "at": "2026-10-15T07:43:21+00:00",
+ "at": "2026-10-15T08:09:22+00:00",
  "items": [
   {
    "check": "plan_shape",
@@ -14,7 +14,7 @@
   {
    "check": "results_fresh",
    "status": "ok",
-   "detail": "computed 2026-10-15T07:42:56+00:00"
+   "detail": "computed 2026-10-15T08:02:53+00:00"
   },
   {
    "check": "checks_passed",
@@ -44,7 +44,7 @@
   {
    "check": "numbers_traced",
    "status": "ok",
-   "detail": "687 figures checked, 0 untraced",
+   "detail": "694 figures checked, 0 untraced",
    "failures": [],
    "warnings": [
     {
@@ -54,12 +54,12 @@
     },
     {
      "text": "1.08",
-     "sentence": "Their statement said it was worth about ₹1.08 lakh: 10% down, and an XIRR, the annualised return the app shows, of −18% a year.",
+     "sentence": "Their statement said it was worth about ₹1.08 lakh: 10% down, and an XIRR (the annualised return across dated instalments that the app shows) of −18% a year.",
      "why": "matches 8 facts; the claims critic must confirm the sentence uses the right one"
     },
     {
      "text": "10",
-     "sentence": "Their statement said it was worth about ₹1.08 lakh: 10% down, and an XIRR, the annualised return the app shows, of −18% a year.",
+     "sentence": "Their statement said it was worth about ₹1.08 lakh: 10% down, and an XIRR (the annualised return across dated instalments that the app shows) of −18% a year.",
      "why": "matches 10 facts; the claims critic must confirm the sentence uses the right one"
     },
     {
@@ -158,34 +158,48 @@
   {
    "check": "style",
    "status": "ok",
-   "detail": "0 errors, 4 warnings",
+   "detail": "0 errors, 6 warnings",
    "errors": [],
    "warnings": [
     {
      "rule": "intensifier",
      "severity": "warn",
-     "line": 259,
+     "line": 262,
      "text": "really",
      "message": "Intensifier. Use the number instead."
     },
     {
      "rule": "long_sentence",
      "severity": "warn",
-     "line": 177,
+     "line": 161,
+     "text": "Someone holding ₹12 lakh who invested it at once beat moving it in over 12 months from an FD, the way a systematic trans…",
+     "message": "59 words; split it."
+    },
+    {
+     "rule": "long_sentence",
+     "severity": "warn",
+     "line": 174,
+     "text": "Doubling the instalment when the Nifty 50's P/E (price-to-earnings ratio: the index's price divided by its companies' ye…",
+     "message": "53 words; split it."
+    },
+    {
+     "rule": "long_sentence",
+     "severity": "warn",
+     "line": 180,
      "text": "Pausing the SIP during a 20% fall and keeping the paused money in an FD cost 3.8 points a year if the pause lasted until…",
      "message": "47 words; split it."
     },
     {
      "rule": "long_sentence",
      "severity": "warn",
-     "line": 235,
+     "line": 236,
      "text": "For each of the 83 Nifty 500 start months since 1995 that were in the red at 12 months, I compared four paths over the s…",
      "message": "74 words; split it."
     },
     {
      "rule": "long_sentence",
      "severity": "warn",
-     "line": 314,
+     "line": 317,
      "text": "What not to conclude: that SIPs always win (small caps lost money over ten years in one start month, and the next 30 yea…",
      "message": "49 words; split it."
     }
@@ -208,23 +222,23 @@
   },
   {
    "check": "recompute",
-   "status": "pending",
-   "detail": "run `desk recompute`"
+   "status": "ok",
+   "detail": "23 headline numbers matched"
   },
   {
-   "check": "review",
-   "status": "pending",
-   "detail": "run `desk review`"
+   "check": "review_answered",
+   "status": "ok",
+   "detail": "13 issues handled"
   },
   {
    "check": "report",
-   "status": "pending",
-   "detail": "run `desk report`, then write: What I set out to ask; What I found; What changed from the plan; Mistakes and how they were caught; Dead ends; What a sceptical reader should check first; What the desk should change"
+   "status": "ok",
+   "detail": "REPORT.md written"
   },
   {
    "check": "budget",
    "status": "ok",
-   "detail": "₹0 of ₹250"
+   "detail": "₹21 of ₹250"
   },
   {
    "check": "human_read",

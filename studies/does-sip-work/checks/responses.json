@@ -1,0 +1,15 @@
+{
+ "r1": "fixed: the dek now says 'for SIPs in the red after a year, keeping going beat stopping in 100% of cases'; the body already names the small-cap and 24-month exceptions.",
+ "r2": "fixed: the closing box now limits the claim to broad-market SIPs in the red after a year.",
+ "r3": "fixed: the closing box now describes what mattered in the record instead of telling the reader what to do.",
+ "r4": "fixed: Chapter 6 now names Japan as the critique's strongest example, in words only, as the plan said (index licences not cleared, so no data).",
+ "r5": "fixed: Q17 now reports the depth-band result and why P17 failed.",
+ "r6": "fixed: Q14 now reports the total-return correlation (−0.18) and says P14 failed.",
+ "r7": "fixed: STP is defined at first use in the text.",
+ "r8": "fixed: P/E is defined at first use.",
+ "r9": "fixed: the first XIRR now says it is the annualised return across dated instalments; I kept it short rather than spelling out the acronym.",
+ "r10": "fixed: the date-of-month figure now sits after the sentence about SIP dates.",
+ "r11": "fixed: rewritten as 'Aiming for ₹1 crore of current purchasing power, with the goal adjusted for inflation…'.",
+ "r12": "fixed: the opening now gives AMFI's count of open SIP accounts (new fact q22_outstanding_latest).",
+ "r13": "fixed: 8.3% in the text and the scorecard, matching the exact 8.35% (8.347%). The numeric gate had passed 8.4% by matching a different fact, a known limit of the gate."
+}
