@@ -20,7 +20,7 @@ import importlib.util
 import re
 import shutil
 
-from .config import CACHE, read_json, write_json
+from .config import CACHE, read_json, scrub, write_json
 from .models import complete
 from .sandbox import run_python
 from .study import Study
@@ -91,7 +91,7 @@ def main(slug: str) -> int:
         r = run_python(script, inputs, out)
         ok = r.ok and (out / "facts.json").is_file()
         attempts.append({"attempt": attempt, "model": reply.model, "inr": round(reply.inr, 2), "ok": ok,
-                         "error": "" if ok else (r.stderr[-1500:] + " " + "; ".join(r.violations))})
+                         "error": "" if ok else scrub(r.stderr[-1500:] + " " + "; ".join(r.violations))})
         if ok:
             break
         msgs += [{"role": "assistant", "content": reply.text},

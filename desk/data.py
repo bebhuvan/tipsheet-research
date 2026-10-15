@@ -37,6 +37,7 @@ def resolve(name: str) -> Path:
 
 
 def fingerprint(path: Path) -> dict:
+    """Size, mtime and sha256. Only the file name is recorded (not the local path), since results are public."""
     st = path.stat()
     key = f"{path}|{st.st_size}|{st.st_mtime_ns}"
     cache = json.loads(_HASH_CACHE.read_text()) if _HASH_CACHE.is_file() else {}
@@ -44,7 +45,7 @@ def fingerprint(path: Path) -> dict:
         cache[key] = sha256_file(path)
         _HASH_CACHE.parent.mkdir(parents=True, exist_ok=True)
         _HASH_CACHE.write_text(json.dumps(cache, indent=0))
-    return {"path": str(path), "size": st.st_size, "mtime_ns": st.st_mtime_ns, "sha256": cache[key]}
+    return {"file": path.name, "size": st.st_size, "mtime_ns": st.st_mtime_ns, "sha256": cache[key]}
 
 
 def load(name: str, results=None, columns: list[str] | None = None, filters=None) -> pd.DataFrame:
@@ -72,7 +73,7 @@ def changed_inputs(recorded: dict[str, dict]) -> list[str]:
         except FileNotFoundError:
             out.append(f"{name}: missing")
             continue
-        if str(now) != fp["path"]:
+        if now.name != fp["file"]:
             out.append(f"{name}: newer snapshot {now.name}")
             continue
         st = now.stat()

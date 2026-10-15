@@ -87,7 +87,22 @@ The owner's own sites set the bar: This Indian Life (thisindianlife.today) and H
 
 The old bench's router with role profiles, nine critics, red team, reader panel, scoreboard, mock calibration, state machine, three tiers of work, and the public-repo export. Each can return when a real study shows it is needed.
 
+## Public by default (decided 2026-10-15)
+
+The repository is public, so the method can be checked as well as the results:
+- The full git history is kept, and plan freezes are tagged and pushed immediately, so GitHub's record shows each plan came before its results (`CONTRIBUTING.md`).
+- Every model prompt and reply is committed under `checks/transcripts/`, with local paths scrubbed.
+- Each study ends with `REPORT.md`. Its record half is generated from the files and git history; the lead researcher writes the narrative half: findings, changes from the plan, mistakes and how they were caught, dead ends, the weakest link, and lessons for the desk. `desk check` treats a study as unfinished until the narrative is written.
+- Code is MIT; writing, methods and results are CC BY 4.0. Raw source data is not redistributed. Each input's file name and hash are recorded instead.
+
+## Skills, agents and CLAUDE.md (decided 2026-10-15)
+
+- **`CLAUDE.md` (with `AGENTS.md` linked to it): yes.** It is the protocol and the first thing any session reads.
+- **Skills: no, for now.** The four guides already are the skills: plain Markdown that Claude Code, Codex or a person can follow. Wrapping them as Claude skills would duplicate them, and Codex wouldn't see the wrappers.
+- **Subagents: no.** Independence matters here, and a subagent is the same model with the same blind spots. The independent work is done by other model families through `desk/models.py`. Parallel work, when needed, runs as separate terminal sessions, each on its own study branch.
+
+Revisit any of these when a real study shows a gap.
+
 ## Open decisions for the owner
 
-- Public or private GitHub repo (local only until decided).
 - When to retire the portal's `research/` bench.

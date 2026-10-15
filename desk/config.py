@@ -61,6 +61,14 @@ def sha256_text(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
+def scrub(text: str) -> str:
+    """Remove local paths from text that will be committed to the public repo."""
+    for root, label in ((str(ROOT), "."), (str(DATABANK_ROOT), "<databank>"), (str(PORTAL_ROOT), "<portal>"),
+                        (str(Path.home()), "~")):
+        text = text.replace(root, label)
+    return text
+
+
 def write_json(path: Path, obj) -> Path:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(obj, indent=1, ensure_ascii=False, default=str) + "\n")

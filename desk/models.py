@@ -1,5 +1,6 @@
 """The desk's two paid model calls, through each provider's OpenAI-compatible endpoint, with a spend ledger
-and a hard per-study cap.
+and a hard per-study cap. Every request and reply is saved to checks/transcripts/ (keys are never in either; local paths
+are scrubbed), so readers of the public repo can see exactly what each model was asked and said.
 
 Roles are fixed: `recompute` (DeepSeek) writes an independent script; `review` (Google) reviews and
 cold-reads the draft. Both are a different family from the session that writes the study (Claude), which
@@ -18,7 +19,7 @@ from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 
-from .config import CAP_INR_PER_STUDY, INR_PER_USD, setting
+from .config import CAP_INR_PER_STUDY, INR_PER_USD, scrub, setting, write_json
 
 PROVIDERS = {
     "deepseek": {"base_url": "https://api.deepseek.com", "key_env": "DEEPSEEK_API_KEY"},
@@ -102,4 +103,9 @@ def complete(study: Path, role_name: str, messages: list[dict], json_mode: bool 
         f.write(json.dumps({"at": datetime.now(timezone.utc).isoformat(timespec="seconds"), "role": role_name,
                             "purpose": purpose, "model": reply.model, "tokens_in": tin, "tokens_out": tout,
                             "usd": round(usd, 5), "inr": round(reply.inr, 2)}) + "\n")
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S")
+    write_json(study / "checks" / "transcripts" / f"{stamp}-{role_name}.json",
+               {"role": role_name, "purpose": purpose, "model": reply.model, "request": json.loads(scrub(json.dumps(
+                   {k: v for k, v in body.items() if k != "messages"} | {"messages": messages}))),
+                "reply": scrub(reply.text), "tokens_in": tin, "tokens_out": tout, "inr": round(reply.inr, 2)})
     return reply

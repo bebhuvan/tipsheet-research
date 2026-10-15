@@ -190,3 +190,25 @@ def test_figure_needs_job_and_evidence(study):
     figures.write(d / "figures.py", {"q1": {"title": "t", "read": "r", "spec": {"kind": "hbars"}, "data": {"x": 1},
                                             "job": "answer", "evidence": "illustration"}})
     assert json.loads((d / "figures.json").read_text())["q1"]["note"].startswith("Evidence: illustration.")
+
+
+def test_report_narrative_required(study):
+    d, _ = study
+    write_results(d)
+    from desk import report
+    report.main(SLUG)
+    text = (d / "REPORT.md").read_text()
+    assert "## The record" in text and "q1_share" not in text          # record is summary, not the fact dump
+    assert status(check.run(SLUG))["report"] == "pending"
+    filled = text.replace(report.TODO, "I wrote this section by hand and it says what actually happened in the study, honestly.")
+    (d / "REPORT.md").write_text(filled)
+    report.main(SLUG)                                                   # regenerating keeps the narrative
+    assert "I wrote this section by hand" in (d / "REPORT.md").read_text()
+    assert status(check.run(SLUG))["report"] == "ok"
+
+
+def test_scrub_removes_local_paths():
+    from pathlib import Path
+    from desk.config import ROOT, scrub
+    s = scrub(f"error in {ROOT}/studies/x/compute.py and {Path.home()}/secret")
+    assert str(Path.home()) not in s and "./studies/x/compute.py" in s

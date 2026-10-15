@@ -40,7 +40,10 @@ def cmd_freeze(slug: str) -> int:
     if S.freeze():
         raise SystemExit(f"already frozen at {S.freeze()['commit'][:7]}; later changes go under ## Amendments")
     write_json(S.freeze_path, {"commit": commit, "frozen_on": date.today().isoformat(), "plan_sha256": sha256_file(S.plan_path)})
-    print(f"{slug}: plan frozen at {commit[:7]}. Commit freeze.json.")
+    tag = f"{slug}/plan-frozen"
+    git("tag", "-a", tag, commit, "-m", f"{slug}: plan frozen before any result was computed")
+    print(f"{slug}: plan frozen at {commit[:7]}, tagged {tag}. Commit freeze.json, then push the branch and the tag now:\n"
+          f"  git push origin HEAD {tag}\nGitHub's record of when the tag arrived is the public evidence that the plan came first.")
     return 0
 
 
@@ -56,6 +59,10 @@ def cmd_publish(slug: str, force_pending: bool = False) -> int:
     text = re.sub(r'^import F from ".*?";$', f'import F from "./{slug}.figures.json";', text, flags=re.M)
     (posts / f"{slug}.mdx").write_text(text)
     shutil.copy(S.figures_path, posts / f"{slug}.figures.json")
+    if not force_pending:
+        tag = f"{slug}/published-{date.today().isoformat()}"
+        git("tag", "-a", tag, "-m", f"{slug}: the version copied to the site")
+        print(f"tagged {tag}; push it with the branch.")
     print(f"copied to {posts}/{slug}.mdx and {slug}.figures.json. Nothing was committed in the portal:"
           " preview it there, and commit only with the owner's go-ahead (pushing the portal's main publishes live).")
     return 0
@@ -64,7 +71,7 @@ def cmd_publish(slug: str, force_pending: bool = False) -> int:
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(prog="desk")
     sub = p.add_subparsers(dest="cmd", required=True)
-    for name in ("new", "freeze", "check", "recompute", "review", "publish"):
+    for name in ("new", "freeze", "check", "recompute", "review", "report", "publish"):
         s = sub.add_parser(name)
         s.add_argument("slug")
         if name == "check":
@@ -86,6 +93,9 @@ def main(argv: list[str] | None = None) -> int:
     if a.cmd == "review":
         from . import review
         return review.main(a.slug)
+    if a.cmd == "report":
+        from . import report
+        return report.main(a.slug)
     if a.cmd == "publish":
         return cmd_publish(a.slug, a.allow_pending)
     return 1

@@ -6,8 +6,8 @@ The reader manages their own money, is intelligent, and has never read a finance
 
 The owner's own sites set the bar for explanation. Read the guides below before a first article, and one published piece before every article.
 
-- **This Indian Life** (thisindianlife.today). Read `docs/EDITORIAL_NORTH_STAR.md` and `docs/academy/VOICE.md` in the project folder (`../THis Indian Life`). Take from it: an answer thesis before drafting, answer types, a narrative job for every chart, specific Indian particulars, and the no-overclaim rule.
-- **Hope and Despair** (hopeanddespair.world). Read `WRITING.md` and `EXPLAINERS.md` in `../hope and despair`. Take from it: lead with the point and complicate it at once, a human scale for every number, caveats before the evidence, weighing rather than splitting, the evidence tag, and the "Still lost? Read this" box.
+- **This Indian Life** (thisindianlife.today). Read its `docs/EDITORIAL_NORTH_STAR.md` and `docs/academy/VOICE.md` (in the project's own repository; on the owner's machine, the sibling folder `THis Indian Life`). Take from it: an answer thesis before drafting, answer types, a narrative job for every chart, specific Indian particulars, and the no-overclaim rule.
+- **Hope and Despair** (hopeanddespair.world). Read its `WRITING.md` and `EXPLAINERS.md` (sibling folder `hope and despair`). Take from it: lead with the point and complicate it at once, a human scale for every number, caveats before the evidence, weighing rather than splitting, the evidence tag, and the "Still lost? Read this" box.
 
 The rules below are those ideas adapted to finance research.
 

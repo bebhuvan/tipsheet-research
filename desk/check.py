@@ -133,6 +133,10 @@ def run(slug: str) -> list[dict]:
         add("review_answered", "fail" if open_ else "ok",
             ("no response in checks/responses.json for " + ", ".join(open_)) if open_ else f"{len(issues)} issues handled")
 
+    from .report import narrative_missing
+    miss = narrative_missing(S)
+    add("report", "pending" if miss else "ok", ("run `desk report`, then write: " + "; ".join(miss)) if miss else "REPORT.md written")
+
     spent = spent_inr(S.dir)
     add("budget", "ok" if spent <= CAP_INR_PER_STUDY else "fail", f"₹{spent:.0f} of ₹{CAP_INR_PER_STUDY:.0f}")
 
